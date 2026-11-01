@@ -2,13 +2,14 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
-const { spawn } = require('child_process');
-const cors = require('cors');
+const { ZeroTTSManager } = require('./lib/tts-manager');
+const { createSecurity, validViewerKey, safeAvatar, resolveTikTokUsername, validateParams, isPlainObject } = require('./lib/security');
 const { WebSocketServer } = require('ws');
 const { TikTokLiveConnection, WebcastEvent, ControlEvent } = require('tiktok-live-connector');
 
-const PORT = process.env.PORT || 3000;
-const DATA_DIR = path.join(__dirname, 'data');
+const PORT = Number(process.env.PORT ?? 3000);
+if (!Number.isInteger(PORT) || PORT < 0 || PORT > 65535) throw new Error('PORT không hợp lệ');
+const DATA_DIR = path.resolve(process.env.APP_DATA_DIR || path.join(__dirname, 'data'));
 const TTS_CACHE_DIR = path.join(DATA_DIR, 'tts-cache');
 const STATE_FILE = path.join(DATA_DIR, 'merit-state.json');
 
@@ -101,143 +102,6 @@ const FORTUNE_DECK = [
 ];
 
 // ============================================================================
-// 2. ZEROTTS PYTHON WORKER MANAGER (VOICE: MAI CHI)
-// ============================================================================
-class ZeroTTSManager {
-  constructor() {
-    this.proc = null;
-    this.ready = false;
-    this.status = 'starting';
-    this.voice = 'maichi';
-    this.voices = ['maichi'];
-    this.model = 'zeroweight-ai/ZeroTTS';
-    this.pending = new Map();
-    this.inflight = new Map();
-    this.reqCounter = 0;
-    this.buffer = '';
-    this.startWorker();
-  }
-
-  resolvePythonBin() {
-    const venvPy = path.join(__dirname, '.venv', 'bin', 'python');
-    if (fs.existsSync(venvPy)) return venvPy;
-    return 'python3';
-  }
-
-  startWorker() {
-    const pyBin = this.resolvePythonBin();
-    const scriptPath = path.join(__dirname, 'tts_worker.py');
-    console.log(`[ZeroTTS] Khởi chạy worker với ${pyBin} (Giọng mặc định: Mai Chi)...`);
-
-    this.status = 'loading';
-    this.proc = spawn(pyBin, [scriptPath], {
-      cwd: __dirname,
-      stdio: ['pipe', 'pipe', 'pipe']
-    });
-
-    this.proc.stdout.on('data', (chunk) => {
-      this.buffer += chunk.toString('utf8');
-      let lines = this.buffer.split('\n');
-      this.buffer = lines.pop() || '';
-      for (const line of lines) {
-        if (!line.trim()) continue;
-        this.handleWorkerLine(line.trim());
-      }
-    });
-
-    this.proc.stderr.on('data', (chunk) => {
-      const msg = chunk.toString('utf8').trim();
-      if (msg) console.log(`[ZeroTTS stderr] ${msg}`);
-    });
-
-    this.proc.on('exit', (code) => {
-      console.warn(`[ZeroTTS] Worker thoát với mã ${code}`);
-      this.ready = false;
-      this.status = 'stopped';
-      for (const [, item] of this.pending) {
-        clearTimeout(item.timer);
-        item.resolve({ ok: false, error: 'ZeroTTS worker exited' });
-      }
-      this.pending.clear();
-    });
-  }
-
-  handleWorkerLine(line) {
-    try {
-      const msg = JSON.parse(line);
-      if (msg.type === 'status') {
-        this.status = msg.status;
-        this.model = msg.model || this.model;
-        broadcastNotification('tts.status', this.getStatus());
-      } else if (msg.type === 'ready') {
-        this.ready = true;
-        this.status = 'ready';
-        this.voice = msg.voice || 'maichi';
-        this.voices = msg.voices || ['maichi'];
-        this.model = msg.model || this.model;
-        console.log(`[ZeroTTS] Sẵn sàng sau ${msg.loadSec}s! Giọng: ${this.voice} (${this.voices.join(', ')})`);
-        broadcastNotification('tts.status', this.getStatus());
-      } else if (msg.type === 'result' && msg.id != null) {
-        const entry = this.pending.get(msg.id);
-        if (entry) {
-          clearTimeout(entry.timer);
-          this.pending.delete(msg.id);
-          entry.resolve(msg);
-        }
-      } else if (msg.type === 'error') {
-        console.error('[ZeroTTS Error]', msg.error);
-        this.status = 'error';
-        broadcastNotification('tts.status', this.getStatus());
-      }
-    } catch (err) {
-      console.log('[ZeroTTS stdout]', line);
-    }
-  }
-
-  getStatus() {
-    return {
-      ready: this.ready,
-      status: this.status,
-      engine: 'ZeroTTS (zeroweight-ai/ZeroTTS)',
-      voice: state.settings.ttsVoice || this.voice || 'maichi',
-      voices: this.voices,
-      model: this.model
-    };
-  }
-
-  synthesize(text, voiceOverride) {
-    const cleanText = String(text || '').trim();
-    if (!cleanText) return Promise.resolve({ ok: false, error: 'Empty text' });
-    const voice = (voiceOverride || state.settings.ttsVoice || 'maichi').toLowerCase();
-    const dedupKey = `${voice}::${cleanText}`;
-
-    if (this.inflight.has(dedupKey)) {
-      return this.inflight.get(dedupKey);
-    }
-
-    const promise = new Promise((resolve) => {
-      if (!this.proc || !this.ready) {
-        return resolve({ ok: false, error: `ZeroTTS đang ở trạng thái: ${this.status}` });
-      }
-      const id = ++this.reqCounter;
-      const timer = setTimeout(() => {
-        this.pending.delete(id);
-        resolve({ ok: false, error: 'ZeroTTS synthesis timeout' });
-      }, 30000);
-
-      this.pending.set(id, { resolve, timer });
-      const payload = JSON.stringify({ id, text: cleanText, voice }) + '\n';
-      this.proc.stdin.write(payload);
-    }).finally(() => {
-      this.inflight.delete(dedupKey);
-    });
-
-    this.inflight.set(dedupKey, promise);
-    return promise;
-  }
-}
-
-// ============================================================================
 // 3. TRẠNG THÁI CHÙA ONLINE & BẢNG VÀNG CÔNG ĐỨC
 // ============================================================================
 const DEFAULT_STATE = {
@@ -255,7 +119,7 @@ const DEFAULT_STATE = {
     lamp: 2,
     dragon: 1
   },
-  devotees: {},
+  devotees: Object.create(null),
   recentEvents: [],
   settings: {
     ttsEnabled: true,
@@ -269,53 +133,92 @@ const DEFAULT_STATE = {
   tiktok: {
     connected: false,
     connecting: false,
-    username: 'zenfacts_vn',
+    username: '',
     roomId: null,
     viewerCount: 0,
     lastError: null
   }
 };
 
+function restoreDevotees(saved) {
+  const result = Object.create(null);
+  if (!isPlainObject(saved)) return result;
+  for (const [key, value] of Object.entries(saved).slice(-10000)) {
+    if (!validViewerKey(key) || !isPlainObject(value)) continue;
+    result[key] = {
+      name: sanitizeUserName(value.name), uniqueId: key, avatar: safeAvatar(value.avatar),
+      merit: Number.isFinite(value.merit) ? Math.max(0, value.merit) : 0,
+      incense: Number.isFinite(value.incense) ? Math.max(0, value.incense) : 0,
+      gifts: Number.isFinite(value.gifts) ? Math.max(0, value.gifts) : 0,
+      lastWish: sanitizeWishText(value.lastWish)
+    };
+  }
+  return result;
+}
+
 function loadState() {
   try {
     if (fs.existsSync(STATE_FILE)) {
+      if (fs.statSync(STATE_FILE).size > 10 * 1024 * 1024) throw new Error('State file exceeds 10 MiB');
       const saved = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
-      return {
-        ...DEFAULT_STATE,
-        ...saved,
-        devotees: saved.devotees || {},
-        offerings: { ...DEFAULT_STATE.offerings, ...(saved.offerings || {}) },
-        settings: { ...DEFAULT_STATE.settings, ...(saved.settings || {}) },
-        tiktok: { ...DEFAULT_STATE.tiktok }
-      };
+      const restored = JSON.parse(JSON.stringify(DEFAULT_STATE));
+      for (const key of ['totalIncense', 'totalMerit', 'woodenFishHits', 'bellRings', 'lanternCount', 'fortuneCount', 'activeIncenseSticks']) {
+        if (Number.isSafeInteger(saved[key]) && saved[key] >= 0) restored[key] = saved[key];
+      }
+      for (const key of Object.keys(restored.offerings)) {
+        if (Number.isSafeInteger(saved.offerings?.[key]) && saved.offerings[key] >= 0) restored.offerings[key] = saved.offerings[key];
+      }
+      for (const key of ['ttsEnabled', 'bgMusicEnabled', 'sfxEnabled']) {
+        if (typeof saved.settings?.[key] === 'boolean') restored.settings[key] = saved.settings[key];
+      }
+      for (const key of ['musicVolume', 'ttsVolume', 'smokeDensity', 'autoSimIntervalMs']) {
+        if (Number.isFinite(saved.settings?.[key])) {
+          restored.settings[key] = Math.max(key === 'autoSimIntervalMs' ? 3500 : 0,
+            Math.min(key === 'autoSimIntervalMs' ? 60000 : key === 'smokeDensity' ? 2 : 1, saved.settings[key]));
+        }
+      }
+      if (typeof saved.settings?.ttsVoice === 'string' && /^[a-z0-9_-]{1,40}$/.test(saved.settings.ttsVoice)) restored.settings.ttsVoice = saved.settings.ttsVoice;
+      restored.devotees = restoreDevotees(saved.devotees);
+      return restored;
     }
   } catch (e) {
     console.warn('[State] Không đọc được merit-state.json, dùng mặc định:', e.message);
   }
-  return JSON.parse(JSON.stringify(DEFAULT_STATE));
+  return { ...JSON.parse(JSON.stringify(DEFAULT_STATE)), devotees: Object.create(null) };
 }
 
-let state = loadState();
+let state;
 
 let saveTimer = null;
+let savePromise = Promise.resolve();
+function persistState() {
+  const toSave = {
+    totalIncense: state.totalIncense,
+    totalMerit: state.totalMerit,
+    woodenFishHits: state.woodenFishHits,
+    bellRings: state.bellRings,
+    lanternCount: state.lanternCount,
+    fortuneCount: state.fortuneCount,
+    activeIncenseSticks: state.activeIncenseSticks,
+    offerings: state.offerings,
+    devotees: state.devotees,
+    settings: state.settings
+  };
+  const serialized = JSON.stringify(toSave, null, 2);
+  const temporary = `${STATE_FILE}.tmp`;
+  savePromise = savePromise.then(async () => {
+    await fs.promises.writeFile(temporary, serialized, { encoding: 'utf8', mode: 0o600 });
+    await fs.promises.rename(temporary, STATE_FILE);
+  }).catch((e) => {
+    console.error('[State] Lỗi lưu file:', e.message);
+  });
+  return savePromise;
+}
 function saveState() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
-    const toSave = {
-      totalIncense: state.totalIncense,
-      totalMerit: state.totalMerit,
-      woodenFishHits: state.woodenFishHits,
-      bellRings: state.bellRings,
-      lanternCount: state.lanternCount,
-      fortuneCount: state.fortuneCount,
-      activeIncenseSticks: state.activeIncenseSticks,
-      offerings: state.offerings,
-      devotees: state.devotees,
-      settings: state.settings
-    };
-    fs.promises.writeFile(STATE_FILE, JSON.stringify(toSave, null, 2), 'utf8').catch((e) => {
-      console.error('[State] Lỗi lưu file:', e.message);
-    });
+    saveTimer = null;
+    void persistState();
   }, 1200);
 }
 
@@ -389,15 +292,20 @@ function sanitizeWishText(rawWish) {
   return cleaned;
 }
 
+state = loadState();
+state.settings.autoSim = false;
+
 function recordDevotee(user, uniqueId, avatar, meritDelta, incenseDelta = 0, giftDelta = 0, wish = '') {
   const displayName = sanitizeUserName(user || uniqueId);
   const cleanWish = sanitizeWishText(wish);
-  const key = (uniqueId || displayName).slice(0, 40);
-  if (!state.devotees[key]) {
+  const candidate = String(uniqueId || displayName).slice(0, 80);
+  const key = validViewerKey(candidate) ? candidate : `viewer:${displayName}`;
+  if (!Object.hasOwn(state.devotees, key)) {
+    if (Object.keys(state.devotees).length >= 10000) delete state.devotees[Object.keys(state.devotees)[0]];
     state.devotees[key] = {
       name: displayName,
-      uniqueId: uniqueId || displayName.toLowerCase().replace(/\s+/g, ''),
-      avatar: avatar || '',
+      uniqueId: key,
+      avatar: safeAvatar(avatar),
       merit: 0,
       incense: 0,
       gifts: 0,
@@ -406,7 +314,7 @@ function recordDevotee(user, uniqueId, avatar, meritDelta, incenseDelta = 0, gif
   }
   const dev = state.devotees[key];
   dev.name = displayName;
-  if (avatar) dev.avatar = avatar;
+  if (avatar) dev.avatar = safeAvatar(avatar);
   dev.merit += meritDelta;
   dev.incense += incenseDelta;
   dev.gifts += giftDelta;
@@ -577,7 +485,7 @@ const Rituals = {
     const user = sanitizeUserName(params.user);
     const uniqueId = params.uniqueId || '';
     const avatar = params.avatar || '';
-    const coins = Math.max(1, Number(params.coins) || 10);
+    const coins = Math.max(1, Math.min(1000000, Number(params.coins) || 10));
     const giftType = ['lotus', 'fruit', 'lamp', 'dragon'].includes(params.giftType)
       ? params.giftType
       : (coins >= 100 ? 'dragon' : coins >= 20 ? 'fruit' : coins >= 5 ? 'lamp' : 'lotus');
@@ -588,7 +496,7 @@ const Rituals = {
       lamp: 'Đèn Lưu Ly Trí Tuệ',
       dragon: 'Đại Lễ Kim Long Chầu Phật'
     };
-    const giftName = params.giftName || giftLabels[giftType];
+    const giftName = String(params.giftName || giftLabels[giftType]).slice(0, 100);
     const multiplier = coins >= 100 ? 50 : coins >= 10 ? 30 : 20;
     const merit = Math.max(20, coins * multiplier);
 
@@ -664,10 +572,18 @@ const Rituals = {
   },
 
   updateSettings(params = {}) {
-    state.settings = {
-      ...state.settings,
-      ...params
-    };
+    const next = {};
+    const booleans = ['ttsEnabled', 'bgMusicEnabled', 'sfxEnabled', 'autoSim'];
+    for (const key of booleans) if (typeof params[key] === 'boolean') next[key] = params[key];
+    for (const key of ['musicVolume', 'ttsVolume', 'smokeDensity']) {
+      if (params[key] !== undefined) next[key] = Math.max(0, Math.min(key === 'smokeDensity' ? 2 : 1, params[key]));
+    }
+    if (params.autoSimIntervalMs !== undefined) next.autoSimIntervalMs = Math.max(3500, Math.min(60000, params.autoSimIntervalMs));
+    if (params.ttsVoice !== undefined) {
+      if (!zeroTts.voices.includes(params.ttsVoice)) throw new Error('Giọng đọc không hợp lệ');
+      next.ttsVoice = params.ttsVoice;
+    }
+    state.settings = { ...state.settings, ...next };
     if (typeof params.autoSim === 'boolean') {
       configureAutoSim(params.autoSim);
     }
@@ -685,7 +601,7 @@ const Rituals = {
     state.fortuneCount = 0;
     state.activeIncenseSticks = 3;
     state.offerings = { lotus: 1, fruit: 1, lamp: 1, dragon: 0 };
-    state.devotees = {};
+    state.devotees = Object.create(null);
     state.recentEvents = [];
     saveState();
     broadcastNotification('temple.state', getPublicState());
@@ -701,7 +617,7 @@ let tiktokConn = null;
 const commentCooldownMap = new Map();
 
 function parseViewerComment(commentText, user, uniqueId, avatar) {
-  const raw = String(commentText || '').trim();
+  const raw = String(commentText || '').slice(0, 500).trim();
   if (!raw || isBlockedSpamOrToxic(raw)) {
     return null;
   }
@@ -791,31 +707,6 @@ function parseViewerComment(commentText, user, uniqueId, avatar) {
 
 const giftComboTracker = new Map();
 
-async function resolveTikTokUsername(rawInput) {
-  let input = String(rawInput || '').trim();
-  if (!input) {
-    throw new Error('Vui lòng nhập @username hoặc link TikTok Live cần kết nối');
-  }
-  if (input.startsWith('http://') || input.startsWith('https://') || input.includes('tiktok.com/')) {
-    const urlToFetch = input.startsWith('http') ? input : `https://${input}`;
-    const directMatch = urlToFetch.match(/tiktok\.com\/@([^/?#]+)/i);
-    if (directMatch && directMatch[1]) {
-      return directMatch[1];
-    }
-    try {
-      const resp = await fetch(urlToFetch, { redirect: 'follow' });
-      const finalUrl = resp.url || '';
-      const resolvedMatch = finalUrl.match(/tiktok\.com\/@([^/?#]+)/i);
-      if (resolvedMatch && resolvedMatch[1]) {
-        return resolvedMatch[1];
-      }
-    } catch (e) {
-      console.warn('[TikTok URL Resolve Warning]', e.message);
-    }
-  }
-  return input.replace(/^@/, '').split(/[/?#]/)[0].trim();
-}
-
 function extractUserFromEvent(data) {
   const u = data?.user || data || {};
   const uniqueId = u.uniqueId || u.displayId || data?.uniqueId || '';
@@ -831,7 +722,7 @@ function extractUserFromEvent(data) {
 }
 
 async function connectTikTokLive(usernameOrUrl) {
-  const cleanUser = await resolveTikTokUsername(usernameOrUrl);
+  const cleanUser = resolveTikTokUsername(usernameOrUrl);
   if (!cleanUser) {
     throw new Error('Không tìm thấy @username hợp lệ từ dữ liệu nhập vào');
   }
@@ -981,12 +872,13 @@ async function connectTikTokLive(usernameOrUrl) {
   }
 }
 
-function disconnectTikTokLive() {
-  if (tiktokConn) {
+async function disconnectTikTokLive() {
+  const connection = tiktokConn;
+  tiktokConn = null;
+  if (connection) {
     try {
-      tiktokConn.disconnect();
+      await connection.disconnect();
     } catch (_) {}
-    tiktokConn = null;
   }
   state.tiktok.connected = false;
   state.tiktok.connecting = false;
@@ -1040,6 +932,7 @@ function configureAutoSim(enabled) {
 // 7. JSON-RPC 2.0 DISPATCHER
 // ============================================================================
 async function handleRpcCall(method, params = {}) {
+  validateParams(params);
   switch (method) {
     case 'temple.getState':
       return getPublicState();
@@ -1094,9 +987,22 @@ async function handleRpcCall(method, params = {}) {
 // 8. EXPRESS + WEBSOCKET SERVER
 // ============================================================================
 const app = express();
-app.use(cors());
-app.use(express.json({ limit: '2mb' }));
-app.use('/tts-cache', express.static(TTS_CACHE_DIR, { maxAge: '7d' }));
+app.disable('x-powered-by');
+const security = createSecurity({ getPort: () => server.address()?.port || PORT });
+app.use(security.guard);
+app.use(express.json({ limit: '8kb', strict: true }));
+app.use(['/rpc', '/api/tts', '/api/session'], (req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'DELETE' && !req.is('application/json')) return res.status(415).json({ error: 'Cần Content-Type application/json' });
+  next();
+});
+app.post('/api/session', security.login);
+app.get('/api/session', (req, res) => res.json({ authenticated: security.authorized(req) }));
+app.delete('/api/session', security.requireAdmin, security.logout);
+app.use('/tts-cache', (req, res, next) => {
+  if (!/^\/[a-z0-9_-]+\.wav$/.test(req.path)) return res.sendStatus(404);
+  next();
+});
+app.use('/tts-cache', express.static(TTS_CACHE_DIR, { dotfiles: 'deny', index: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/admin', (_req, res) => {
@@ -1104,9 +1010,9 @@ app.get('/admin', (_req, res) => {
 });
 
 // HTTP JSON-RPC 2.0 Endpoint
-app.post('/rpc', async (req, res) => {
+app.post('/rpc', security.requireAdmin, async (req, res) => {
   const { jsonrpc, id, method, params } = req.body || {};
-  if (!method) {
+  if (jsonrpc !== '2.0' || typeof method !== 'string' || method.length > 80 || (id !== undefined && !(typeof id === 'string' && id.length <= 80) && !(typeof id === 'number' && Number.isSafeInteger(id)))) {
     return res.status(400).json({
       jsonrpc: '2.0',
       id: id ?? null,
@@ -1114,7 +1020,7 @@ app.post('/rpc', async (req, res) => {
     });
   }
   try {
-    const result = await handleRpcCall(method, params || {});
+    const result = await handleRpcCall(method, params === undefined ? {} : params);
     res.json({
       jsonrpc: jsonrpc || '2.0',
       id: id ?? null,
@@ -1130,93 +1036,107 @@ app.post('/rpc', async (req, res) => {
 });
 
 // ZeroTTS HTTP Endpoint (Mai Chi default)
-app.all('/api/tts', async (req, res) => {
-  const text = (req.body?.text || req.query?.text || '').trim();
-  const voice = (req.body?.voice || req.query?.voice || state.settings.ttsVoice || 'maichi').trim();
-  if (!text) {
-    return res.status(400).json({ ok: false, error: 'Thiếu nội dung text cần đọc' });
-  }
+app.post('/api/tts', security.requireAdmin, async (req, res) => {
+  const { text, voice = state.settings.ttsVoice || 'maichi' } = req.body || {};
   const result = await zeroTts.synthesize(text, voice);
-  res.json(result);
+  res.status(result.ok ? 200 : 422).json(result);
 });
 
 app.get('/api/state', (_req, res) => {
   res.json(getPublicState());
 });
 
-const server = http.createServer(app);
-const wss = new WebSocketServer({ server, path: '/ws' });
+app.use((err, req, res, _next) => {
+  res.status(err.type === 'entity.too.large' ? 413 : 400).json({ error: 'Yêu cầu JSON không hợp lệ hoặc quá lớn' });
+});
 
-function broadcastNotification(method, params) {
-  const payload = JSON.stringify({
-    jsonrpc: '2.0',
-    method,
-    params
-  });
+const server = http.createServer({ maxHeaderSize: 16384 }, app);
+server.requestTimeout = 15000;
+server.headersTimeout = 10000;
+server.keepAliveTimeout = 5000;
+server.maxConnections = 64;
+const wss = new WebSocketServer({ noServer: true, maxPayload: 8192, perMessageDeflate: false });
+server.on('upgrade', (req, socket, head) => {
+  if (req.url !== '/ws' || !security.allowedRequest(req) || !security.originAllowed(req) || wss.clients.size >= 8) {
+    socket.end('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n');
+    return;
+  }
+  wss.handleUpgrade(req, socket, head, ws => wss.emit('connection', ws));
+});
+
+function sendNotification(method, params) {
+  const payload = JSON.stringify({ jsonrpc: '2.0', method, params });
   for (const client of wss.clients) {
     if (client.readyState === 1) {
-      client.send(payload);
+      if (client.bufferedAmount > 1024 * 1024) client.terminate();
+      else client.send(payload);
     }
   }
 }
 
-wss.on('connection', (ws) => {
-  ws.send(
-    JSON.stringify({
-      jsonrpc: '2.0',
-      method: 'temple.state',
-      params: getPublicState()
-    })
-  );
-
-  ws.on('message', async (raw) => {
-    let msg;
-    try {
-      msg = JSON.parse(raw.toString('utf8'));
-    } catch (_) {
-      return;
-    }
-    if (!msg || !msg.method) return;
-    try {
-      const result = await handleRpcCall(msg.method, msg.params || {});
-      if (msg.id !== undefined) {
-        ws.send(
-          JSON.stringify({
-            jsonrpc: '2.0',
-            id: msg.id,
-            result
-          })
-        );
-      }
-    } catch (err) {
-      if (msg.id !== undefined) {
-        ws.send(
-          JSON.stringify({
-            jsonrpc: '2.0',
-            id: msg.id,
-            error: { code: -32000, message: err.message || 'RPC Error' }
-          })
-        );
-      }
-    }
-  });
-});
-
-const zeroTts = new ZeroTTSManager();
-
-server.listen(PORT, () => {
-  console.log(`============================================================`);
-  console.log(`🪷 CHÙA ONLINE TIKTOK LIVE RPC ĐÃ KHỞI ĐỘNG`);
-  console.log(`📺 Màn hình Live (9:16 OBS): http://localhost:${PORT}`);
-  console.log(`🎛️ Bảng điều khiển RPC Admin: http://localhost:${PORT}/admin`);
-  console.log(`🔌 JSON-RPC 2.0 Endpoint   : http://localhost:${PORT}/rpc (ws://localhost:${PORT}/ws)`);
-  console.log(`============================================================`);
-
-  // Tự động kết nối tới @zenfacts_vn ngay khi khởi động server
-  const defaultChannel = process.env.TIKTOK_USER || state.tiktok?.username || 'zenfacts_vn';
-  if (defaultChannel) {
-    connectTikTokLive(defaultChannel).catch((err) => {
-      console.warn(`[Auto-Connect @${defaultChannel}] Chưa kết nối được ngay:`, err.message);
+function broadcastNotification(method, params) {
+  if (method === 'temple.event' && params.event?.ttsText && state.settings.ttsEnabled) {
+    // Generate once on the server. OBS receives a WAV URL, never an admin credential.
+    const event = { ...params.event };
+    void zeroTts.synthesize(event.ttsText, event.ttsVoice).then(result => {
+      sendNotification(method, { event: { ...event, ttsUrl: result.ok ? result.url : null }, state: getPublicState() });
     });
+    return;
   }
+  sendNotification(method, params);
+}
+
+wss.on('connection', ws => {
+  ws.alive = true;
+  ws.on('pong', () => { ws.alive = true; });
+  ws.on('error', () => ws.terminate());
+  // All websocket clients are read-only, even a browser with an admin cookie.
+  ws.on('message', () => ws.close(1008, 'Read-only overlay; use authenticated HTTP RPC'));
+  ws.send(JSON.stringify({ jsonrpc: '2.0', method: 'temple.state', params: getPublicState() }));
 });
+const heartbeat = setInterval(() => {
+  for (const client of wss.clients) {
+    if (!client.alive) client.terminate();
+    else { client.alive = false; client.ping(); }
+  }
+}, 30000);
+heartbeat.unref();
+
+const zeroTts = new ZeroTTSManager({ onStatus: status => sendNotification('tts.status', status) });
+
+function start() {
+  return new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(PORT, '127.0.0.1', () => {
+      server.removeListener('error', reject);
+      const port = server.address().port;
+      console.log(`Live: http://127.0.0.1:${port}/ | OBS: http://127.0.0.1:${port}/?obs=1`);
+      console.log(`Admin: http://127.0.0.1:${port}/admin`);
+      console.log(`Mã quản trị (chỉ nhập vào giao diện, không đưa vào URL): ${security.token}`);
+      console.log(`TTS: ${zeroTts.status}. Chỉ kết nối TikTok khi bấm Kết Nối.`);
+      resolve(server.address());
+    });
+  });
+}
+
+async function stop() {
+  clearInterval(heartbeat);
+  if (autoSimTimer) clearInterval(autoSimTimer);
+  await disconnectTikTokLive();
+  zeroTts.stop();
+  for (const client of wss.clients) client.terminate();
+  wss.close();
+  if (server.listening) await new Promise(resolve => server.close(resolve));
+  if (saveTimer) {
+    clearTimeout(saveTimer);
+    saveTimer = null;
+    await persistState();
+  }
+  await savePromise;
+}
+
+if (require.main === module) {
+  start().catch(async err => { console.error(err.message); await stop(); process.exitCode = 1; });
+  for (const signal of ['SIGTERM', 'SIGINT']) process.once(signal, () => { void stop(); });
+}
+module.exports = { start, stop, server };

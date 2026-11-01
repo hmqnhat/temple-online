@@ -7,3 +7,10 @@ embedded-assets.js
 *.log
 *.m4a
 public/assets/bg_chant.m4a
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/

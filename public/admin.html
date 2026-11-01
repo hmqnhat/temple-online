@@ -134,8 +134,8 @@
         <div class="top-sub" id="statusBanner">Đang tải trạng thái hệ thống...</div>
       </div>
       <div class="top-links">
-        <a class="btn" href="/?obs=1" target="_blank">📺 Mở Màn Hình OBS 9:16 Sạch (?obs=1)</a>
-        <a class="btn gold" href="/" target="_blank">🪷 Mở Màn Hình Live Chính</a>
+        <a class="btn" href="/?obs=1" target="_blank" rel="noopener">📺 Mở Màn Hình OBS 9:16 Sạch (?obs=1)</a>
+        <a class="btn gold" href="/" target="_blank" rel="noopener">🪷 Mở Màn Hình Live Chính</a>
       </div>
     </header>
 
@@ -161,14 +161,14 @@
           <input type="text" id="rpcWish" value="Cầu gia đạo bình an, tài lộc vượng phát" placeholder="Lời cầu nguyện..." />
         </div>
         <div class="action-grid">
-          <button class="btn gold" onclick="sendRpc('temple.burnIncense', { count: 3 })">🔥 Thắp 3 Nén Hương</button>
-          <button class="btn" onclick="sendRpc('temple.sendPrayer', {})">🏮 Thả Đèn Hoa Đăng</button>
-          <button class="btn" onclick="sendRpc('temple.strikeWoodenFish', { count: 9 })">🪵 Gõ Mõ 9 Nhịp</button>
-          <button class="btn" onclick="sendRpc('temple.ringBell', { count: 1, readTts: true })">🔔 Thỉnh Đại Hồng Chung</button>
-          <button class="btn" onclick="sendRpc('temple.drawFortune', {})">🎋 Xin Xăm / Gieo Quẻ</button>
-          <button class="btn" onclick="sendRpc('temple.offerGift', { giftType: 'fruit', coins: 30, giftName: 'Mâm Ngũ Quả Cát Tường' })">🍑 Dâng Mâm Ngũ Quả</button>
-          <button class="btn gold" onclick="sendRpc('temple.grandCeremony', { coins: 500, giftName: 'Đại Lễ Kim Long Chầu Phật' })">🐉 Đại Lễ Kim Long</button>
-          <button class="btn" onclick="sendRpc('temple.resetMerit', {})">♻️ Đặt Lại Bảng Công Đức</button>
+          <button class="btn gold" id="action0">🔥 Thắp 3 Nén Hương</button>
+          <button class="btn" id="action1">🏮 Thả Đèn Hoa Đăng</button>
+          <button class="btn" id="action2">🪵 Gõ Mõ 9 Nhịp</button>
+          <button class="btn" id="action3">🔔 Thỉnh Đại Hồng Chung</button>
+          <button class="btn" id="action4">🎋 Xin Xăm / Gieo Quẻ</button>
+          <button class="btn" id="action5">🍑 Dâng Mâm Ngũ Quả</button>
+          <button class="btn gold" id="action6">🐉 Đại Lễ Kim Long</button>
+          <button class="btn" id="action7">♻️ Đặt Lại Bảng Công Đức</button>
         </div>
       </section>
 
@@ -190,54 +190,7 @@
     </div>
   </div>
 
-  <script>
-    async function sendRpc(method, extraParams = {}) {
-      const user = document.getElementById('rpcUser').value.trim() || 'Thí Chủ';
-      const wish = document.getElementById('rpcWish').value.trim();
-      const body = {
-        jsonrpc: '2.0',
-        id: Date.now(),
-        method,
-        params: { user, wish, ...extraParams }
-      };
-      const res = await fetch('/rpc', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-      const data = await res.json();
-      document.getElementById('rpcOutput').textContent = JSON.stringify(data, null, 2);
-      refreshStatus();
-      return data;
-    }
-
-    document.getElementById('btnConn').onclick = () => {
-      const username = document.getElementById('ttUser').value.trim();
-      sendRpc('live.connect', { username });
-    };
-    document.getElementById('btnDisc').onclick = () => sendRpc('live.disconnect', {});
-    document.getElementById('btnSendComment').onclick = () => {
-      const comment = document.getElementById('simComment').value.trim();
-      sendRpc('temple.comment', { comment });
-    };
-    document.getElementById('btnSpeakMaiChi').onclick = async () => {
-      const text = document.getElementById('ttsDirectText').value.trim();
-      const data = await sendRpc('temple.speak', { text, voice: 'maichi', broadcast: true });
-      if (data?.result?.url) {
-        const player = document.getElementById('adminAudioPreview');
-        player.src = data.result.url;
-        player.play().catch(() => {});
-      }
-    };
-
-    async function refreshStatus() {
-      const res = await fetch('/api/state');
-      const st = await res.json();
-      document.getElementById('statusBanner').textContent =
-        `Hương đã thắp: ${st.totalIncense} | Tổng Công Đức: ${st.totalMerit} | ZeroTTS: ${st.tts?.status} (Giọng: ${st.tts?.voice})`;
-    }
-    refreshStatus();
-    setInterval(refreshStatus, 4000);
-  </script>
+  <script src="/js/control.js"></script>
+  <script src="/js/admin.js"></script>
 </body>
 </html>

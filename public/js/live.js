@@ -472,7 +472,7 @@
     if (!ev) return;
 
     if (ev.ttsText && ev.type !== 'drawFortune') {
-      audio.enqueueTts(ev.ttsText, { voice: ev.ttsVoice || 'maichi' });
+      audio.enqueueTts(ev.ttsText, { voice: ev.ttsVoice || 'maichi', url: ev.ttsUrl });
     }
 
     switch (ev.type) {
@@ -539,6 +539,7 @@
         // Chỉ hiển thị tờ Quẻ Xăm đúng thời điểm giọng đọc bắt đầu vang lên!
         audio.enqueueTts(ev.ttsText || '', {
           voice: ev.ttsVoice || 'maichi',
+          url: ev.ttsUrl,
           onStart: () => {
             audio.playIncenseChime();
             showFortuneModal(ev.user, ev.fortune);
@@ -612,7 +613,6 @@
 
   // 8. Kết nối JSON-RPC 2.0 WebSocket & Gửi Lệnh RPC
   let ws = null;
-  let rpcId = 1;
 
   function connectWebSocket() {
     const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -645,24 +645,9 @@
 
   async function callRpc(method, params = {}) {
     audio.ensureContext();
-    const payload = {
-      jsonrpc: '2.0',
-      id: rpcId++,
-      method,
-      params
-    };
-    if (ws && ws.readyState === WebSocket.OPEN) {
-      ws.send(JSON.stringify(payload));
-      return;
-    }
-    const res = await fetch('/rpc', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-    if (data?.result?.state) updateUIState(data.result.state);
-    if (data?.result?.event) triggerRitualVisuals(data.result.event);
+    const data = await window.templeRpc(method, params);
+    if (data.error) console.warn('[Điều khiển]', data.error.message);
+    // Visuals arrive once over the read-only websocket, including server-generated audio.
     return data;
   }
 

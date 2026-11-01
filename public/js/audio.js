@@ -319,35 +319,13 @@ class TempleAudioEngine {
       id: `tts_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
       text: clean,
       voice: (options.voice || this.ttsVoice || 'maichi').toLowerCase(),
-      url: options.url || null,
+      url: typeof options.url === 'string' && /^\/tts-cache\/[a-z0-9_-]+\.wav$/.test(options.url) ? options.url : null,
       onStart,
-      onEnd,
-      fetchPromise: null
+      onEnd
     };
-
-    if (!item.url) {
-      item.fetchPromise = this.fetchZeroTtsAudio(item.text, item.voice);
-    }
 
     this.ttsQueue.push(item);
     this.processTtsQueue();
-  }
-
-  async fetchZeroTtsAudio(text, voice = 'maichi') {
-    try {
-      const res = await fetch('/api/tts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, voice })
-      });
-      const data = await res.json();
-      if (data && data.ok && data.url) {
-        return data;
-      }
-      return { ok: false, error: data?.error || 'ZeroTTS unavailable' };
-    } catch (err) {
-      return { ok: false, error: err.message };
-    }
   }
 
   async processTtsQueue() {
@@ -357,13 +335,6 @@ class TempleAudioEngine {
 
     try {
       let audioUrl = item.url;
-      if (!audioUrl && item.fetchPromise) {
-        const res = await item.fetchPromise;
-        if (res && res.ok && res.url) {
-          audioUrl = res.url;
-        }
-      }
-
       if (audioUrl) {
         this.setBgDucking(true);
         if (this.onTtsStateChange) {

@@ -1,6 +1,12 @@
 # 🪷 Chùa Linh Ứng Online — TikTok Live RPC (9:16 Interactive Buddhist Sanctuary)
 
-Hệ thống phát trực tiếp tương tác (**Interactive TikTok Live Stream & JSON-RPC 2.0**) chuẩn khung dọc **9:16 (`1080×1920`)** dành cho **OBS Studio / TikTok Live Studio**, chạy siêu nhẹ trên **Bun.js** và tích hợp giọng đọc AI tiếng Việt **ZeroTTS (`zeroweight-ai/ZeroTTS`)**.
+> **Bản làm việc đã gia cố bảo mật (01/11/2026).** Chạy local bằng Node 22+;
+> đăng nhập quản trị bằng mã hiển thị trong terminal. WebSocket chỉ nhận sự kiện;
+> kết nối TikTok bằng username và bấm thủ công. TTS mặc định tắt, không tự tải model.
+> Xem [phạm vi sửa, kiểm thử và giới hạn](docs/security/SECURITY-REVIEW.md).
+
+
+Hệ thống phát trực tiếp tương tác (**Interactive TikTok Live Stream & JSON-RPC 2.0**) chuẩn khung dọc **9:16 (`1080×1920`)** dành cho **OBS Studio / TikTok Live Studio**, chạy siêu nhẹ trên **Node.js** và tích hợp giọng đọc AI tiếng Việt **ZeroTTS (`zeroweight-ai/ZeroTTS`)**.
 
 Người xem trên TikTok Live tương tác trực tiếp qua **Bình luận (Comment)**, **Thả tim (Like)**, **Chia sẻ / Follow** và **Tặng quà (Gift)** để thực hiện các nghi thức tâm linh trên màn hình Chánh Điện **Đức Phật A Di Đà**:
 - 🔥 **Thắp hương & Đảnh lễ Tam Bái (8-Frame Walking & Prostration)**: Nhân vật Phật tử mặc áo lam bước đi từng bước dọc thảm đỏ hoa sen lên trước Lư Hương Đỉnh Đồng, hạ gối quỳ và thực hiện 3 lạy Ngũ thể đầu địa hướng về Đức Phật A Di Đà.
@@ -13,22 +19,22 @@ Người xem trên TikTok Live tương tác trực tiếp qua **Bình luận (Co
 
 ## 📸 Hình Ảnh Demo Giao Diện
 
-### 1. Màn hình Chánh Điện 9:16 & Bảng Điều Khiển Nhanh (`http://localhost:3000`)
+### 1. Màn hình Chánh Điện 9:16 & Bảng Điều Khiển Nhanh (`http://127.0.0.1:3000`)
 ![Màn hình Chánh Điện và Điều Khiển Nhanh](docs/demo/demo-main-stage.png)
 
-### 2. Chế độ OBS Browser Source 9:16 Sạch (`http://localhost:3000/?obs=1`) & Gieo Quẻ Linh Xăm
+### 2. Chế độ OBS Browser Source 9:16 Sạch (`http://127.0.0.1:3000/?obs=1`) & Gieo Quẻ Linh Xăm
 | Màn hình OBS 9:16 (`?obs=1`) | Tờ Giải Quẻ Linh Xăm (Đồng bộ Giọng Đọc) |
 | :---: | :---: |
 | ![OBS 9:16 Mode](docs/demo/demo-obs-9x16.png) | ![Fortune Oracle Modal](docs/demo/demo-fortune-oracle.png) |
 
-### 3. Bảng Điều Khiển JSON-RPC 2.0 & Admin (`http://localhost:3000/admin`)
+### 3. Bảng Điều Khiển JSON-RPC 2.0 & Admin (`http://127.0.0.1:3000/admin`)
 ![Admin JSON-RPC Panel](docs/demo/demo-admin-panel.png)
 
 ---
 
 ## ⚡ Kiến Trúc & Tối Ưu Hóa Hiệu Suất (Siêu Nhẹ CPU/GPU)
 
-- **Runtime**: Chạy trực tiếp trên **Bun.js** (`~0.1% CPU` khi chờ).
+- **Runtime**: Chạy trực tiếp trên **Node.js** (`~0.1% CPU` khi chờ).
 - **Canvas Particle Engine (`public/js/particles.js`)**:
   - Khóa tốc độ vẽ ở **30 FPS** ổn định, tự động tạm dừng khi ẩn tab (`document.hidden`).
   - Pre-render toàn bộ Khói hương, Hạt vàng và Cánh hoa sen ra Offscreen Canvas 1 lần duy nhất lúc khởi tạo (`drawImage`), không gọi `createRadialGradient` hay `shadowBlur` trong vòng lặp frame.
@@ -45,31 +51,51 @@ Người xem trên TikTok Live tương tác trực tiếp qua **Bình luận (Co
 
 ## 🚀 Hướng Dẫn Cài Đặt & Chạy Nhanh
 
-### 1. Yêu cầu hệ thống
-- [Bun.js](https://bun.sh/) (`>= 1.1`)
-- Python `3.10+` & [`uv`](https://github.com/astral-sh/uv) (để tạo môi trường `.venv` chạy `zerotts`)
+### 1. Chạy giao diện và bảng điều khiển
 
-### 2. Cài đặt thư viện
+Cần **Node.js 22+** và npm. Không cần cài Python/TTS để thử hình ảnh.
+
 ```bash
-# Cài đặt dependencies cho Bun / Node
-bun install
-
-# Tạo môi trường Python .venv và cài đặt ZeroTTS
-uv venv .venv
-uv pip install --python .venv/bin/python zerotts pillow
+npm ci --ignore-scripts
+npm start
+# Tự reload khi sửa mã:
+npm run dev
 ```
 
-### 3. Khởi chạy Server
+- Live: [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
+- OBS Browser Source: [http://127.0.0.1:3000/?obs=1](http://127.0.0.1:3000/?obs=1), kích thước `1080 × 1920`.
+- Admin: [http://127.0.0.1:3000/admin](http://127.0.0.1:3000/admin).
+
+Dùng nút **Đăng nhập quản trị** và nhập mã từ terminal. Mã mới được tạo mỗi lần
+khởi động; phiên đăng nhập hết hạn sau 8 giờ hoặc khi khởi động lại server.
+Token không được đưa vào link OBS. Chọn username TikTok đang LIVE rồi bấm kết nối;
+app không tự mở LIVE, không tự kết nối kênh mẫu và không nhận URL/short-link.
+Chỉ dùng một host nhất quán (`127.0.0.1` hoặc `localhost`) cho trang đang điều khiển.
+
+Mặc định cổng `3000`, có thể đặt `PORT`. `APP_DATA_DIR` tùy chọn đổi thư mục lưu state/cache.
+Nếu đặt `ADMIN_TOKEN` qua môi trường thì phải dùng chuỗi ngẫu nhiên 32–128 ký tự chữ,
+số, gạch dưới hoặc gạch ngang. App không tự đọc file `.env`.
+
+### 2. TTS tùy chọn — mặc định tắt
+
+Lockfile hiện nhắm **CPython 3.11 trên macOS ARM64**; chưa kiểm thử native inference.
+Cần uv và Python phù hợp để chuẩn bị môi trường riêng. Không dùng lệnh cài dependency không ghim phiên bản.
+
 ```bash
-bun start
-# Hoặc chế độ tự động reload khi sửa code:
-bun run dev
+uv venv --python 3.11 .venv
+uv pip sync --python .venv/bin/python --require-hashes --only-binary :all: --index-url https://pypi.org/simple requirements.lock
+
+# Lần chuẩn bị đầu: cho phép tải model tại revision đã ghim (có thể tốn nhiều dung lượng).
+ENABLE_TTS=1 TTS_ALLOW_MODEL_DOWNLOAD=1 npm start
+# Những lần sau: chỉ đọc model đã có trong cache của app.
+ENABLE_TTS=1 npm start
 ```
 
-Mặc định server chạy tại cổng `3000`:
-- **Màn hình Live + Điều khiển nhanh**: [http://localhost:3000](http://localhost:3000)
-- **Màn hình OBS Browser Source (Sạch 9:16)**: [http://localhost:3000/?obs=1](http://localhost:3000/?obs=1) *(Đặt kích thước Browser Source trong OBS là `1080 × 1920`)*
-- **Bảng điều khiển Admin & RPC**: [http://localhost:3000/admin](http://localhost:3000/admin)
+TTS bị giới hạn 20 câu/phút, tối đa 4 tác vụ và 320 ký tự đầu vào mỗi câu
+(worker chuẩn hóa và rút gọn nội dung trước khi tổng hợp). Nếu nạp quá 120 giây hoặc
+xử lý/chờ quá 30 giây, worker bị dừng và cần khởi động lại app.
+Giao diện vẫn nhận sự kiện khi TTS tắt hoặc gặp lỗi.
+
 
 ---
 
@@ -88,14 +114,18 @@ Mặc định server chạy tại cổng `3000`:
 
 ---
 
-## 🔌 Giao Thức JSON-RPC 2.0 (`POST /rpc` & `ws://localhost:3000/ws`)
+## 🔌 JSON-RPC điều khiển (`POST /rpc`) và WebSocket chỉ đọc (`/ws`)
 
-Bạn có thể gọi trực tiếp từ **TikFinity**, **Streamer.bot**, webhook hoặc `curl`:
+Lệnh điều khiển dùng HTTP kèm Bearer token từ terminal, hoặc cookie phiên từ giao diện.
+WebSocket chỉ phát trạng thái/sự kiện, yêu cầu Origin cùng host/port và từ chối mọi lệnh gửi lên.
+Không mở cổng/tunnel để nhận webhook bên ngoài.
+Các ví dụ dưới đây dùng token mẫu; thay bằng mã từ terminal:
 
 ```bash
 # 1. Thắp hương cầu an
-curl -X POST http://localhost:3000/rpc \
+curl -X POST http://127.0.0.1:3000/rpc \
   -H "Content-Type: application/json" \
+  -H 'Authorization: Bearer THAY_BANG_MA_QUAN_TRI' \
   -d '{
     "jsonrpc": "2.0",
     "id": 1,
@@ -108,8 +138,9 @@ curl -X POST http://localhost:3000/rpc \
   }'
 
 # 2. Xin xăm / Gieo quẻ đầu năm
-curl -X POST http://localhost:3000/rpc \
+curl -X POST http://127.0.0.1:3000/rpc \
   -H "Content-Type: application/json" \
+  -H 'Authorization: Bearer THAY_BANG_MA_QUAN_TRI' \
   -d '{
     "jsonrpc": "2.0",
     "id": 2,
@@ -120,9 +151,10 @@ curl -X POST http://localhost:3000/rpc \
     }
   }'
 
-# 3. Kết nối tới phòng TikTok Live (@username hoặc link vt.tiktok.com)
-curl -X POST http://localhost:3000/rpc \
+# 3. Kết nối tới phòng TikTok Live (chỉ @username)
+curl -X POST http://127.0.0.1:3000/rpc \
   -H "Content-Type: application/json" \
+  -H 'Authorization: Bearer THAY_BANG_MA_QUAN_TRI' \
   -d '{
     "jsonrpc": "2.0",
     "id": 3,
@@ -151,7 +183,7 @@ curl -X POST http://localhost:3000/rpc \
 ## 📁 Cấu Trúc Thư Mục
 
 ```text
-├── server.js                  # Bun.js HTTP + WebSocket JSON-RPC 2.0 Server & TikTok Live Connector
+├── server.js                  # Node.js HTTP RPC + WebSocket chỉ đọc & TikTok Live Connector
 ├── tts_worker.py              # Tiến trình Python ZeroTTS thường trú (48kHz, chống rè/clipping, lọc ký tự lạ)
 ├── data/
 │   ├── merit-state.json       # Lưu trữ bền vững Bảng Vàng Công Đức của người xem thật

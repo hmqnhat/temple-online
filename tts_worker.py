@@ -15,6 +15,7 @@ import time
 import traceback
 import unicodedata
 from pathlib import Path
+from lib.tts_cache import prune_cache, MAX_AUDIO_BYTES
 
 os.environ.setdefault("OMP_NUM_THREADS", "3")
 os.environ.setdefault("OMP_WAIT_POLICY", "PASSIVE")
@@ -26,13 +27,11 @@ import numpy as np
 from zerotts import ZeroTTS, normalize_vi_text
 from zerotts.chunking import normalize_punctuation
 
-CACHE_DIR = Path(__file__).resolve().parent / "data" / "tts-cache"
+CACHE_DIR = Path(os.environ.get("APP_DATA_DIR", Path(__file__).resolve().parent / "data")) / "tts-cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-LOCAL_MODEL_CANDIDATES = [
-    os.environ.get("ZEROTTS_MODEL_PATH", ""),
-    "/Users/zens/Work/UIT/Projects/f1-metrics-explainer/models/zerotts",
-]
+MODEL_ID = "zeroweight-ai/ZeroTTS"
+MODEL_REVISION = "18d6681518a4becaed3c125ceb3c7db59905fe86"
 
 # Chỉ giữ lại chữ cái tiếng Việt (Latin + dấu tiếng Việt), chữ số và dấu câu cơ bản
 VIETNAMESE_ALLOWED_RE = re.compile(
@@ -42,13 +41,6 @@ BRACKET_EMOTE_RE = re.compile(r"\[[^\]]{1,24}\]")
 REPEATED_CHARS_RE = re.compile(r"(.)\1{2,}", re.IGNORECASE)
 MULTI_PUNCT_RE = re.compile(r"([.,!?])\1+")
 MULTI_SPACE_RE = re.compile(r"\s+")
-
-
-def resolve_model_source() -> str:
-    for candidate in LOCAL_MODEL_CANDIDATES:
-        if candidate and os.path.isdir(candidate) and os.path.isfile(os.path.join(candidate, "config.json")):
-            return candidate
-    return "zeroweight-ai/ZeroTTS"
 
 
 def emit(payload: dict) -> None:
@@ -114,17 +106,23 @@ def polish_waveform(wav: np.ndarray, sample_rate: int) -> np.ndarray:
 
 def main() -> None:
     t0 = time.time()
-    model_src = resolve_model_source()
-    emit({"type": "status", "status": "loading", "model": model_src})
+    prune_cache(CACHE_DIR)
+    for partial in CACHE_DIR.glob("*.part.wav"):
+        partial.unlink(missing_ok=True)
+    emit({"type": "status", "status": "loading", "model": f"{MODEL_ID}@{MODEL_REVISION}"})
 
     try:
-        tts = ZeroTTS.from_pretrained(model_src, intra_op_num_threads=3)
+        tts = ZeroTTS.from_pretrained(
+            MODEL_ID, revision=MODEL_REVISION,
+            local_files_only=os.environ.get("TTS_ALLOW_MODEL_DOWNLOAD") != "1",
+            intra_op_num_threads=3,
+        )
         voices = tts.list_voices()
         default_voice = "maichi" if "maichi" in voices else (voices[0] if voices else None)
         load_sec = round(time.time() - t0, 2)
         emit({
             "type": "ready",
-            "model": model_src,
+            "model": f"{MODEL_ID}@{MODEL_REVISION}",
             "voice": default_voice,
             "voices": voices,
             "sampleRate": int(tts.sample_rate),
@@ -147,17 +145,21 @@ def main() -> None:
         try:
             req = json.loads(line)
             req_id = req.get("id")
-            text = (req.get("text") or "").strip()
-            voice = (req.get("voice") or "maichi").strip().lower()
-            if voice not in voices:
-                voice = "maichi"
+            text = req.get("text")
+            voice = req.get("voice", "maichi")
+            if not isinstance(text, str) or not 1 <= len(text) <= 320:
+                raise ValueError("TTS text length must be 1–320 characters")
+            if not isinstance(voice, str) or voice not in voices or not re.fullmatch(r"[a-z0-9_-]{1,40}", voice):
+                raise ValueError("Unsupported voice")
+            text = text.strip()
+            prune_cache(CACHE_DIR)
 
             norm_text = clean_and_normalize_text(text)
             if not norm_text:
                 emit({"type": "result", "id": req_id, "ok": False, "error": "Filtered empty/spam text"})
                 continue
 
-            cache_key = hashlib.sha1(f"v3::{voice}::{norm_text}".encode("utf-8")).hexdigest()[:20]
+            cache_key = hashlib.sha256(f"v4::{MODEL_REVISION}::{voice}::{norm_text}".encode("utf-8")).hexdigest()[:32]
             out_name = f"{voice}_{cache_key}.wav"
             out_path = CACHE_DIR / out_name
 
@@ -181,7 +183,18 @@ def main() -> None:
                 continue
 
             clean_audio = polish_waveform(raw_wav, int(tts.sample_rate))
-            tts.save_audio(clean_audio, str(out_path))
+            if clean_audio.shape[-1] / float(tts.sample_rate) > 60:
+                raise ValueError("Generated audio exceeds 60 seconds")
+            partial_path = CACHE_DIR / f"{voice}_{cache_key}.part.wav"
+            try:
+                tts.save_audio(clean_audio, str(partial_path))
+                size = partial_path.stat().st_size
+                if size > MAX_AUDIO_BYTES:
+                    raise ValueError("Generated audio exceeds cache file limit")
+                prune_cache(CACHE_DIR, reserve_bytes=size)
+                partial_path.replace(out_path)
+            finally:
+                partial_path.unlink(missing_ok=True)
             synth_sec = round(time.time() - t_synth, 2)
             duration_sec = round(clean_audio.shape[-1] / float(tts.sample_rate), 2)
 

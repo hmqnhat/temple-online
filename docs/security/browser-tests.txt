@@ -1,0 +1,9 @@
+
+> tiktok-live-temple-rpc@1.0.0 test:browser
+> node test/browser-smoke.cjs
+
+Live: http://127.0.0.1:49593/ | OBS: http://127.0.0.1:49593/?obs=1
+Admin: http://127.0.0.1:49593/admin
+Mã quản trị (chỉ nhập vào giao diện, không đưa vào URL): browser_test_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+TTS: disabled. Chỉ kết nối TikTok khi bấm Kết Nối.
+PASS browser: login/retry, HttpOnly session, reload, logout, quick controls, OBS receives events without credentials/TTS requests, fortune animation, CSP, no JavaScript errors
