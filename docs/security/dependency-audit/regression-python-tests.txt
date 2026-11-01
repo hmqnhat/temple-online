@@ -1,0 +1,7 @@
+test_symlinks_are_not_followed (test_tts_cache.CacheTests.test_symlinks_are_not_followed) ... ok
+test_ttl_size_and_file_quota (test_tts_cache.CacheTests.test_ttl_size_and_file_quota) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

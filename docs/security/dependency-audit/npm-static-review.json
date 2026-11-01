@@ -1,0 +1,2762 @@
+{
+  "packages": 117,
+  "codeFilesScanned": 1443,
+  "automaticInstallHooks": [],
+  "prepareScripts": [
+    {
+      "package": "@sindresorhus/is",
+      "command": "npm run build"
+    },
+    {
+      "package": "axios",
+      "command": "husky"
+    },
+    {
+      "package": "got",
+      "command": "npm run build"
+    },
+    {
+      "package": "mime",
+      "command": "node src/build.js"
+    }
+  ],
+  "nativeFiles": [
+    {
+      "package": "playwright-core",
+      "file": "lib/webp_codec.wasm",
+      "sha256": "164cd9583a3e4d081f767d3b41ff0a730443dc7535fcc5caff83561463384b79"
+    }
+  ],
+  "triageFindings": [
+    {
+      "package": "ms",
+      "file": "index.js",
+      "line": 53,
+      "rule": "dynamic_execution",
+      "snippet": "?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec("
+    },
+    {
+      "package": "axios",
+      "file": "dist/axios.js",
+      "line": 1393,
+      "rule": "dynamic_execution",
+      "snippet": "    while ((matches = regExp.exec(str)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/axios.js",
+      "line": 1792,
+      "rule": "dynamic_execution",
+      "snippet": "    while (match = tokensRE.exec(str)) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/axios.js",
+      "line": 2009,
+      "rule": "dynamic_execution",
+      "snippet": "              return parser.exec(value);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/axios.js",
+      "line": 3039,
+      "rule": "dynamic_execution",
+      "snippet": "    while ((match = pattern.exec(name)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/axios.js",
+      "line": 3341,
+      "rule": "dynamic_execution",
+      "snippet": "    var match = /^([-+\\w]{1,25}):(?:\\/\\/)?/.exec(url);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/axios.min.js",
+      "line": 4,
+      "rule": "dynamic_execution",
+      "snippet": "],o[1])}},matchAll:function(e,t){for(var n,r=[];null!==(n=e.exec(t));)r.push(n);return r},isHTMLForm:be,hasOwnProperty:F,hasOwnProp:F,hasOwnInPrototypeChain:q,getSafeProp:function(e,t){return null!=e&&q(e,t)?e[t]:void 0},toSafeFlatObject:fu"
+    },
+    {
+      "package": "axios",
+      "file": "dist/esm/axios.js",
+      "line": 893,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((matches = regExp.exec(str)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/esm/axios.js",
+      "line": 1358,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = tokensRE.exec(str))) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/esm/axios.js",
+      "line": 1626,
+      "rule": "dynamic_execution",
+      "snippet": "          return parser.exec(value);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/esm/axios.js",
+      "line": 2789,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = pattern.exec(name)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/esm/axios.js",
+      "line": 3170,
+      "rule": "dynamic_execution",
+      "snippet": "  const match = /^([-+\\w]{1,25}):(?:\\/\\/)?/.exec(url);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/esm/axios.min.js",
+      "line": 2,
+      "rule": "dynamic_execution",
+      "snippet": ",n[1])}},matchAll:(e,t)=>{let n;const r=[];for(;null!==(n=e.exec(t));)r.push(n);return r},isHTMLForm:I,hasOwnProperty:s,hasOwnProp:s,hasOwnInPrototypeChain:c,getSafeProp:(e,t)=>null!=e&&c(e,t)?e[t]:void 0,toSafeFlatObject:e=>{if(null==e||\"o"
+    },
+    {
+      "package": "axios",
+      "file": "dist/browser/axios.cjs",
+      "line": 895,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((matches = regExp.exec(str)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/browser/axios.cjs",
+      "line": 1360,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = tokensRE.exec(str))) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/browser/axios.cjs",
+      "line": 1628,
+      "rule": "dynamic_execution",
+      "snippet": "          return parser.exec(value);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/browser/axios.cjs",
+      "line": 2791,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = pattern.exec(name)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/browser/axios.cjs",
+      "line": 3172,
+      "rule": "dynamic_execution",
+      "snippet": "  const match = /^([-+\\w]{1,25}):(?:\\/\\/)?/.exec(url);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 841,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((matches = regExp.exec(str)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 1220,
+      "rule": "dynamic_execution",
+      "snippet": "  while (match = tokensRE.exec(str)) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 1415,
+      "rule": "dynamic_execution",
+      "snippet": "          return parser.exec(value);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 2406,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = pattern.exec(name)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 2887,
+      "rule": "dynamic_execution",
+      "snippet": "  const match = /^([-+\\w]{1,25}):(?:\\/\\/)?/.exec(url);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 2916,
+      "rule": "dynamic_execution",
+      "snippet": "    const match = DATA_URL_PATTERN.exec(uri);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 3572,
+      "rule": "dynamic_execution",
+      "snippet": "    const prefix = /^[*.]+/.exec(trimmed);"
+    },
+    {
+      "package": "axios",
+      "file": "dist/node/axios.cjs",
+      "line": 3629,
+      "rule": "dynamic_execution",
+      "snippet": "  const match = CIDR_ENTRY_RE.exec(entry);"
+    },
+    {
+      "package": "axios",
+      "file": "lib/utils.js",
+      "line": 883,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((matches = regExp.exec(str)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "lib/core/AxiosHeaders.js",
+      "line": 26,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = tokensRE.exec(str))) {"
+    },
+    {
+      "package": "axios",
+      "file": "lib/core/AxiosHeaders.js",
+      "line": 294,
+      "rule": "dynamic_execution",
+      "snippet": "          return parser.exec(value);"
+    },
+    {
+      "package": "axios",
+      "file": "lib/helpers/parseProtocol.js",
+      "line": 4,
+      "rule": "dynamic_execution",
+      "snippet": "  const match = /^([-+\\w]{1,25}):(?:\\/\\/)?/.exec(url);"
+    },
+    {
+      "package": "axios",
+      "file": "lib/helpers/fromDataURI.js",
+      "line": 35,
+      "rule": "dynamic_execution",
+      "snippet": "    const match = DATA_URL_PATTERN.exec(uri);"
+    },
+    {
+      "package": "axios",
+      "file": "lib/helpers/formDataToJSON.js",
+      "line": 40,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = pattern.exec(name)) !== null) {"
+    },
+    {
+      "package": "axios",
+      "file": "lib/helpers/shouldBypassProxy.js",
+      "line": 332,
+      "rule": "dynamic_execution",
+      "snippet": "    const prefix = /^[*.]+/.exec(trimmed);"
+    },
+    {
+      "package": "axios",
+      "file": "lib/helpers/shouldBypassProxy.js",
+      "line": 399,
+      "rule": "dynamic_execution",
+      "snippet": "  const match = CIDR_ENTRY_RE.exec(entry);"
+    },
+    {
+      "package": "body-parser",
+      "file": "lib/types/json.js",
+      "line": 189,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = FIRST_CHAR_REGEXP.exec(str)"
+    },
+    {
+      "package": "bytes",
+      "file": "index.js",
+      "line": 151,
+      "rule": "dynamic_execution",
+      "snippet": "  var results = parseRegExp.exec(val);"
+    },
+    {
+      "package": "content-disposition",
+      "file": "index.js",
+      "line": 266,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = EXT_VALUE_REGEXP.exec(str)"
+    },
+    {
+      "package": "content-disposition",
+      "file": "index.js",
+      "line": 319,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = DISPOSITION_TYPE_REGEXP.exec(string)"
+    },
+    {
+      "package": "content-disposition",
+      "file": "index.js",
+      "line": 340,
+      "rule": "dynamic_execution",
+      "snippet": "  while ((match = PARAM_REGEXP.exec(string))) {"
+    },
+    {
+      "package": "content-type",
+      "file": "index.js",
+      "line": 139,
+      "rule": "dynamic_execution",
+      "snippet": "    while ((match = PARAM_REGEXP.exec(header))) {"
+    },
+    {
+      "package": "depd",
+      "file": "index.js",
+      "line": 425,
+      "rule": "dynamic_execution",
+      "snippet": "  var deprecatedfn = new Function('fn', 'log', 'deprecate', 'message', 'site',"
+    },
+    {
+      "package": "escape-html",
+      "file": "index.js",
+      "line": 35,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = matchHtmlRegExp.exec(str);"
+    },
+    {
+      "package": "express",
+      "file": "lib/router/layer.js",
+      "line": 129,
+      "rule": "dynamic_execution",
+      "snippet": "    match = this.regexp.exec(path)"
+    },
+    {
+      "package": "get-intrinsic",
+      "file": "index.js",
+      "line": 305,
+      "rule": "dynamic_execution",
+      "snippet": "\tif ($exec(/^%?[^%]*%?$/, name) === null) {"
+    },
+    {
+      "package": "got",
+      "file": "dist/source/core/options.js",
+      "line": 2071,
+      "rule": "dynamic_execution",
+      "snippet": "   unixSocketGroups = /^(?<socketPath>[^:]+):(?<path>.+)$/v.exec(`${url.pathname}${url.search}`)?.groups;"
+    },
+    {
+      "package": "got",
+      "file": "dist/source/core/utils/is-unix-socket-url.js",
+      "line": 23,
+      "rule": "dynamic_execution",
+      "snippet": "    return /^(?<socketPath>[^:]+):/v.exec(`${url.pathname}${url.search}`)?.groups?.socketPath;"
+    },
+    {
+      "package": "ms",
+      "file": "index.js",
+      "line": 53,
+      "rule": "dynamic_execution",
+      "snippet": "?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec("
+    },
+    {
+      "package": "ipaddr.js",
+      "file": "ipaddr.min.js",
+      "line": 1,
+      "rule": "dynamic_execution",
+      "snippet": "|:)(0(:|$)){2,})/g,i=this.toNormalizedString(),r=0,t=-1;n=e.exec(i);)n[0].length>t&&(r=n.index,t=n[0].length);return t<0?i:i.substring(0,r)+\"::\"+i.substring(r+t)},r.prototype.toByteArray=function(){var r,t,n,e,i;for(r=[],t=0,n=(i=this.parts"
+    },
+    {
+      "package": "ipaddr.js",
+      "file": "lib/ipaddr.js",
+      "line": 238,
+      "rule": "dynamic_execution",
+      "snippet": "      while ((match = regex.exec(string))) {"
+    },
+    {
+      "package": "media-typer",
+      "file": "index.js",
+      "line": 166,
+      "rule": "dynamic_execution",
+      "snippet": "  while (match = paramRegExp.exec(string)) {"
+    },
+    {
+      "package": "media-typer",
+      "file": "index.js",
+      "line": 246,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = typeRegExp.exec(string.toLowerCase())"
+    },
+    {
+      "package": "mime-types",
+      "file": "index.js",
+      "line": 55,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = EXTRACT_TYPE_REGEXP.exec(type)"
+    },
+    {
+      "package": "mime-types",
+      "file": "index.js",
+      "line": 113,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = EXTRACT_TYPE_REGEXP.exec(type)"
+    },
+    {
+      "package": "ms",
+      "file": "index.js",
+      "line": 52,
+      "rule": "dynamic_execution",
+      "snippet": "s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec("
+    },
+    {
+      "package": "negotiator",
+      "file": "lib/encoding.js",
+      "line": 70,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = simpleEncodingRegExp.exec(str);"
+    },
+    {
+      "package": "negotiator",
+      "file": "lib/language.js",
+      "line": 54,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = simpleLanguageRegExp.exec(str);"
+    },
+    {
+      "package": "negotiator",
+      "file": "lib/mediaType.js",
+      "line": 54,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = simpleMediaTypeRegExp.exec(str);"
+    },
+    {
+      "package": "negotiator",
+      "file": "lib/charset.js",
+      "line": 54,
+      "rule": "dynamic_execution",
+      "snippet": "  var match = simpleCharsetRegExp.exec(str);"
+    },
+    {
+      "package": "normalize-url",
+      "file": "index.js",
+      "line": 26,
+      "rule": "dynamic_execution",
+      "snippet": "= /^data:(?<type>[^,]*?),(?<data>[^#]*?)(?:#(?<hash>.*))?$/.exec(urlString);"
+    },
+    {
+      "package": "normalize-url",
+      "file": "index.js",
+      "line": 160,
+      "rule": "dynamic_execution",
+      "snippet": "\t\t\tconst match = protocolRegex.exec(urlObject.pathname);"
+    },
+    {
+      "package": "path-to-regexp",
+      "file": "index.js",
+      "line": 44,
+      "rule": "dynamic_execution",
+      "snippet": "    while (m = MATCHING_GROUP_REGEXP.exec(path.source)) {"
+    },
+    {
+      "package": "path-to-regexp",
+      "file": "index.js",
+      "line": 134,
+      "rule": "dynamic_execution",
+      "snippet": "  while (m = MATCHING_GROUP_REGEXP.exec(path)) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 724,
+      "rule": "dynamic_execution",
+      "snippet": "?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec("
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 1711,
+      "rule": "dynamic_execution",
+      "snippet": "      while ((match2 = LINE.exec(lines)) != null) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 7927,
+      "rule": "dynamic_execution",
+      "snippet": "        const subnet = constants.RE_SUBNET_STRING.exec(address);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 8758,
+      "rule": "dynamic_execution",
+      "snippet": "        const subnet = constants6.RE_SUBNET_STRING.exec(address);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 8771,
+      "rule": "dynamic_execution",
+      "snippet": "        const zone = constants6.RE_ZONE_STRING.exec(address);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 8838,
+      "rule": "dynamic_execution",
+      "snippet": "          result = constants6.RE_URL_WITH_PORT.exec(stripped);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 8846,
+      "rule": "dynamic_execution",
+      "snippet": "          result = constants6.RE_URL.exec(stripped);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 19255,
+      "rule": "dynamic_execution",
+      "snippet": "      let match2 = first.exec(source);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 19262,
+      "rule": "dynamic_execution",
+      "snippet": "      while (match2 = line.exec(source)) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 19276,
+      "rule": "dynamic_execution",
+      "snippet": "      match2 = last.exec(source);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 24921,
+      "rule": "dynamic_execution",
+      "snippet": "      var match2 = /^\\w+:\\/\\/[^\\/]*/.exec(dir);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 24948,
+      "rule": "dynamic_execution",
+      "snippet": "      while (match2 = re.exec(fileData)) lastMatch = match2;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 25011,
+      "rule": "dynamic_execution",
+      "snippet": "      var match2 = /^eval at ([^(]+) \\((.+):(\\d+):(\\d+)\\)$/.exec(origin);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 25020,
+      "rule": "dynamic_execution",
+      "snippet": "      match2 = /^eval at ([^(]+) \\((.+)\\)$/.exec(origin);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 25170,
+      "rule": "dynamic_execution",
+      "snippet": "      var match2 = /\\n    at [^(]+ \\((.*):(\\d+):(\\d+)\\)/.exec(error51.stack);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 26031,
+      "rule": "dynamic_execution",
+      "snippet": "      } else if (parts = metaKeyCodeRe.exec(s)) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 26034,
+      "rule": "dynamic_execution",
+      "snippet": "      } else if (parts = fnKeyRe.exec(s)) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 35893,
+      "rule": "dynamic_execution",
+      "snippet": "        const matches = RELATIVE_JSON_POINTER.exec($data);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 36042,
+      "rule": "dynamic_execution",
+      "snippet": "        const makeValidate = new Function(`${names_1.default.self}`, `${names_1.default.scope}`, sourceCode);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 40058,
+      "rule": "dynamic_execution",
+      "snippet": "      const matches = DATE.exec(str);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 40078,
+      "rule": "dynamic_execution",
+      "snippet": "        const matches = TIME.exec(str);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 40109,
+      "rule": "dynamic_execution",
+      "snippet": "      const a1 = TIME.exec(t1);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 40110,
+      "rule": "dynamic_execution",
+      "snippet": "      const a2 = TIME.exec(t2);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 42909,
+      "rule": "dynamic_execution",
+      "snippet": "        const matches = RELATIVE_JSON_POINTER.exec($data);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 43058,
+      "rule": "dynamic_execution",
+      "snippet": "        const makeValidate = new Function(`${names_1.default.self}`, `${names_1.default.scope}`, sourceCode);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46063,
+      "rule": "dynamic_execution",
+      "snippet": "      var results = parseRegExp.exec(val);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46135,
+      "rule": "dynamic_execution",
+      "snippet": "        while (match2 = PARAM_REGEXP.exec(header)) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46642,
+      "rule": "process_execution",
+      "snippet": "        return notFoundError(parsed.original, \"spawnSync\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46659,
+      "rule": "process_execution",
+      "snippet": "    var cp = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46668,
+      "rule": "process_execution",
+      "snippet": "    function spawnSync(command, args, options2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46670,
+      "rule": "process_execution",
+      "snippet": "      const result = cp.spawnSync(parsed.command, parsed.args, parsed.options);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46676,
+      "rule": "process_execution",
+      "snippet": "    module2.exports.sync = spawnSync;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46858,
+      "rule": "dynamic_execution",
+      "snippet": "      (function exec() {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 46864,
+      "rule": "dynamic_execution",
+      "snippet": "            exec();"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47538,
+      "rule": "dynamic_execution",
+      "snippet": "          const renameFromMatch = /^rename from (.*)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47543,
+      "rule": "dynamic_execution",
+      "snippet": "          const renameToMatch = /^rename to (.*)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47548,
+      "rule": "dynamic_execution",
+      "snippet": "          const copyFromMatch = /^copy from (.*)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47553,
+      "rule": "dynamic_execution",
+      "snippet": "          const copyToMatch = /^copy to (.*)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47558,
+      "rule": "dynamic_execution",
+      "snippet": "          const newFileModeMatch = /^new file mode (\\d+)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47563,
+      "rule": "dynamic_execution",
+      "snippet": "    const deletedFileModeMatch = /^deleted file mode (\\d+)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47568,
+      "rule": "dynamic_execution",
+      "snippet": "          const oldModeMatch = /^old mode (\\d+)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47572,
+      "rule": "dynamic_execution",
+      "snippet": "          const newModeMatch = /^new mode (\\d+)/.exec(extLine);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47587,
+      "rule": "dynamic_execution",
+      "snippet": "      const headerMatch = /^(?:Index:|diff(?: -r \\w+)+)\\s+/.exec(line);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 47755,
+      "rule": "dynamic_execution",
+      "snippet": "    const fileHeaderMatch = /^(---|\\+\\+\\+)\\s+/.exec(diffstr[i2]);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 51871,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process7 = __toESM(require(\"node:child_process\"), 1);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 51876,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process2 = __toESM(require(\"node:child_process\"), 1);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 51957,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process = __toESM(require(\"node:child_process\"), 1);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 51958,
+      "rule": "process_execution",
+      "snippet": "var execFile = (0, import_node_util.promisify)(import_node_child_process.default.execFile);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 51994,
+      "rule": "dynamic_execution",
+      "snippet": "ch2 = /^\\s*root\\s*=\\s*(?<mountPoint>\"[^\"]*\"|'[^']*'|[^#]*)/.exec(line);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52003,
+      "rule": "process_execution",
+      "snippet": "ar execFile2 = (0, import_node_util2.promisify)(import_node_child_process2.default.execFile);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52088,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process6 = require(\"node:child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52093,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process3 = require(\"node:child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52094,
+      "rule": "process_execution",
+      "snippet": "xecFileAsync = (0, import_node_util3.promisify)(import_node_child_process3.execFile);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52100,
+      "rule": "dynamic_execution",
+      "snippet": "!-)(?<id>[^\"]+?)\";\\s+?LSHandlerURLScheme = (?:http|https);/.exec(stdout);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52111,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process4 = require(\"node:child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52112,
+      "rule": "process_execution",
+      "snippet": "ecFileAsync2 = (0, import_node_util4.promisify)(import_node_child_process4.execFile);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52122,
+      "rule": "persistence",
+      "snippet": "  const { stdout } = await execFileAsync2(\"osascript\", [\"-e\", script, outputArguments], execOptions);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52134,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process5 = require(\"node:child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52135,
+      "rule": "process_execution",
+      "snippet": "ecFileAsync3 = (0, import_node_util5.promisify)(import_node_child_process5.execFile);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52165,
+      "rule": "dynamic_execution",
+      "snippet": "  const match2 = /ProgId\\s*REG_SZ\\s*(?<id>\\S+)/.exec(stdout);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52178,
+      "rule": "process_execution",
+      "snippet": "ecFileAsync4 = (0, import_node_util6.promisify)(import_node_child_process6.execFile);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52376,
+      "rule": "process_execution",
+      "snippet": "  const subprocess = import_node_child_process7.default.spawn(command, cliArguments, childProcessOptions);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52379,
+      "rule": "process_execution",
+      "snippet": "      subprocess.once(\"error\", reject);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52380,
+      "rule": "process_execution",
+      "snippet": "      subprocess.once(\"close\", (exitCode) => {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52391,
+      "rule": "process_execution",
+      "snippet": "      subprocess.once(\"error\", reject);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52392,
+      "rule": "process_execution",
+      "snippet": "      subprocess.once(\"spawn\", () => {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52393,
+      "rule": "process_execution",
+      "snippet": "        subprocess.once(\"close\", (exitCode) => {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52394,
+      "rule": "process_execution",
+      "snippet": "          subprocess.off(\"error\", reject);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52399,
+      "rule": "process_execution",
+      "snippet": "          subprocess.unref();"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52405,
+      "rule": "process_execution",
+      "snippet": "  subprocess.unref();"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52407,
+      "rule": "process_execution",
+      "snippet": "    subprocess.once(\"error\", reject);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52408,
+      "rule": "process_execution",
+      "snippet": "    subprocess.once(\"spawn\", () => {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52409,
+      "rule": "process_execution",
+      "snippet": "      subprocess.off(\"error\", reject);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 52641,
+      "rule": "process_execution",
+      "snippet": "var import_node_child_process8 = __toESM(require(\"node:child_process\"), 1);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 54232,
+      "rule": "dynamic_execution",
+      "snippet": "        const m = regex.exec(val);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 54675,
+      "rule": "process_execution",
+      "snippet": "        proc = import_node_child_process8.default.spawn(import_node_process8.default.argv[0], args, { stdio: \"inherit\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 54677,
+      "rule": "process_execution",
+      "snippet": "        proc = import_node_child_process8.default.spawn(executableFile, args, { stdio: \"inherit\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/utilsBundle.js",
+      "line": 54687,
+      "rule": "process_execution",
+      "snippet": "      proc = import_node_child_process8.default.spawn(import_node_process8.default.execPath, args, { stdio: \"inherit\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 5173,
+      "rule": "dynamic_execution",
+      "snippet": "    const result2 = re2.exec(source14)?.[0];"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 9816,
+      "rule": "dynamic_execution",
+      "snippet": "        const loadVite = new Function('return import(\"vite\")');"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 10029,
+      "rule": "process_execution",
+      "snippet": "    // @see https://nodejs.org/api/child_process.html#child_process_options_detached"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 10144,
+      "rule": "process_execution",
+      "snippet": "      childProcess.spawnSync(`taskkill /pid ${pid} /T /F`, { shell: true, windowsHide: true });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 10185,
+      "rule": "process_execution",
+      "snippet": "    childProcess = __toESM(require(\"child_process\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 10344,
+      "rule": "dynamic_execution",
+      "snippet": "  const ipv4Mapped = /^::ffff:(\\d+\\.\\d+\\.\\d+\\.\\d+)$/i.exec(address);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 12562,
+      "rule": "process_execution",
+      "snippet": "    const version3 = (0, import_child_process.execSync)(\"sw_vers -productVersion\", { stdio: [\"ignore\", \"pipe\", \"ignore\"] }).toString().trim().split(\".\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 12597,
+      "rule": "process_execution",
+      "snippet": "var import_child_process, import_os4, cachedUserAgent;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 12601,
+      "rule": "process_execution",
+      "snippet": "    import_child_process = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 12613,
+      "rule": "dynamic_execution",
+      "snippet": "\\n        try {\\n          (() => {\\n            globalThis.eval(timer.func);\\n          })();\\n        } catch (e) {\\n          error2 = e;\\n        }\\n        await new Promise((f) => this._embedder.setTimeout(f));\\n        return { timer"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 20584,
+      "rule": "dynamic_execution",
+      "snippet": "esultValue(args[i], handles);\\n    let result = this.global.eval(expression);\\n    if (isFunction === true) {\\n      result = result(...parameters);\\n    } else if (isFunction === false) {\\n      result = result;\\n    } else {\\n      if (ty"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 20642,
+      "rule": "dynamic_execution",
+      "snippet": "      new Function(\"(\" + expression2 + \")\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 20649,
+      "rule": "dynamic_execution",
+      "snippet": "        new Function(\"(\" + expression2 + \")\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 20944,
+      "rule": "dynamic_execution",
+      "snippet": "esultValue(args[i], handles);\\n    let result = this.global.eval(expression);\\n    if (isFunction === true) {\\n      result = result(...parameters);\\n    } else if (isFunction === false) {\\n      result = result;\\n    } else {\\n      if (ty"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 22097,
+      "rule": "dynamic_execution",
+      "snippet": "              const func = injected2.eval(\"(\" + params2.functionText + \")\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 25682,
+      "rule": "dynamic_execution",
+      "snippet": "              let result3 = evaledExpression ?? globalThis.eval(expression3);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 25741,
+      "rule": "dynamic_execution",
+      "snippet": "          let result2 = globalThis.eval(data.expression);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 25812,
+      "rule": "dynamic_execution",
+      "snippet": "            const callback = injected.eval(callbackText2);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 33462,
+      "rule": "dynamic_execution",
+      "snippet": "    const match = /^Inst (\\S+) /.exec(line);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 33694,
+      "rule": "process_execution",
+      "snippet": "    childProcess2 = __toESM(require(\"child_process\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 33855,
+      "rule": "process_execution",
+      "snippet": "    childProcess3 = __toESM(require(\"child_process\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 36242,
+      "rule": "sensitive_paths",
+      "snippet": "      \"--use-mock-keychain\","
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 38549,
+      "rule": "dynamic_execution",
+      "snippet": "t match = /^(?:view-source:)?(?:chrome|edge):\\/*([^/?#]+)/i.exec(url3);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 51238,
+      "rule": "dynamic_execution",
+      "snippet": "        const match = /^data:([^,]*),([\\s\\S]*)$/.exec(url3);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 51892,
+      "rule": "dynamic_execution",
+      "snippet": "  const m = /\\/devtools\\/page\\/([^/]+)/.exec(wsUrl);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 59872,
+      "rule": "dynamic_execution",
+      "snippet": "        return await this._frame.$$eval(this._selector, pageFunction, arg2);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 60066,
+      "rule": "dynamic_execution",
+      "snippet": "        return await this._frame.$$eval(this._selector, (ee) => ee.map((e) => e.innerText));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 60069,
+      "rule": "dynamic_execution",
+      "snippet": "        return await this._frame.$$eval(this._selector, (ee) => ee.map((e) => e.textContent || \"\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 61959,
+      "rule": "dynamic_execution",
+      "snippet": "      async $eval(selector, pageFunction, arg2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 61964,
+      "rule": "dynamic_execution",
+      "snippet": "      async $$eval(selector, pageFunction, arg2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 62473,
+      "rule": "dynamic_execution",
+      "snippet": "      async $eval(selector, pageFunction, arg2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 62477,
+      "rule": "dynamic_execution",
+      "snippet": "      async $$eval(selector, pageFunction, arg2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 63065,
+      "rule": "dynamic_execution",
+      "snippet": "      async $eval(selector, pageFunction, arg2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 63067,
+      "rule": "dynamic_execution",
+      "snippet": "        return await this._mainFrame.$eval(selector, pageFunction, arg2);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 63069,
+      "rule": "dynamic_execution",
+      "snippet": "      async $$eval(selector, pageFunction, arg2) {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 63071,
+      "rule": "dynamic_execution",
+      "snippet": "        return await this._mainFrame.$$eval(selector, pageFunction, arg2);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68022,
+      "rule": "process_execution",
+      "snippet": "var import_child_process2, z10, resume, highlight, hideHighlight, annotate, devtools_default;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68026,
+      "rule": "process_execution",
+      "snippet": "    import_child_process2 = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68130,
+      "rule": "process_execution",
+      "snippet": "        const daemon = (0, import_child_process2.spawn)(process.execPath, daemonArgs, { detached: true, stdio: \"ignore\", windowsHide: true });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68132,
+      "rule": "process_execution",
+      "snippet": "        const client = (0, import_child_process2.spawn)(process.execPath, [...daemonArgs, \"--annotate\"], {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68253,
+      "rule": "dynamic_execution",
+      "snippet": "              const value = eval(`(${expr})`);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68260,
+      "rule": "dynamic_execution",
+      "snippet": "              const value = eval(`(${expr})`);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 68286,
+      "rule": "dynamic_execution",
+      "snippet": "  const literal = /^\\/(.*)\\/([a-z]*)$/.exec(source14);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 72553,
+      "rule": "sensitive_paths",
+      "snippet": ".promises.readFile(import_path52.default.join(userDataDir, \"Local State\"), \"utf-8\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73260,
+      "rule": "process_execution",
+      "snippet": "var import_child_process3, import_fs62, import_net9, import_os24, import_path56, Session2, SocketConnectionClient;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73264,
+      "rule": "process_execution",
+      "snippet": "    import_child_process3 = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73383,
+      "rule": "process_execution",
+      "snippet": "        const child = (0, import_child_process3.spawn)(process.execPath, args, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73633,
+      "rule": "process_execution",
+      "snippet": "        const child2 = (0, import_child_process4.spawn)(process.execPath, daemonArgs, { stdio: \"ignore\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73647,
+      "rule": "process_execution",
+      "snippet": "      const child = (0, import_child_process4.spawn)(process.execPath, daemonArgs, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73725,
+      "rule": "process_execution",
+      "snippet": "    const child = (0, import_child_process4.spawn)(process.execPath, daemonArgs, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73756,
+      "rule": "process_execution",
+      "snippet": "      const result2 = (0, import_child_process4.execSync)("
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73764,
+      "rule": "process_execution",
+      "snippet": "      const result2 = (0, import_child_process4.execSync)(\"ps auxww\", { encoding: \"utf-8\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73844,
+      "rule": "process_execution",
+      "snippet": "var import_child_process4, import_os25, import_path57, import_bootstrap4, globalOptions, booleanOptions, daemonProcessPatterns;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 73848,
+      "rule": "process_execution",
+      "snippet": "    import_child_process4 = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 75156,
+      "rule": "process_execution",
+      "snippet": "var import_child_process5, import_os27, debug15, ws3, debugLogger2, extensionConnectionTimeout, CDPRelayServer, ExtensionConnection;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 75160,
+      "rule": "process_execution",
+      "snippet": "    import_child_process5 = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 75271,
+      "rule": "process_execution",
+      "snippet": "        (0, import_child_process5.spawn)(executablePath, args, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 76122,
+      "rule": "process_execution",
+      "snippet": "    childProcess4 = __toESM(require(\"child_process\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 76712,
+      "rule": "process_execution",
+      "snippet": "t_path64, import_os29, import_fs68, import_crypto32, import_child_process6, DashboardConnection, ContextDebugger, AttachedPage;"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 76720,
+      "rule": "process_execution",
+      "snippet": "    import_child_process6 = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 76871,
+      "rule": "process_execution",
+      "snippet": "            (0, import_child_process6.execFile)(\"open\", [\"-R\", params2.path]);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 76874,
+      "rule": "process_execution",
+      "snippet": "            (0, import_child_process6.execFile)(\"explorer\", [\"/select,\", params2.path]);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/coreBundle.js",
+      "line": 76877,
+      "rule": "process_execution",
+      "snippet": "            (0, import_child_process6.execFile)(\"xdg-open\", [import_path64.default.dirname(params2.path)]);"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/session.js",
+      "line": 34,
+      "rule": "process_execution",
+      "snippet": "var import_child_process = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/session.js",
+      "line": 153,
+      "rule": "process_execution",
+      "snippet": "    const child = (0, import_child_process.spawn)(process.execPath, args, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/program.js",
+      "line": 35,
+      "rule": "process_execution",
+      "snippet": "var import_child_process = require(\"child_process\");"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/program.js",
+      "line": 201,
+      "rule": "process_execution",
+      "snippet": "        const child2 = (0, import_child_process.spawn)(process.execPath, daemonArgs, { stdio: \"ignore\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/program.js",
+      "line": 215,
+      "rule": "process_execution",
+      "snippet": "      const child = (0, import_child_process.spawn)(process.execPath, daemonArgs, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/program.js",
+      "line": 293,
+      "rule": "process_execution",
+      "snippet": "    const child = (0, import_child_process.spawn)(process.execPath, daemonArgs, {"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/program.js",
+      "line": 325,
+      "rule": "process_execution",
+      "snippet": "      const result = (0, import_child_process.execSync)("
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/cli-client/program.js",
+      "line": 333,
+      "rule": "process_execution",
+      "snippet": "      const result = (0, import_child_process.execSync)(\"ps auxww\", { encoding: \"utf-8\" });"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/tools/utils/extension.js",
+      "line": 68,
+      "rule": "sensitive_paths",
+      "snippet": "lt.promises.readFile(import_path.default.join(userDataDir, \"Local State\"), \"utf-8\"));"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/server/electron/loader.js",
+      "line": 78,
+      "rule": "sensitive_paths",
+      "snippet": "  \"--use-mock-keychain\","
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/xtermModule-B794rD2Z.js",
+      "line": 5,
+      "rule": "dynamic_execution",
+      "snippet": "`);for(;n.length>1;){let e=n.shift(),r=n.shift();if(/^\\d+$/.exec(e)){let n=parseInt(e);if(D(n))if(r===`?`)t.push({type:0,index:n});else{let e=(0,y.parseColor)(r);e&&t.push({type:1,index:n,color:e})}}}return t.length&&this._onColor.fire(t),!"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/xtermModule-B794rD2Z.js",
+      "line": 10,
+      "rule": "dynamic_execution",
+      "snippet": "oLowerCase();if(t.indexOf(`rgb:`)===0){t=t.slice(4);let e=n.exec(t);if(e){let t=e[1]?15:e[4]?255:e[7]?4095:65535;return[Math.round(parseInt(e[1]||e[4]||e[7]||e[10],16)/t*255),Math.round(parseInt(e[2]||e[5]||e[8]||e[11],16)/t*255),Math.round"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 1,
+      "rule": "dynamic_execution",
+      "snippet": "/MSIE \\d/.test(e),i=/Trident\\/(?:[7-9]|\\d{2,})\\..*rv:(\\d+)/.exec(e),a=/Edge\\/(\\d+)/.exec(e),o=r||i||a,s=o&&(r?document.documentMode||6:+(a||i)[1]),c=!a&&/WebKit\\//.test(e),l=c&&/Qt\\/\\d+\\.\\d+/.test(e),u=!a&&/Chrome\\/(\\d+)/.exec(e),d=u&&+u[1]"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 4,
+      "rule": "dynamic_execution",
+      "snippet": "eateDocumentFragment();for(var p=0;;){u.lastIndex=p;var m=u.exec(t),h=m?m.index-p:t.length-p;if(h){var g=document.createTextNode(l.slice(p,p+h));o&&s<9?f.appendChild(k(`span`,[g])):f.appendChild(g),e.map.push(e.pos,e.pos+h,g),e.col+=h,e.pos"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 24,
+      "rule": "dynamic_execution",
+      "snippet": "!\\[CDATA\\[/.test(n))return 0;var s=n&&/^<(\\/)?([\\w_:\\.-]*)/.exec(n);if(s&&s[1])for(;i;)if(i.tagName==s[2]){i=i.prev;break}else if(o.implicitlyClosed.hasOwnProperty(g(i.tagName)))i=i.prev;else break;else if(s)for(;i;){var c=o.contextGrabbers"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 25,
+      "rule": "dynamic_execution",
+      "snippet": "stLine();a<=s;a++,o=0){n.lastIndex=o;var c=e.getLine(a),l=n.exec(c);if(l)return{from:t(a,l.index),to:t(a,l.index+l[0].length),match:l}}}function o(e,n,o){if(!i(n))return a(e,n,o);n=r(n,`gm`);for(var s,c=1,l=o.line,u=e.lastLine();l<=u;){for("
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 26,
+      "rule": "dynamic_execution",
+      "snippet": "`+f}c*=2,n.lastIndex=o.ch;var p=n.exec(s);if(p){var m=s.slice(0,p.index).split(`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 28,
+      "rule": "dynamic_execution",
+      "snippet": " s(e,t,n){for(var r,i=0;i<=e.length;){t.lastIndex=i;var a=t.exec(e);if(!a)break;var o=a.index+a[0].length;if(o>e.length-n)break;(!r||o>r.index+r[0].length)&&(r=a),i=a.index+1}return r}function c(e,n,i){n=r(n,`g`);for(var a=i.line,o=i.ch,c=e"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 31,
+      "rule": "dynamic_execution",
+      "snippet": "ase?`gi`:`g`)),{token:function(t){e.lastIndex=t.pos;var n=e.exec(t.string);if(n&&n.index==t.pos)return t.pos+=n[0].length||1,`searching`;n?t.pos=n.index:t.skipToEnd()}}}function n(){this.posFrom=this.posTo=this.lastQuery=this.query=null,thi"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/codeMirrorModule-BEB2e8M3.js",
+      "line": 32,
+      "rule": "dynamic_execution",
+      "snippet": "ion(t){if(t){var n;if(n=/^\\s*([\\+\\-]?\\d+)\\s*\\:\\s*(\\d+)\\s*$/.exec(t))e.setCursor(r(e,n[1]),Number(n[2]));else if(n=/^\\s*([\\+\\-]?\\d+(\\.\\d+)?)\\%\\s*/.exec(t)){var a=Math.round(e.lineCount()*Number(n[1])/100);/^[-+]/.test(n[1])&&(a=i.line+a+1),e"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 12,
+      "rule": "dynamic_execution",
+      "snippet": "e(/\\n/g,` `);let r=[],i=[],a=0,o=/\\{([^}]+)\\}/g,s;for(;(s=o.exec(n))!==null;){let[o,c]=s,l=n.slice(a,s.index);r.push(l),i.push(l);let u=en(e.params,c,t);u===void 0?(r.push(o),i.push(o)):s.index===0?(r.push(u),i.push(u)):(r.push((0,M.jsx)(`s"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 19,
+      "rule": "dynamic_execution",
+      "snippet": "t`,children:t})]})};function Or(e){let t=[],n=0,r;for(;(r=A.exec(e))!==null;){let i=e.substring(n,r.index);i&&t.push(i);let a=r[0];t.push(kr(a)),n=r.index+a.length}let i=e.substring(n);return i&&t.push(i),t}function kr(e){let t=e;return t.s"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 25,
+      "rule": "dynamic_execution",
+      "snippet": "0,M.jsx)(`span`,{children:l},c.length+1));let u=0;for(;(s=o.exec(r))!==null;){let e=r.substring(u,s.index);l.push((0,M.jsx)(`span`,{children:e},l.length+1)),u=s.index+2;let t=s[0][1];if(t===`%`)l.push((0,M.jsx)(`span`,{children:`%`},l.lengt"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 54,
+      "rule": "dynamic_execution",
+      "snippet": "or(let e=0;e<a.length;e++)s[e]=Pl(a[e],o);let c=this.global.eval(n);return e===!0?c=c(...s):e===!1?c=c:typeof c==`function`&&(c=c(...s)),t?this._promiseAwareJsonValueNoThrow(c):c}jsonValue(e,t){if(t!==void 0)return Fl(t,e=>({fallThrough:e})"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 67,
+      "rule": "dynamic_execution",
+      "snippet": "y;function pu(e,t){let n=[],r=0,i=t=>{t.lastIndex=r;let n=t.exec(e)?.[0];return n&&(r+=n.length),n},a=(n,a,o=!1)=>{let s=``,c=!1;for(++r;r<e.length&&(e[r]!==n||c);){if(n===\"`\"&&e.startsWith(\"${\",r))throw Error(`Template literal placeholders"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 132,
+      "rule": "dynamic_execution",
+      "snippet": "t=/(.*?)[ \\t]*\\r?\\n/sy,n=/[ \\t]*(.*?)[ \\t]*\\r?\\n/sy}let r=t.exec(e);if(!r)return e;let i=r[1],a=` `,o=t.lastIndex;for(n.lastIndex=o;r=n.exec(e);)r[1]===``?a===`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/traceViewer/assets/defaultSettingsView-D-g2vrvf.js",
+      "line": 134,
+      "rule": "dynamic_execution",
+      "snippet": "o=n.lastIndex;let s=/[ \\t]*(.*)/sy;return s.lastIndex=o,r=s.exec(e),i+a+(r?.[1]??``)}function mm(e,t){let n=``;for(let r=1;r<e.length-1;++r){let i=e[r];if(!(i===`\\r`&&e[r+1]===`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 1,
+      "rule": "dynamic_execution",
+      "snippet": "/MSIE \\d/.test(e),i=/Trident\\/(?:[7-9]|\\d{2,})\\..*rv:(\\d+)/.exec(e),a=/Edge\\/(\\d+)/.exec(e),o=r||i||a,s=o&&(r?document.documentMode||6:+(a||i)[1]),c=!a&&/WebKit\\//.test(e),l=c&&/Qt\\/\\d+\\.\\d+/.test(e),u=!a&&/Chrome\\/(\\d+)/.exec(e),d=u&&+u[1]"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 4,
+      "rule": "dynamic_execution",
+      "snippet": "eateDocumentFragment();for(var p=0;;){u.lastIndex=p;var m=u.exec(t),h=m?m.index-p:t.length-p;if(h){var g=document.createTextNode(l.slice(p,p+h));o&&s<9?f.appendChild(k(`span`,[g])):f.appendChild(g),e.map.push(e.pos,e.pos+h,g),e.col+=h,e.pos"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 24,
+      "rule": "dynamic_execution",
+      "snippet": "!\\[CDATA\\[/.test(n))return 0;var s=n&&/^<(\\/)?([\\w_:\\.-]*)/.exec(n);if(s&&s[1])for(;i;)if(i.tagName==s[2]){i=i.prev;break}else if(o.implicitlyClosed.hasOwnProperty(g(i.tagName)))i=i.prev;else break;else if(s)for(;i;){var c=o.contextGrabbers"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 25,
+      "rule": "dynamic_execution",
+      "snippet": "stLine();a<=s;a++,o=0){n.lastIndex=o;var c=e.getLine(a),l=n.exec(c);if(l)return{from:t(a,l.index),to:t(a,l.index+l[0].length),match:l}}}function o(e,n,o){if(!i(n))return a(e,n,o);n=r(n,`gm`);for(var s,c=1,l=o.line,u=e.lastLine();l<=u;){for("
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 26,
+      "rule": "dynamic_execution",
+      "snippet": "`+f}c*=2,n.lastIndex=o.ch;var p=n.exec(s);if(p){var m=s.slice(0,p.index).split(`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 28,
+      "rule": "dynamic_execution",
+      "snippet": " s(e,t,n){for(var r,i=0;i<=e.length;){t.lastIndex=i;var a=t.exec(e);if(!a)break;var o=a.index+a[0].length;if(o>e.length-n)break;(!r||o>r.index+r[0].length)&&(r=a),i=a.index+1}return r}function c(e,n,i){n=r(n,`g`);for(var a=i.line,o=i.ch,c=e"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 31,
+      "rule": "dynamic_execution",
+      "snippet": "ase?`gi`:`g`)),{token:function(t){e.lastIndex=t.pos;var n=e.exec(t.string);if(n&&n.index==t.pos)return t.pos+=n[0].length||1,`searching`;n?t.pos=n.index:t.skipToEnd()}}}function n(){this.posFrom=this.posTo=this.lastQuery=this.query=null,thi"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js",
+      "line": 32,
+      "rule": "dynamic_execution",
+      "snippet": "ion(t){if(t){var n;if(n=/^\\s*([\\+\\-]?\\d+)\\s*\\:\\s*(\\d+)\\s*$/.exec(t))e.setCursor(r(e,n[1]),Number(n[2]));else if(n=/^\\s*([\\+\\-]?\\d+(\\.\\d+)?)\\%\\s*/.exec(t)){var a=Math.round(e.lineCount()*Number(n[1])/100);/^[-+]/.test(n[1])&&(a=i.line+a+1),e"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/dashboard/assets/index-hRvO4yU2.js",
+      "line": 10,
+      "rule": "dynamic_execution",
+      "snippet": ")m)|([^\\x1b]+)/g,r=[],i,a={},o=!1,s=t?.fg,c=t?.bg;for(;(i=n.exec(e))!==null;){let[,,e,,n]=i;if(e)for(let n of e.split(`;`)){let e=+n;switch(e){case 0:a={};break;case 1:a[`font-weight`]=`bold`;break;case 2:a.opacity=`0.8`;break;case 3:a[`fon"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 1,
+      "rule": "dynamic_execution",
+      "snippet": "/MSIE \\d/.test(e),i=/Trident\\/(?:[7-9]|\\d{2,})\\..*rv:(\\d+)/.exec(e),a=/Edge\\/(\\d+)/.exec(e),o=r||i||a,s=o&&(r?document.documentMode||6:+(a||i)[1]),c=!a&&/WebKit\\//.test(e),l=c&&/Qt\\/\\d+\\.\\d+/.test(e),u=!a&&/Chrome\\/(\\d+)/.exec(e),d=u&&+u[1]"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 4,
+      "rule": "dynamic_execution",
+      "snippet": "eateDocumentFragment();for(var p=0;;){u.lastIndex=p;var m=u.exec(t),h=m?m.index-p:t.length-p;if(h){var g=document.createTextNode(l.slice(p,p+h));o&&s<9?f.appendChild(k(`span`,[g])):f.appendChild(g),e.map.push(e.pos,e.pos+h,g),e.col+=h,e.pos"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 24,
+      "rule": "dynamic_execution",
+      "snippet": "!\\[CDATA\\[/.test(n))return 0;var s=n&&/^<(\\/)?([\\w_:\\.-]*)/.exec(n);if(s&&s[1])for(;i;)if(i.tagName==s[2]){i=i.prev;break}else if(o.implicitlyClosed.hasOwnProperty(g(i.tagName)))i=i.prev;else break;else if(s)for(;i;){var c=o.contextGrabbers"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 25,
+      "rule": "dynamic_execution",
+      "snippet": "stLine();a<=s;a++,o=0){n.lastIndex=o;var c=e.getLine(a),l=n.exec(c);if(l)return{from:t(a,l.index),to:t(a,l.index+l[0].length),match:l}}}function o(e,n,o){if(!i(n))return a(e,n,o);n=r(n,`gm`);for(var s,c=1,l=o.line,u=e.lastLine();l<=u;){for("
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 26,
+      "rule": "dynamic_execution",
+      "snippet": "`+f}c*=2,n.lastIndex=o.ch;var p=n.exec(s);if(p){var m=s.slice(0,p.index).split(`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 28,
+      "rule": "dynamic_execution",
+      "snippet": " s(e,t,n){for(var r,i=0;i<=e.length;){t.lastIndex=i;var a=t.exec(e);if(!a)break;var o=a.index+a[0].length;if(o>e.length-n)break;(!r||o>r.index+r[0].length)&&(r=a),i=a.index+1}return r}function c(e,n,i){n=r(n,`g`);for(var a=i.line,o=i.ch,c=e"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 31,
+      "rule": "dynamic_execution",
+      "snippet": "ase?`gi`:`g`)),{token:function(t){e.lastIndex=t.pos;var n=e.exec(t.string);if(n&&n.index==t.pos)return t.pos+=n[0].length||1,`searching`;n?t.pos=n.index:t.skipToEnd()}}}function n(){this.posFrom=this.posTo=this.lastQuery=this.query=null,thi"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/codeMirrorModule-DK72OMRi.js",
+      "line": 32,
+      "rule": "dynamic_execution",
+      "snippet": "ion(t){if(t){var n;if(n=/^\\s*([\\+\\-]?\\d+)\\s*\\:\\s*(\\d+)\\s*$/.exec(t))e.setCursor(r(e,n[1]),Number(n[2]));else if(n=/^\\s*([\\+\\-]?\\d+(\\.\\d+)?)\\%\\s*/.exec(t)){var a=Math.round(e.lineCount()*Number(n[1])/100);/^[-+]/.test(n[1])&&(a=i.line+a+1),e"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/index-Cn0mmDuv.js",
+      "line": 10,
+      "rule": "dynamic_execution",
+      "snippet": ")m)|([^\\x1b]+)/g,r=[],i,a={},o=!1,s=t?.fg,c=t?.bg;for(;(i=n.exec(e))!==null;){let[,,e,,n]=i;if(e)for(let n of e.split(`;`)){let e=+n;switch(e){case 0:a={};break;case 1:a[`font-weight`]=`bold`;break;case 2:a.opacity=`0.8`;break;case 3:a[`fon"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/index-Cn0mmDuv.js",
+      "line": 76,
+      "rule": "dynamic_execution",
+      "snippet": "t=/(.*?)[ \\t]*\\r?\\n/sy,n=/[ \\t]*(.*?)[ \\t]*\\r?\\n/sy}let r=t.exec(e);if(!r)return e;let i=r[1],a=` `,o=t.lastIndex;for(n.lastIndex=o;r=n.exec(e);)r[1]===``?a===`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/recorder/assets/index-Cn0mmDuv.js",
+      "line": 78,
+      "rule": "dynamic_execution",
+      "snippet": "o=n.lastIndex;let s=/[ \\t]*(.*)/sy;return s.lastIndex=o,r=s.exec(e),i+a+(r?.[1]??``)}function ra(e,t){let n=``;for(let r=1;r<e.length-1;++r){let i=e[r];if(!(i===`\\r`&&e[r+1]===`"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/htmlReport/report.js",
+      "line": 9,
+      "rule": "dynamic_execution",
+      "snippet": "earTimeout)},[t])]}function za(e){let t=[],n=0,r;for(;(r=La.exec(e))!==null;){let i=e.substring(n,r.index);i&&t.push(i);let a=r[0];t.push(Ba(a)),n=r.index+a.length}let i=e.substring(n);return i&&t.push(i),t}function Ba(e){let t=e;return t.s"
+    },
+    {
+      "package": "playwright-core",
+      "file": "lib/vite/htmlReport/report.js",
+      "line": 16,
+      "rule": "dynamic_execution",
+      "snippet": ")m)|([^\\x1b]+)/g,r=[],i,a={},o=!1,s=t?.fg,c=t?.bg;for(;(i=n.exec(e))!==null;){let[,,e,,n]=i;if(e)for(let n of e.split(`;`)){let e=+n;switch(e){case 0:a={};break;case 1:a[`font-weight`]=`bold`;break;case 2:a.opacity=`0.8`;break;case 3:a[`fon"
+    },
+    {
+      "package": "qs",
+      "file": "test/parse.js",
+      "line": 1170,
+      "rule": "dynamic_execution",
+      "snippet": "                var parts = reg.exec(str);"
+    },
+    {
+      "package": "qs",
+      "file": "test/parse.js",
+      "line": 1173,
+      "rule": "dynamic_execution",
+      "snippet": "                    parts = reg.exec(str);"
+    },
+    {
+      "package": "qs",
+      "file": "dist/qs.js",
+      "line": 49,
+      "rule": "dynamic_execution",
+      "snippet": "ror('\"allowMissing\" argument must be a boolean');if(null===$exec(/^%?[^%]*%?$/,r))throw new $SyntaxError(\"`%` may not be present anywhere but at the beginning and end of the intrinsic name\");var t=stringToPath(r),o=t.length>0?t[0]:\"\",n=getB"
+    },
+    {
+      "package": "ms",
+      "file": "index.js",
+      "line": 53,
+      "rule": "dynamic_execution",
+      "snippet": "?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec("
+    }
+  ],
+  "registryComparisons": [
+    {
+      "package": "node_modules/@bufbuild/protobuf",
+      "version": "2.16.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 364,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/@keyv/serialize",
+      "version": "1.1.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/@sec-ant/readable-stream",
+      "version": "0.4.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 25,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/@sindresorhus/is",
+      "version": "8.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 9,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/@types/http-cache-semantics",
+      "version": "4.2.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/accepts",
+      "version": "1.3.8",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/agent-base",
+      "version": "6.0.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 10,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/agent-base/node_modules/debug",
+      "version": "4.4.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/agent-base/node_modules/ms",
+      "version": "2.1.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/array-flatten",
+      "version": "1.1.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/asynckit",
+      "version": "0.4.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 20,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/axios",
+      "version": "1.21.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 92,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/body-parser",
+      "version": "1.20.9",
+      "archiveIntegrity": true,
+      "comparedFiles": 10,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/byte-counter",
+      "version": "0.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 8,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/bytes",
+      "version": "3.1.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/cacheable-lookup",
+      "version": "7.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/cacheable-request",
+      "version": "13.0.19",
+      "archiveIntegrity": true,
+      "comparedFiles": 11,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/call-bind-apply-helpers",
+      "version": "1.0.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 21,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/call-bound",
+      "version": "1.0.4",
+      "archiveIntegrity": true,
+      "comparedFiles": 11,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/chunk-data",
+      "version": "0.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/combined-stream",
+      "version": "1.0.8",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/content-disposition",
+      "version": "0.5.4",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/content-type",
+      "version": "1.0.5",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/cookie",
+      "version": "0.7.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/cookie-signature",
+      "version": "1.0.7",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/debug",
+      "version": "2.6.9",
+      "archiveIntegrity": true,
+      "comparedFiles": 17,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/decompress-response",
+      "version": "10.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/delayed-stream",
+      "version": "1.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/depd",
+      "version": "2.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/destroy",
+      "version": "1.2.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/dunder-proto",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 15,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/ee-first",
+      "version": "1.1.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/encodeurl",
+      "version": "2.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/es-define-property",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 11,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/es-errors",
+      "version": "1.3.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 22,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/es-object-atoms",
+      "version": "1.1.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 16,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/es-set-tostringtag",
+      "version": "2.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 10,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/escape-html",
+      "version": "1.0.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/etag",
+      "version": "1.8.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/express",
+      "version": "4.22.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 16,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/finalhandler",
+      "version": "1.3.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/follow-redirects",
+      "version": "1.16.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/form-data",
+      "version": "4.0.6",
+      "archiveIntegrity": true,
+      "comparedFiles": 8,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/forwarded",
+      "version": "0.2.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/fresh",
+      "version": "0.5.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/function-bind",
+      "version": "1.1.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 12,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/get-intrinsic",
+      "version": "1.3.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 9,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/get-proto",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 15,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/get-stream",
+      "version": "9.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 13,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/gopd",
+      "version": "1.2.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 12,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/got",
+      "version": "15.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 49,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/has-symbols",
+      "version": "1.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 16,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/has-tostringtag",
+      "version": "1.0.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 16,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/hasown",
+      "version": "2.0.4",
+      "archiveIntegrity": true,
+      "comparedFiles": 10,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/http-cache-semantics",
+      "version": "4.3.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/http-errors",
+      "version": "2.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/http2-wrapper",
+      "version": "2.2.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 26,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/https-proxy-agent",
+      "version": "5.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 11,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/https-proxy-agent/node_modules/debug",
+      "version": "4.4.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/https-proxy-agent/node_modules/ms",
+      "version": "2.1.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/iconv-lite",
+      "version": "0.4.24",
+      "archiveIntegrity": true,
+      "comparedFiles": 26,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/inherits",
+      "version": "2.0.4",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/ipaddr.js",
+      "version": "1.9.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/is-stream",
+      "version": "4.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/keyv",
+      "version": "5.6.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/lowercase-keys",
+      "version": "4.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/math-intrinsics",
+      "version": "1.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 38,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/media-typer",
+      "version": "0.3.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/merge-descriptors",
+      "version": "1.0.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/methods",
+      "version": "1.1.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/mime",
+      "version": "1.6.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 10,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/mime-db",
+      "version": "1.52.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/mime-types",
+      "version": "2.1.35",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/mimic-response",
+      "version": "4.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/ms",
+      "version": "2.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/negotiator",
+      "version": "0.6.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 9,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/normalize-url",
+      "version": "8.1.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/object-inspect",
+      "version": "1.13.4",
+      "archiveIntegrity": true,
+      "comparedFiles": 34,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/on-finished",
+      "version": "2.4.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/parseurl",
+      "version": "1.3.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/path-to-regexp",
+      "version": "0.1.13",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/playwright-core",
+      "version": "1.64.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 115,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/proxy-addr",
+      "version": "2.0.8",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/proxy-from-env",
+      "version": "2.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/qs",
+      "version": "6.16.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 20,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/quick-lru",
+      "version": "5.1.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/range-parser",
+      "version": "1.2.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/raw-body",
+      "version": "2.5.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/resolve-alpn",
+      "version": "1.2.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/responselike",
+      "version": "4.0.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/responselike/node_modules/lowercase-keys",
+      "version": "3.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/rxjs",
+      "version": "7.8.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 2277,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/safe-buffer",
+      "version": "5.2.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/safer-buffer",
+      "version": "2.1.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/send",
+      "version": "0.19.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/send/node_modules/ms",
+      "version": "2.1.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/serve-static",
+      "version": "1.16.3",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/setprototypeof",
+      "version": "1.2.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/side-channel",
+      "version": "1.1.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 12,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/side-channel-list",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 13,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/side-channel-map",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 12,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/side-channel-weakmap",
+      "version": "1.0.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 12,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/statuses",
+      "version": "2.0.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/tagged-tag",
+      "version": "1.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 4,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/tiktok-live-api-sdk",
+      "version": "0.4.0-beta1",
+      "archiveIntegrity": true,
+      "comparedFiles": 6,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/tiktok-live-connector",
+      "version": "2.5.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 18,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/tiktok-live-proto",
+      "version": "0.2.4",
+      "archiveIntegrity": true,
+      "comparedFiles": 15,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/toidentifier",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/tslib",
+      "version": "2.9.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 14,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/type-fest",
+      "version": "5.10.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 222,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/type-is",
+      "version": "1.6.18",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/typed-emitter",
+      "version": "2.1.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 7,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/uint8array-extras",
+      "version": "1.6.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/unpipe",
+      "version": "1.0.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/utils-merge",
+      "version": "1.0.1",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/vary",
+      "version": "1.1.2",
+      "archiveIntegrity": true,
+      "comparedFiles": 5,
+      "mismatches": [],
+      "archiveLinks": []
+    },
+    {
+      "package": "node_modules/ws",
+      "version": "8.22.0",
+      "archiveIntegrity": true,
+      "comparedFiles": 19,
+      "mismatches": [],
+      "archiveLinks": []
+    }
+  ]
+}

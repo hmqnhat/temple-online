@@ -1,0 +1,9 @@
+{
+  "uv": "uv 0.13.6 (Homebrew 2026-10-26 aarch64-apple-darwin)",
+  "projectPython": "3.11.18",
+  "projectExecutable": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/.venv/bin/python",
+  "managedPythonPrefix": "/Users/nhat.hm/.local/share/uv/python/cpython-3.11.18-macos-aarch64-none",
+  "systemPython": "Python 3.9.6",
+  "installedDistributions": 30,
+  "modelDownloaded": false
+}

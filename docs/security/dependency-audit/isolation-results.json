@@ -1,0 +1,2327 @@
+{
+  "node": {
+    "exitCode": 0,
+    "stdout": "Live: http://127.0.0.1:51102/ | OBS: http://127.0.0.1:51102/?obs=1\nAdmin: http://127.0.0.1:51102/admin\nM\u00e3 qu\u1ea3n tr\u1ecb (ch\u1ec9 nh\u1eadp v\u00e0o giao di\u1ec7n, kh\u00f4ng \u0111\u01b0a v\u00e0o URL): isolation_test_eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\nTTS: disabled. Ch\u1ec9 k\u1ebft n\u1ed1i TikTok khi b\u1ea5m K\u1ebft N\u1ed1i.\n",
+    "stderr": "",
+    "checks": {
+      "readFakeSecretOutsideAllowlist": {
+        "denied": true,
+        "code": "EPERM"
+      },
+      "writeOutsideWorkDirectory": {
+        "denied": true,
+        "code": "EPERM"
+      },
+      "spawnChildProcess": {
+        "denied": true,
+        "code": "EPERM"
+      },
+      "connectOutsideAllowedPort": {
+        "denied": true,
+        "code": "EPERM"
+      },
+      "realApplication": {
+        "passed": true,
+        "ttsStatus": "disabled",
+        "tiktokConnected": false,
+        "boundAddress": "127.0.0.1",
+        "playwrightLoaded": false
+      },
+      "observedJavascriptActivity": [
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/server.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/express.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/body-parser/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/depd/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/merge-descriptors/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/application.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/finalhandler/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/debug/src/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/debug/src/node.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/debug/src/debug.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ms/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/encodeurl/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/escape-html/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/on-finished/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ee-first/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/parseurl/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/statuses/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/statuses/codes.json"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/unpipe/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/router/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/router/route.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/array-flatten/array-flatten.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/router/layer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/path-to-regexp/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/methods/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/utils-merge/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/setprototypeof/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/middleware/init.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/middleware/query.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/qs/lib/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/qs/lib/stringify.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/side-channel/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/type.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/object-inspect/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/object-inspect/util.inspect.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/side-channel-list/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/side-channel-map/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-intrinsic/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-object-atoms/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/eval.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/range.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/ref.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/syntax.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-errors/uri.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/abs.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/floor.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/max.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/min.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/pow.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/round.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/sign.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/math-intrinsics/isNaN.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/gopd/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/gopd/gOPD.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-define-property/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/has-symbols/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/has-symbols/shams.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-proto/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-proto/Reflect.getPrototypeOf.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-proto/Object.getPrototypeOf.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/dunder-proto/get.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/call-bind-apply-helpers/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/function-bind/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/function-bind/implementation.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/call-bind-apply-helpers/functionCall.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/call-bind-apply-helpers/actualApply.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/call-bind-apply-helpers/functionApply.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/call-bind-apply-helpers/reflectApply.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/hasown/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/call-bound/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/side-channel-weakmap/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/qs/lib/utils.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/qs/lib/formats.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/qs/lib/parse.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/view.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/utils.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/safe-buffer/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/content-disposition/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/content-type/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/send/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http-errors/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/inherits/inherits.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/toidentifier/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/destroy/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/etag/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/fresh/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mime/mime.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mime/types.json"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/send/node_modules/ms/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/range-parser/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/proxy-addr/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/forwarded/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ipaddr.js/lib/ipaddr.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/request.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/accepts/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/negotiator/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/negotiator/lib/charset.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/negotiator/lib/encoding.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/negotiator/lib/language.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/negotiator/lib/mediaType.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mime-types/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mime-db/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mime-db/db.json"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/type-is/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/media-typer/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/express/lib/response.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cookie-signature/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cookie/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/vary/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/body-parser/lib/types/json.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/bytes/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/body-parser/lib/read.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/raw-body/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/lib/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/safer-buffer/safer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/lib/bom-handling.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/lib/streams.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/lib/extend-node.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/body-parser/lib/types/raw.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/serve-static/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/body-parser/lib/types/text.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/body-parser/lib/types/urlencoded.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/lib/tts-manager.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/lib/security.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/stream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/websocket.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/permessage-deflate.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/buffer-util.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/constants.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/limiter.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/receiver.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/validation.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/sender.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/event-target.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/extension.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/subprotocol.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/websocket-server.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-connector/dist/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-connector/dist/chunk-ZRW5x4aP.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-connector/dist/chunk-ZRW5x4aP.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-connector/dist/lib-DWhiWLli.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-connector/dist/lib-DWhiWLli.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-proto/dist/node/v3.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-proto/dist/node/v3.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/binary-encoding.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/binary-encoding.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/varint.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/varint.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/proto-int64.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/proto-int64.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/text-encoding.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/text-encoding.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/base64-encoding.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/base64-encoding.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/text-format.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/text-format.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/descriptors.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/descriptors.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/size-delimited.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wire/size-delimited.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/to-binary.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/to-binary.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/error.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/error.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/unsafe.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/unsafe.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/scalar.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/scalar.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/message.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/message.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/create.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/create.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/is-message.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/is-message.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/guard.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/reflect/guard.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wkt/wrappers.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/wkt/wrappers.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/from-binary.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@bufbuild/protobuf/dist/esm/from-binary.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/wrapper.mjs"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/wrapper.mjs"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/stream.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/stream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/extension.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/extension.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/permessage-deflate.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/permessage-deflate.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/receiver.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/receiver.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/sender.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/sender.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/subprotocol.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/subprotocol.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/websocket.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/websocket.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/websocket-server.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/ws/lib/websocket-server.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/create.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/create.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sindresorhus/is/distribution/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sindresorhus/is/distribution/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sindresorhus/is/distribution/utilities.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sindresorhus/is/distribution/utilities.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/as-promise/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/as-promise/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/errors.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/errors.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/strip-url-auth.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/strip-url-auth.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/byte-counter/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/byte-counter/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/byte-counter/utilities.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/byte-counter/utilities.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/chunk-data/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/chunk-data/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/uint8array-extras/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/uint8array-extras/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cacheable-request/dist/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cacheable-request/dist/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/stream.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/stream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/is-stream/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/is-stream/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sec-ant/readable-stream/dist/ponyfill/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sec-ant/readable-stream/dist/ponyfill/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sec-ant/readable-stream/dist/ponyfill/asyncIterator.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sec-ant/readable-stream/dist/ponyfill/asyncIterator.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sec-ant/readable-stream/dist/ponyfill/fromAnyIterable.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@sec-ant/readable-stream/dist/ponyfill/fromAnyIterable.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/exports.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/exports.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/array.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/array.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/contents.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/contents.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/utils.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/utils.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/array-buffer.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/array-buffer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/buffer.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/buffer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/string.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/get-stream/source/string.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http-cache-semantics/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http-cache-semantics/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/keyv/dist/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/keyv/dist/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@keyv/serialize/dist/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/@keyv/serialize/dist/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mimic-response/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/mimic-response/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/normalize-url/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/normalize-url/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/responselike/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/responselike/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/responselike/node_modules/lowercase-keys/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/responselike/node_modules/lowercase-keys/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cacheable-request/dist/types.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cacheable-request/dist/types.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/decompress-response/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/decompress-response/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/timer.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/timer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/defer-to-connect.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/defer-to-connect.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/get-body-size.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/get-body-size.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/proxy-events.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/proxy-events.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/timed-out.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/timed-out.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/unhandle.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/unhandle.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/weakable-map.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/weakable-map.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/calculate-retry-delay.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/calculate-retry-delay.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/options.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/options.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/lowercase-keys/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/lowercase-keys/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cacheable-lookup/source/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/cacheable-lookup/source/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/parse-link-header.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/parse-link-header.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/is-unix-socket-url.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/is-unix-socket-url.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/response.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/response.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/is-client-request.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/utils/is-client-request.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/diagnostics-channel.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/got/dist/source/core/diagnostics-channel.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-api-sdk/dist/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/tiktok-live-api-sdk/dist/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/axios.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/axios.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/utils.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/utils.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/bind.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/bind.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/Axios.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/Axios.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/buildURL.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/buildURL.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/AxiosURLSearchParams.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/AxiosURLSearchParams.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/toFormData.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/toFormData.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/AxiosError.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/AxiosError.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/AxiosHeaders.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/AxiosHeaders.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/parseHeaders.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/parseHeaders.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/sanitizeHeaderValue.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/sanitizeHeaderValue.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/classes/FormData.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/classes/FormData.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/form-data/lib/form_data.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/form-data/lib/form_data.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/classes/Buffer.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/classes/Buffer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/InterceptorManager.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/InterceptorManager.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/dispatchRequest.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/dispatchRequest.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/transformData.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/transformData.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/defaults/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/defaults/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/defaults/transitional.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/defaults/transitional.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/toURLEncodedForm.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/toURLEncodedForm.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/classes/URLSearchParams.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/node/classes/URLSearchParams.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/common/utils.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/platform/common/utils.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/formDataToJSON.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/formDataToJSON.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/methodList.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/methodList.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/cancel/isCancel.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/cancel/isCancel.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/cancel/CanceledError.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/cancel/CanceledError.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/adapters.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/adapters.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/http.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/http.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/settle.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/settle.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/buildFullPath.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/buildFullPath.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/isAbsoluteURL.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/isAbsoluteURL.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/combineURLs.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/combineURLs.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/normalizeURLForProtocolCheck.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/normalizeURLForProtocolCheck.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/proxy-from-env/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/proxy-from-env/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/dist/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/dist/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/follow-redirects/index.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/follow-redirects/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/env/data.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/env/data.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/fromDataURI.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/fromDataURI.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/parseProtocol.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/parseProtocol.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/setFormDataHeaders.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/setFormDataHeaders.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/AxiosTransformStream.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/AxiosTransformStream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/formDataToStream.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/formDataToStream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/readBlob.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/readBlob.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/Http2Sessions.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/Http2Sessions.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/callbackify.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/callbackify.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/shouldBypassProxy.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/shouldBypassProxy.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/progressEventReducer.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/progressEventReducer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/speedometer.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/speedometer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/throttle.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/throttle.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/estimateDataURLDecodedBytes.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/estimateDataURLDecodedBytes.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/xhr.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/xhr.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/cookies.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/cookies.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/resolveConfig.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/resolveConfig.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/isURLSameOrigin.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/isURLSameOrigin.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/mergeConfig.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/mergeConfig.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/assertParamsAcyclic.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/assertParamsAcyclic.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/fetch.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/adapters/fetch.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/composeSignals.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/composeSignals.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/trackStream.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/trackStream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/createMultipartBody.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/core/createMultipartBody.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/formDataToBlob.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/formDataToBlob.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/validator.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/validator.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/cancel/CancelToken.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/cancel/CancelToken.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/spread.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/spread.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/isAxiosError.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/isAxiosError.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/HttpStatusCode.js"
+        },
+        {
+          "operation": "fs.openSync",
+          "target": "file:///Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/axios/lib/helpers/HttpStatusCode.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/agent.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/quick-lru/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/delay-async-destroy.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/client-request.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/incoming-message.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/proxy-events.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/errors.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/validate-header-name.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/is-request-pseudo-header.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/validate-header-value.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/proxy-socket-handler.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/auto.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/resolve-alpn/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/calculate-server-name.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/h1-over-h2.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/js-stream-socket.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/unexpected-status-code-error.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/initialize.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/utils/check-type.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/get-auth-headers.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/h2-over-h2.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/h2-over-hx.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/http2-wrapper/source/proxies/h2-over-h1.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/combined-stream/lib/combined_stream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/delayed-stream/lib/delayed_stream.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/parallel.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/lib/iterate.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/lib/async.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/lib/defer.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/lib/abort.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/lib/state.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/lib/terminator.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/serial.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/asynckit/serialOrdered.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/es-set-tostringtag/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/has-tostringtag/shams.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/form-data/lib/populate.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/dist/agent.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/node_modules/debug/src/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/node_modules/debug/src/node.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/node_modules/debug/src/common.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/node_modules/ms/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/agent-base/dist/src/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/agent-base/node_modules/debug/src/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/agent-base/node_modules/debug/src/node.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/agent-base/node_modules/debug/src/common.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/agent-base/node_modules/ms/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/agent-base/dist/src/promisify.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/https-proxy-agent/dist/parse-proxy-response.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/follow-redirects/debug.js"
+        },
+        {
+          "operation": "net.connect",
+          "target": "127.0.0.1:51102"
+        },
+        {
+          "operation": "net.connect",
+          "target": "127.0.0.1:51102"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/index.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/internal.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/utf16.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/utf7.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/sbcs-codec.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/sbcs-data.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/sbcs-data-generated.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/dbcs-codec.js"
+        },
+        {
+          "operation": "fs.readFileSync",
+          "target": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/node_modules/iconv-lite/encodings/dbcs-data.js"
+        }
+      ]
+    }
+  },
+  "python": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "checks": {
+      "readFakeSecretOutsideAllowlist": {
+        "denied": true,
+        "errno": 1
+      },
+      "writeOutsideWorkDirectory": {
+        "denied": true,
+        "errno": 1
+      },
+      "spawnChildProcess": {
+        "denied": true,
+        "errno": 1
+      },
+      "connectOutsideAllowedPort": {
+        "denied": true,
+        "errno": 1
+      },
+      "nativeAndTextSmoke": {
+        "passed": true,
+        "providers": [
+          "CoreMLExecutionProvider",
+          "AzureExecutionProvider",
+          "CPUExecutionProvider"
+        ],
+        "textNormalized": true,
+        "modelLoaded": false
+      },
+      "imports": [
+        {
+          "module": "anyio",
+          "ok": true,
+          "distributionVersion": "4.16.0",
+          "moduleVersion": null,
+          "seconds": 0.009
+        },
+        {
+          "module": "cffi",
+          "ok": true,
+          "distributionVersion": "2.1.1",
+          "moduleVersion": null,
+          "seconds": 0.008
+        },
+        {
+          "module": "click",
+          "ok": true,
+          "distributionVersion": "8.5.0",
+          "moduleVersion": null,
+          "seconds": 0.03
+        },
+        {
+          "module": "coloredlogs",
+          "ok": true,
+          "distributionVersion": "15.0.1",
+          "moduleVersion": null,
+          "seconds": 0.018
+        },
+        {
+          "module": "filelock",
+          "ok": true,
+          "distributionVersion": "4.2.6",
+          "moduleVersion": null,
+          "seconds": 0.024
+        },
+        {
+          "module": "flatbuffers",
+          "ok": true,
+          "distributionVersion": "25.12.19",
+          "moduleVersion": null,
+          "seconds": 0.142
+        },
+        {
+          "module": "fsspec",
+          "ok": true,
+          "distributionVersion": "2026.9.0",
+          "moduleVersion": null,
+          "seconds": 0.072
+        },
+        {
+          "module": "h11",
+          "ok": true,
+          "distributionVersion": "0.16.0",
+          "moduleVersion": null,
+          "seconds": 0.012
+        },
+        {
+          "module": "hf_xet",
+          "ok": true,
+          "distributionVersion": "1.8.0",
+          "moduleVersion": null,
+          "seconds": 0.013
+        },
+        {
+          "module": "httpcore2",
+          "ok": true,
+          "distributionVersion": "2.16.0",
+          "moduleVersion": null,
+          "seconds": 0.067
+        },
+        {
+          "module": "httpx2",
+          "ok": true,
+          "distributionVersion": "2.16.0",
+          "moduleVersion": null,
+          "seconds": 0.046
+        },
+        {
+          "module": "huggingface_hub",
+          "ok": true,
+          "distributionVersion": "2.4.0",
+          "moduleVersion": null,
+          "seconds": 0.003
+        },
+        {
+          "module": "humanfriendly",
+          "ok": true,
+          "distributionVersion": "10.0",
+          "moduleVersion": null,
+          "seconds": 0.0
+        },
+        {
+          "module": "idna",
+          "ok": true,
+          "distributionVersion": "3.20",
+          "moduleVersion": null,
+          "seconds": 0.0
+        },
+        {
+          "module": "mpmath",
+          "ok": true,
+          "distributionVersion": "1.3.0",
+          "moduleVersion": null,
+          "seconds": 0.128
+        },
+        {
+          "module": "numpy",
+          "ok": true,
+          "distributionVersion": "2.4.6",
+          "moduleVersion": null,
+          "seconds": 0.0
+        },
+        {
+          "module": "onnxruntime",
+          "ok": true,
+          "distributionVersion": "1.23.2",
+          "moduleVersion": null,
+          "seconds": 0.049
+        },
+        {
+          "module": "packaging",
+          "ok": true,
+          "distributionVersion": "26.3",
+          "moduleVersion": null,
+          "seconds": 0.001
+        },
+        {
+          "module": "google.protobuf",
+          "ok": true,
+          "distributionVersion": "7.36.2",
+          "moduleVersion": null,
+          "seconds": 0.001
+        },
+        {
+          "module": "pycparser",
+          "ok": true,
+          "distributionVersion": "3.12",
+          "moduleVersion": null,
+          "seconds": 0.03
+        },
+        {
+          "module": "yaml",
+          "ok": true,
+          "distributionVersion": "6.0.3",
+          "moduleVersion": null,
+          "seconds": 0.028
+        },
+        {
+          "module": "scipy",
+          "ok": true,
+          "distributionVersion": "1.17.1",
+          "moduleVersion": null,
+          "seconds": 0.014
+        },
+        {
+          "module": "sounddevice",
+          "ok": true,
+          "distributionVersion": "0.5.6",
+          "moduleVersion": null,
+          "seconds": 0.08
+        },
+        {
+          "module": "soundfile",
+          "ok": true,
+          "distributionVersion": "0.14.0",
+          "moduleVersion": null,
+          "seconds": 0.011
+        },
+        {
+          "module": "sympy",
+          "ok": true,
+          "distributionVersion": "1.14.0",
+          "moduleVersion": null,
+          "seconds": 0.917
+        },
+        {
+          "module": "tokenizers",
+          "ok": true,
+          "distributionVersion": "0.23.3",
+          "moduleVersion": null,
+          "seconds": 0.015
+        },
+        {
+          "module": "tqdm",
+          "ok": true,
+          "distributionVersion": "4.70.1",
+          "moduleVersion": null,
+          "seconds": 0.013
+        },
+        {
+          "module": "truststore",
+          "ok": true,
+          "distributionVersion": "0.10.5",
+          "moduleVersion": null,
+          "seconds": 0.0
+        },
+        {
+          "module": "typing_extensions",
+          "ok": true,
+          "distributionVersion": "4.16.0",
+          "moduleVersion": null,
+          "seconds": 0.0
+        },
+        {
+          "module": "zerotts",
+          "ok": true,
+          "distributionVersion": "0.1.5",
+          "moduleVersion": "0.1.2",
+          "seconds": 0.012
+        }
+      ],
+      "observedPythonAuditEvents": []
+    }
+  },
+  "forbiddenCanaryConnections": [],
+  "outsideWriteCreated": false,
+  "scope": "macOS OS sandbox; real Node dependencies, native Python imports; no LIVE, model load or TTS inference"
+}

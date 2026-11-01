@@ -1,5 +1,7 @@
 # Gia cố bản làm việc Zane — 01/11/2026
 
+Bổ sung sau lần gia cố đầu: xem [rà dependency, cài Python và test cách ly](DEPENDENCY-REVIEW.md).
+
 Mốc gốc: local commit `6b18988`, khớp 29 file của upstream
 `zane-tv/tiktok-live-temple-rpc@2f8b9822f1507d66c16a1fb42053906304a16d11`.
 
@@ -65,15 +67,15 @@ lỗ hổng đã biết cho các phiên bản đó tại thời điểm kiểm t
 ## Giới hạn còn lại
 
 - Chưa kiểm thử LIVE TikTok thật, OBS/TikTok LIVE Studio thật hoặc TTS/model/native thật.
-- Python lock được tạo từ metadata, chưa cài/chạy toàn bộ native dependency. Không coi
+- Python lock đã được cài bằng wheel xác minh hash vào `.venv` Python 3.11.18; 30 package đã import trong sandbox. Chưa chạy model/native inference thật. Không coi
   lock/hash hoặc advisory rỗng là chứng nhận không có mã độc.
 - Không audit lại toàn bộ mã nguồn từng dependency, lịch sử upstream hoặc graph ONNX.
   Review trước đó chưa phát hiện bằng chứng lấy cookie/mật khẩu/SSH key trong phạm vi đã rà.
 - Process vẫn có quyền của tài khoản chạy app. Các guard HTTP không phải sandbox cho mã npm/Python
   độc hại; không chạy bằng root/admin và không cung cấp cookie/session TikTok không cần thiết.
 - Không có cấu hình triển khai public/LAN. Không port-forward hoặc đặt tunnel vào server này.
-- Máy này chưa có Bun/uv/CPython 3.11 trong PATH. Đã kiểm thử phần server bằng Node 24;
-  mã hỗ trợ Node 22+. Chưa xác nhận runtime Bun. TTS giữ tắt cho đến khi chuẩn bị và thử riêng.
+- Đã cài uv 0.13.6 và Python 3.11.18 cho `.venv`; Python 3.9 hệ thống giữ nguyên. Server đã thử bằng Node 24;
+  mã hỗ trợ Node 22+. Chưa xác nhận runtime Bun. TTS vẫn tắt, model cần thử riêng.
 - Asset nhạc nền `public/assets/bg_chant.m4a` không có trong source tải về; giao diện có synth fallback.
 
 Mức sử dụng đã có bằng chứng là phát triển và thử nghiệm cục bộ bản đã gia cố.

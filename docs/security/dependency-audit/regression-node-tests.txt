@@ -1,0 +1,43 @@
+
+> tiktok-live-temple-rpc@1.0.0 test
+> node --test test/*.test.js
+
+Live: http://127.0.0.1:51127/ | OBS: http://127.0.0.1:51127/?obs=1
+Admin: http://127.0.0.1:51127/admin
+Mã quản trị (chỉ nhập vào giao diện, không đưa vào URL): state_test_cccccccccccccccccccccccccccccccccccccccc
+TTS: disabled. Chỉ kết nối TikTok khi bấm Kết Nối.
+✔ loading old state filters dangerous keys, URLs and settings; shutdown saves atomically (191.855417ms)
+Live: http://127.0.0.1:51114/ | OBS: http://127.0.0.1:51114/?obs=1
+Admin: http://127.0.0.1:51114/admin
+Mã quản trị (chỉ nhập vào giao diện, không đưa vào URL): test_only_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+TTS: disabled. Chỉ kết nối TikTok khi bấm Kết Nối.
+✔ loopback only; startup does not connect TikTok or spawn TTS (10.523333ms)
+✔ Host/Origin/Fetch Metadata guards apply to HTTP and websocket upgrades (15.335292ms)
+✔ unauthenticated HTTP cannot reset, connect, speak or synthesize (8.295334ms)
+✔ browser session requires secret, same origin, HttpOnly cookie and supports logout (11.062375ms)
+✔ websocket is receive-only even when carrying admin bearer credentials (4.912542ms)
+✔ username validation blocks SSRF without sending any canary request (6.042542ms)
+✔ prototype keys and malformed RPC params are rejected before changing state (6.231958ms)
+✔ legitimate HTTP action broadcasts once to OBS and sanitizes viewer image URLs (2.858125ms)
+✔ TikTok adapter remains manual; live events cannot pollute prototype (2.316542ms)
+✔ body limits, headers, static-file boundaries and external admin script (6.29475ms)
+✔ login and control rates are bounded (47.506833ms)
+Live: http://127.0.0.1:51126/ | OBS: http://127.0.0.1:51126/?obs=1
+Admin: http://127.0.0.1:51126/admin
+Mã quản trị (chỉ nhập vào giao diện, không đưa vào URL): tts_test_dddddddddddddddddddddddddddddddddddddddd
+TTS: ready. Chỉ kết nối TikTok khi bấm Kết Nối.
+✔ server synthesizes once for multiple read-only overlays, and falls back after worker timeout (390.581417ms)
+✔ TTS disabled by default; worker gets no inherited credentials (1.004417ms)
+✔ text and voice limits apply before creating work (0.301375ms)
+✔ one active job; bounded queue; concurrent identical text is deduplicated (1.224208ms)
+✔ timeout kills Python and resolves all waiting jobs, leaving no background work (22.09325ms)
+✔ 20 requests per minute and no worker URLs outside the audio cache (0.766375ms)
+✔ startup failure, pipe errors and oversized output stop the worker (1.162166ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 470.550375

@@ -82,7 +82,7 @@ Lockfile hiện nhắm **CPython 3.11 trên macOS ARM64**; chưa kiểm thử na
 Cần uv và Python phù hợp để chuẩn bị môi trường riêng. Không dùng lệnh cài dependency không ghim phiên bản.
 
 ```bash
-uv venv --python 3.11 .venv
+uv venv --python 3.11.18 .venv
 uv pip sync --python .venv/bin/python --require-hashes --only-binary :all: --index-url https://pypi.org/simple requirements.lock
 
 # Lần chuẩn bị đầu: cho phép tải model tại revision đã ghim (có thể tốn nhiều dung lượng).

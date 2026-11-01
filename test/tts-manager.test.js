@@ -24,6 +24,10 @@ test('TTS disabled by default; worker gets no inherited credentials', () => {
   const f = fixture();
   assert.equal(f.environment.AWS_SECRET_ACCESS_KEY, undefined);
   assert.equal(f.environment.TTS_ALLOW_MODEL_DOWNLOAD, '0');
+  assert.equal(f.environment.COLOREDLOGS_AUTO_INSTALL, undefined);
+  assert.equal(f.environment.HF_HUB_DISABLE_IMPLICIT_TOKEN, '1');
+  assert.equal(f.environment.HF_HUB_DISABLE_TELEMETRY, '1');
+  assert.ok(f.environment.ZEROTTS_VOICES_HOME.endsWith('/voices'));
   f.manager.stop(); delete process.env.AWS_SECRET_ACCESS_KEY;
 });
 
