@@ -1,0 +1,58 @@
+{
+  "testedUtc": "2026-11-01T14:51:50.565Z",
+  "revision": "18d6681518a4becaed3c125ceb3c7db59905fe86",
+  "offlineWorkerSandbox": true,
+  "tiktokConnected": false,
+  "samples": [
+    {
+      "text": "Xin chào các bạn. Đây là giọng đọc Mai Chi đang chạy trực tiếp trên máy.",
+      "file": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/data/tts-samples/maichi-1.wav",
+      "cached": false,
+      "apiWallSec": 1.7155479169999999,
+      "synthSec": 1.68,
+      "workerRssAfterMiB": 1126.5,
+      "audio": {
+        "type": 1,
+        "channels": 1,
+        "sampleRate": 48000,
+        "bits": 16,
+        "bytes": 345644,
+        "durationSec": 3.6,
+        "peak": 0.74859619140625,
+        "rms": 0.1567224220235256
+      }
+    },
+    {
+      "text": "Cảm ơn Minh Tâm đã ủng hộ người phát triển và vận hành buổi livestream.",
+      "file": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/data/tts-samples/maichi-2.wav",
+      "cached": false,
+      "apiWallSec": 1.9097333749999998,
+      "synthSec": 1.9,
+      "workerRssAfterMiB": 1198.7,
+      "audio": {
+        "type": 1,
+        "channels": 1,
+        "sampleRate": 48000,
+        "bits": 16,
+        "bytes": 345644,
+        "durationSec": 3.6,
+        "peak": 0.71295166015625,
+        "rms": 0.1340599389098259
+      }
+    }
+  ],
+  "loadWallSec": 4.3467663750000005,
+  "voices": [
+    "baotrang",
+    "giahuy",
+    "hamy",
+    "huuduc",
+    "kimoanh",
+    "maichi",
+    "quangminh",
+    "tiendat"
+  ],
+  "workerRssReadyMiB": 1050.6,
+  "cacheHitPassed": true,
+  "passed": true
+}

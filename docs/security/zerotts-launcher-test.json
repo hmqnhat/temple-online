@@ -1,0 +1,16 @@
+{
+  "launcher": "npm run start:tts",
+  "ready": true,
+  "voices": [
+    "baotrang",
+    "giahuy",
+    "hamy",
+    "huuduc",
+    "kimoanh",
+    "maichi",
+    "quangminh",
+    "tiendat"
+  ],
+  "tiktokConnected": false,
+  "model": "zeroweight-ai/ZeroTTS@18d6681518a4becaed3c125ceb3c7db59905fe86"
+}

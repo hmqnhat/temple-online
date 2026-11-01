@@ -7,7 +7,8 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "test": "node --test test/*.test.js",
-    "test:browser": "node test/browser-smoke.cjs"
+    "test:browser": "node test/browser-smoke.cjs",
+    "start:tts": "ENABLE_TTS=1 TTS_ALLOW_MODEL_DOWNLOAD=0 node server.js"
   },
   "dependencies": {
     "express": "4.22.3",

@@ -64,6 +64,26 @@ const app = require('../server');
     assert.equal((await overlay.evaluate(() => window.templeRpc('temple.resetMerit'))).error.message, 'Overlay chỉ nhận sự kiện');
     assert.deepEqual(overlayWrites, []);
 
+    const invoke = (method, params) => admin.evaluate(async ({ method, params }) => {
+      const response = await fetch('/rpc', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ jsonrpc: '2.0', id: 7, method, params }) });
+      return response.json();
+    }, { method, params });
+    assert.ok((await invoke('temple.offerGift', { user: 'Quà nhỏ', coins: 1 })).result);
+    await overlay.waitForFunction(() => document.querySelector('#centralName').textContent === 'Quà nhỏ');
+    assert.ok((await invoke('temple.offerGift', { user: 'Quà lớn một', coins: 100 })).result);
+    await overlay.waitForFunction(() => document.querySelector('#centralName').textContent === 'Quà lớn một');
+    assert.equal(await overlay.locator('#fortuneModal.visible').count(), 0);
+    assert.ok((await invoke('temple.offerGift', { user: 'Quà lớn hai', coins: 200 })).result);
+    for (let i = 0; i < 20; i++) {
+      assert.ok((await invoke('temple.comment', { user: `Người xem ${i}`, uniqueId: `flood_${i}`,
+        comment: 'Cầu gia đình bình an' })).result);
+    }
+    assert.equal(await overlay.locator('#centralName').textContent(), 'Quà lớn một');
+    await overlay.waitForFunction(() => document.querySelector('#centralName').textContent === 'Quà lớn hai');
+    await overlay.waitForFunction(() => document.querySelector('#centralName').textContent === 'Quà nhỏ');
+    assert.deepEqual(overlayWrites, []);
+
     const live = await adminContext.newPage();
     await live.goto(origin + '/');
     const state = await live.evaluate(() => fetch('/api/state').then(res => res.json()));
@@ -80,7 +100,7 @@ const app = require('../server');
     await admin.getByText('Hủy', { exact: true }).click();
     assert.deepEqual(errors, []);
     assert.deepEqual(policyViolations, []);
-    console.log('PASS browser: login/retry, HttpOnly session, reload, logout, quick controls, OBS receives events without credentials/TTS requests, fortune animation, CSP, no JavaScript errors');
+    console.log('PASS browser: login/retry, HttpOnly session, reload, logout, quick controls, read-only OBS, fortune animation, gifts preempt comments, comment flood cannot overwrite donors, equal-tier FIFO, interrupted gift resumes, CSP, no JavaScript errors');
   } finally {
     if (browser) await browser.close();
     await app.stop();

@@ -170,6 +170,18 @@ test('TikTok adapter remains manual; live events cannot pollute prototype', asyn
   assert.equal(Object.prototype.merit, undefined);
   const state = (await request('/api/state')).json;
   assert.ok(state.leaderboard.every(viewer => !['__proto__', 'constructor', 'prototype'].includes(viewer.uniqueId)));
+  const { ws } = await connectWs();
+  for (const [coins, tier] of [[1, 'lotus'], [5, 'lamp'], [20, 'fruit'], [100, 'dragon']]) {
+    const notification = once(ws, 'message');
+    connector.emit('GIFT', { user: { uniqueId: `gift_${coins}`, nickname: 'Người ủng hộ' },
+      giftId: `gift_${coins}`, groupId: `group_${coins}`, repeatCount: 1,
+      giftDetails: { diamondCount: coins, name: `Quà ${coins}` } });
+    const message = JSON.parse((await notification)[0].toString());
+    assert.equal(message.method, 'temple.event');
+    assert.equal(message.params.event.coins, coins);
+    assert.equal(message.params.event.priorityTier, tier);
+  }
+  ws.terminate();
   connector.failDisconnect = true;
   assert.equal((await rpc('live.disconnect')).json.result.connected, false);
 });

@@ -226,6 +226,7 @@
   }
 
   let prostrationTimers = [];
+  let highlightTimers = [];
   function clearProstrationTimers() {
     while (prostrationTimers.length > 0) {
       clearTimeout(prostrationTimers.pop());
@@ -324,18 +325,18 @@
     }
     if (beam) {
       beam.classList.add('intense');
-      setTimeout(() => beam.classList.remove('intense'), 4500);
+      highlightTimers.push(setTimeout(() => beam.classList.remove('intense'), 4500));
     }
 
     const haloSys = document.getElementById('buddhaHaloSystem');
     const lotusHand = document.getElementById('lotusHandHalo');
     if (haloSys) {
       haloSys.classList.add('flare');
-      setTimeout(() => haloSys.classList.remove('flare'), 3600);
+      highlightTimers.push(setTimeout(() => haloSys.classList.remove('flare'), 3600));
     }
     if (lotusHand) {
       lotusHand.classList.add('flare');
-      setTimeout(() => lotusHand.classList.remove('flare'), 3600);
+      highlightTimers.push(setTimeout(() => lotusHand.classList.remove('flare'), 3600));
     }
     particles.spawnBellWave(540, 260, 2);
 
@@ -467,13 +468,36 @@
   // 7. Xử lý hiệu ứng khi có Nghi Thức mới
   let fortuneTimer = null;
   let grandTimer = null;
+  let grandBellTimer = null;
+
+  function stopRitualVisuals() {
+    audio.cancelTts();
+    clearProstrationTimers();
+    highlightTimers.forEach(clearTimeout); highlightTimers = [];
+    clearTimeout(fortuneTimer); clearTimeout(grandTimer); clearTimeout(grandBellTimer);
+    document.getElementById('fortuneModal')?.classList.remove('visible');
+    document.getElementById('grandCeremonyBanner')?.classList.remove('visible');
+    document.getElementById('centralWorshipper')?.classList.remove('walking-up');
+    document.getElementById('sacredLightBeam')?.classList.remove('intense');
+    document.getElementById('buddhaHaloSystem')?.classList.remove('flare');
+    document.getElementById('lotusHandHalo')?.classList.remove('flare');
+    setCentralPose('kneel');
+  }
+
+  const ritualScheduler = new window.TempleQueues.RitualScheduler({
+    onStart: triggerRitualVisuals,
+    onStop: stopRitualVisuals,
+    onAudio: (ev, url, done) => {
+      audio.enqueueTts(ev.ttsText, { voice: ev.ttsVoice || 'maichi', url, onEnd: done });
+    },
+    onDrop: (ev, reason) => {
+      if (reason === 'full') console.warn('[Ritual queue full]', window.TempleQueues.eventTier(ev));
+    }
+  });
+  window.addEventListener('pagehide', () => ritualScheduler.stop());
 
   function triggerRitualVisuals(ev) {
     if (!ev) return;
-
-    if (ev.ttsText && ev.type !== 'drawFortune') {
-      audio.enqueueTts(ev.ttsText, { voice: ev.ttsVoice || 'maichi', url: ev.ttsUrl });
-    }
 
     switch (ev.type) {
       case 'burnIncense': {
@@ -519,7 +543,7 @@
 
       case 'grandCeremony': {
         audio.playTempleBell(1.2);
-        setTimeout(() => audio.playTempleBell(1.1), 900);
+        grandBellTimer = setTimeout(() => audio.playTempleBell(1.1), 900);
         particles.spawnGrandCeremonyRain();
         pulseHallBowing();
         showGrandCeremonyBanner(ev.user, ev.giftName, ev.merit);
@@ -536,28 +560,10 @@
           `Thí chủ ${ev.user} đang thành tâm xin quẻ...`,
           false
         );
-        // Chỉ hiển thị tờ Quẻ Xăm đúng thời điểm giọng đọc bắt đầu vang lên!
-        audio.enqueueTts(ev.ttsText || '', {
-          voice: ev.ttsVoice || 'maichi',
-          url: ev.ttsUrl,
-          onStart: () => {
-            audio.playIncenseChime();
-            showFortuneModal(ev.user, ev.fortune);
-            updateCentralWorshipper(
-              ev.user,
-              ev.avatar,
-              `🎋 Quẻ số ${ev.fortune?.number} (${ev.fortune?.rank})`,
-              ev.fortune?.meaning || '',
-              true
-            );
-          },
-          onEnd: () => {
-            clearTimeout(fortuneTimer);
-            fortuneTimer = setTimeout(() => {
-              document.getElementById('fortuneModal')?.classList.remove('visible');
-            }, 1800);
-          }
-        });
+        // Show the result even when speech is disabled, full or still synthesizing.
+        showFortuneModal(ev.user, ev.fortune);
+        updateCentralWorshipper(ev.user, ev.avatar,
+          `🎋 Quẻ số ${ev.fortune?.number} (${ev.fortune?.rank})`, ev.fortune?.meaning || '', true);
         break;
       }
     }
@@ -625,7 +631,9 @@
           updateUIState(msg.params);
         } else if (msg.method === 'temple.event') {
           if (msg.params?.state) updateUIState(msg.params.state);
-          if (msg.params?.event) triggerRitualVisuals(msg.params.event);
+          if (msg.params?.event) ritualScheduler.enqueue(msg.params.event);
+        } else if (msg.method === 'tts.ready') {
+          ritualScheduler.audioReady(msg.params || {});
         } else if (msg.method === 'tts.play') {
           if (msg.params?.url) {
             audio.enqueueTts(msg.params.text || 'Nam mô A Di Đà Phật', {

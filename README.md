@@ -78,23 +78,54 @@ số, gạch dưới hoặc gạch ngang. App không tự đọc file `.env`.
 
 ### 2. TTS tùy chọn — mặc định tắt
 
-Lockfile hiện nhắm **CPython 3.11 trên macOS ARM64**; chưa kiểm thử native inference.
+Lockfile hiện nhắm **CPython 3.11 trên macOS ARM64**. Model đã được cài và thử tạo WAV thật trên máy M1 Pro; xem [kết quả TTS](docs/security/ZEROTTS-SETUP.md).
 Cần uv và Python phù hợp để chuẩn bị môi trường riêng. Không dùng lệnh cài dependency không ghim phiên bản.
 
 ```bash
 uv venv --python 3.11.18 .venv
 uv pip sync --python .venv/bin/python --require-hashes --only-binary :all: --index-url https://pypi.org/simple requirements.lock
 
-# Lần chuẩn bị đầu: cho phép tải model tại revision đã ghim (có thể tốn nhiều dung lượng).
-ENABLE_TTS=1 TTS_ALLOW_MODEL_DOWNLOAD=1 npm start
-# Những lần sau: chỉ đọc model đã có trong cache của app.
-ENABLE_TTS=1 npm start
+# Chuẩn bị model lần đầu: tải khoảng 1,05 GB và xác minh hash từng file.
+.venv/bin/python scripts/setup-zerotts.py
+# Chạy app với TTS; worker chỉ đọc model đã có trong cache.
+npm run start:tts
 ```
 
-TTS bị giới hạn 20 câu/phút, tối đa 4 tác vụ và 320 ký tự đầu vào mỗi câu
-(worker chuẩn hóa và rút gọn nội dung trước khi tổng hợp). Nếu nạp quá 120 giây hoặc
-xử lý/chờ quá 30 giây, worker bị dừng và cần khởi động lại app.
+TTS có ngân sách riêng: 20 câu/phút cho tương tác thường, 5 câu/phút cho mỗi tầng quà
+(tổng tối đa 40 câu/phút); mỗi hàng tối đa 4 tác vụ gồm tác vụ đang chạy cùng tầng.
+Đầu vào tối đa 320 ký tự (worker chuẩn hóa và rút gọn trước khi tổng hợp).
+Nếu nạp quá 120 giây hoặc tổng hợp một câu quá 30 giây, worker bị dừng và cần khởi động lại app.
+Tác vụ chờ quá hạn chỉ bị loại riêng, không dừng worker đang xử lý quà.
 Giao diện vẫn nhận sự kiện khi TTS tắt hoặc gặp lỗi.
+
+### Hàng đợi và ưu tiên quà
+
+Mỗi tầng có hàng riêng cho trình diễn và tạo giọng, theo giá trị `coins` của sự kiện:
+
+| Ưu tiên từ cao xuống thấp | Giá trị |
+| --- | --- |
+| Kim Long | Từ 100 xu |
+| Mâm ngũ quả | 20–99 xu |
+| Đèn lưu ly | 5–19 xu |
+| Hoa sen | 1–4 xu |
+| Tương tác thường | Bình luận, tim, follow/share và đọc thử thủ công |
+
+Cùng tầng xử lý FIFO. Quà tầng cao ngắt hiệu ứng/giọng đang phát của tầng thấp;
+quà bị ngắt được đưa về đầu hàng của nó và trình diễn/đọc lại từ đầu, bình luận bị ngắt được bỏ.
+Tương tác thường không ghi đè người tặng quà. Ưu tiên nghiêm ngặt: tương tác tầng thấp
+có thể chờ hoặc hết hạn nếu tầng cao đến liên tục.
+
+Hiệu ứng nhận ngay qua `temple.event`, không chờ TTS; audio được ghép sau qua `tts.ready`
+theo ID sự kiện. Model chỉ tổng hợp một câu tại một thời điểm: câu đang tổng hợp được
+hoàn thành, sau đó chọn tầng cao nhất đang chờ; không tải lại model để ngắt câu.
+
+Mỗi overlay giữ tối đa 10 tương tác thường chờ và 20 quà mỗi tầng (gồm quà đang trình diễn).
+Tương tác thường chờ quá 15 giây, quà chờ quá 120 giây sẽ bị loại. Hàng đầy từ chối
+sự kiện trình diễn mới trong chính tầng đó và ghi cảnh báo console; điểm/bảng sự kiện
+đã ghi ở server vẫn được giữ. Một lượt hiện tối thiểu 8 giây, tối đa 45 giây nếu đang
+chờ/phát giọng. TTS chờ tối đa 30 giây cho tương tác thường, 120 giây cho quà.
+Quá tải/hết lượt TTS vẫn có hiệu ứng, có thể không có giọng đọc. Hàng trình diễn nằm
+trong bộ nhớ mỗi overlay, chưa khôi phục sau reload hoặc mất kết nối.
 
 
 ---

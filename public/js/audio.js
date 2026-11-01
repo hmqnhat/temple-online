@@ -32,6 +32,8 @@ class TempleAudioEngine {
     this.ttsQueue = [];
     this.ttsPlaying = false;
     this.currentAudio = null;
+    this.playbackGeneration = 0;
+    this.cancelCurrentPlayback = null;
     this.onTtsStateChange = null;
   }
 
@@ -311,7 +313,6 @@ class TempleAudioEngine {
 
     if (this.ttsQueue.length >= 6) {
       const dropped = this.ttsQueue.shift();
-      if (dropped?.onStart) dropped.onStart();
       if (dropped?.onEnd) dropped.onEnd();
     }
 
@@ -332,6 +333,7 @@ class TempleAudioEngine {
     if (this.ttsPlaying || this.ttsQueue.length === 0) return;
     this.ttsPlaying = true;
     const item = this.ttsQueue.shift();
+    const generation = this.playbackGeneration;
 
     try {
       let audioUrl = item.url;
@@ -342,16 +344,19 @@ class TempleAudioEngine {
         }
         if (item.onStart) item.onStart();
         await this.playWavUrl(audioUrl);
+        if (generation !== this.playbackGeneration) return;
         if (item.onEnd) item.onEnd();
       } else {
         if (item.onStart) item.onStart();
         if (item.onEnd) setTimeout(item.onEnd, 5500);
       }
     } catch (err) {
+      if (generation !== this.playbackGeneration) return;
       console.warn('[ZeroTTS Playback Warning]', err);
       if (item.onStart) item.onStart();
       if (item.onEnd) item.onEnd();
     } finally {
+      if (generation !== this.playbackGeneration) return;
       this.ttsPlaying = false;
       if (this.ttsQueue.length === 0) {
         this.setBgDucking(false);
@@ -364,26 +369,34 @@ class TempleAudioEngine {
     }
   }
 
+  cancelTts() {
+    this.playbackGeneration++;
+    this.ttsQueue.length = 0;
+    this.cancelCurrentPlayback?.();
+    this.ttsPlaying = false;
+    this.setBgDucking(false);
+    this.onTtsStateChange?.({ speaking: false, synthesizing: false, text: '' });
+  }
+
   playWavUrl(url) {
     return new Promise((resolve) => {
       try {
         const audio = new Audio(url);
         this.currentAudio = audio;
         audio.volume = this.ttsVolume;
-        audio.onended = () => {
-          this.currentAudio = null;
+        const finish = () => {
+          if (this.currentAudio === audio) this.currentAudio = null;
+          if (this.cancelCurrentPlayback === cancel) this.cancelCurrentPlayback = null;
+          audio.onended = null; audio.onerror = null;
           resolve();
         };
-        audio.onerror = () => {
-          this.currentAudio = null;
-          resolve();
-        };
+        const cancel = () => { audio.pause(); finish(); };
+        this.cancelCurrentPlayback = cancel;
+        audio.onended = finish;
+        audio.onerror = finish;
         const playPromise = audio.play();
         if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(() => {
-            this.currentAudio = null;
-            resolve();
-          });
+          playPromise.catch(finish);
         }
       } catch (_) {
         resolve();

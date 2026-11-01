@@ -1,5 +1,8 @@
 # Rà dependency và chuẩn bị Python — 01/11/2026
 
+Báo cáo này ghi nhận vòng rà dependency trước khi tải model. Bổ sung tiếp theo:
+[ZeroTTS đã cài model và thử tổng hợp thật](ZEROTTS-SETUP.md).
+
 ## Kết luận trong phạm vi đã kiểm tra
 
 Chưa tìm thấy bằng chứng mã độc trong những đường mã được đọc kỹ và hành vi đã quan sát.

@@ -1,0 +1,315 @@
+{
+  "checkedUtc": "2026-11-01T14:48:14.810216+00:00",
+  "repo": "zeroweight-ai/ZeroTTS",
+  "revision": "18d6681518a4becaed3c125ceb3c7db59905fe86",
+  "bytes": 1047985886,
+  "files": [
+    {
+      "file": "config.json",
+      "bytes": 378,
+      "gitBlob": "d139436b25a71f05be52c9e6a2a17a3eb9781a60",
+      "lfsSha256": null,
+      "localSha256": "3676da6a9f4dba7a8f2d106d5c1fb02c491391dc19c91dae893133a7e219d666",
+      "verified": true
+    },
+    {
+      "file": "null_voice_emb.npy",
+      "bytes": 30848,
+      "gitBlob": "a19631a07e1e5bddc3692e64cf13465d96a672c2",
+      "lfsSha256": "ec014c14f79e8fc16f4ca6ea557f33fa2cbd7d448b5de5f467aace9ca0321e9f",
+      "localSha256": "ec014c14f79e8fc16f4ca6ea557f33fa2cbd7d448b5de5f467aace9ca0321e9f",
+      "verified": true
+    },
+    {
+      "file": "onnx/codec/LICENSE-Apache-2.0.txt",
+      "bytes": 359,
+      "gitBlob": "fe248076c064bc6cd0aa80b6e69cb7bed9892b5f",
+      "lfsSha256": null,
+      "localSha256": "38ab08051cc3a06dd39507b77d7e8b928b563c49288eb7263339712652d41c6d",
+      "verified": true
+    },
+    {
+      "file": "onnx/codec/codec_browser_onnx_meta.json",
+      "bytes": 14056,
+      "gitBlob": "4d37c35a899b2bf09af133748a9040666e91a2a8",
+      "lfsSha256": null,
+      "localSha256": "32009d6ac1cd2663bbbf5c06d6835b3a862c02f7de121663071938f2edac8e92",
+      "verified": true
+    },
+    {
+      "file": "onnx/codec/moss_audio_tokenizer_decode_full.onnx",
+      "bytes": 681902,
+      "gitBlob": "364cf6154c209cc8f709e8931dc9e21dc94132f7",
+      "lfsSha256": "0fbbafe3fd4afa2a019af5c5ced204af6e2d1db044fa40f021525d2aee95b4ac",
+      "localSha256": "0fbbafe3fd4afa2a019af5c5ced204af6e2d1db044fa40f021525d2aee95b4ac",
+      "verified": true
+    },
+    {
+      "file": "onnx/codec/moss_audio_tokenizer_decode_shared.data",
+      "bytes": 44198912,
+      "gitBlob": "435aa9e8047313a6ceaaa643a4ee754317719719",
+      "lfsSha256": "e69d52e0f4e84ca27850557ee54face46632d3a5a16c89bd246c7c408466dcad",
+      "localSha256": "e69d52e0f4e84ca27850557ee54face46632d3a5a16c89bd246c7c408466dcad",
+      "verified": true
+    },
+    {
+      "file": "onnx/codec/moss_audio_tokenizer_decode_step.onnx",
+      "bytes": 351400,
+      "gitBlob": "c1eee2aaf1dbcb551c0adfdc87722cbe5c90a004",
+      "lfsSha256": "9527c86a29e1837edec1f74db57d5eeaadb3a715af3382703566460afed25855",
+      "localSha256": "9527c86a29e1837edec1f74db57d5eeaadb3a715af3382703566460afed25855",
+      "verified": true
+    },
+    {
+      "file": "onnx/local_frame_decode.onnx",
+      "bytes": 186743011,
+      "gitBlob": "e25c78dec39ae02a3ed64c852287c470c9154c52",
+      "lfsSha256": "3c4540ef4e69dcf604dc6f60f6f99f119189694ff5f31113def20406e274f025",
+      "localSha256": "3c4540ef4e69dcf604dc6f60f6f99f119189694ff5f31113def20406e274f025",
+      "verified": true
+    },
+    {
+      "file": "onnx/prefix_step.onnx",
+      "bytes": 348303894,
+      "gitBlob": "cd3168b9637be115806877607d014d311541d8a0",
+      "lfsSha256": "b7544c9fdd3535b21fe8dea855407180ad2084f9da298f8a153893522496565b",
+      "localSha256": "b7544c9fdd3535b21fe8dea855407180ad2084f9da298f8a153893522496565b",
+      "verified": true
+    },
+    {
+      "file": "onnx/text_encoder.onnx",
+      "bytes": 323096725,
+      "gitBlob": "1e84421a2ce138890a2ca06ddd0017433ea8a97d",
+      "lfsSha256": "d37557a4abe07953a02686a176664486e73838389a14ff4a3f36b47ac2bccd52",
+      "localSha256": "d37557a4abe07953a02686a176664486e73838389a14ff4a3f36b47ac2bccd52",
+      "verified": true
+    },
+    {
+      "file": "onnx/voice_encoder.onnx",
+      "bytes": 139853093,
+      "gitBlob": "86f1e6d908a3f264b04c1701712ab86007c427f6",
+      "lfsSha256": "f6b84e65108d39bbff4f82927881c608778015fa36aba253c8336c08ab239f13",
+      "localSha256": "f6b84e65108d39bbff4f82927881c608778015fa36aba253c8336c08ab239f13",
+      "verified": true
+    },
+    {
+      "file": "silence_frame.npy",
+      "bytes": 256,
+      "gitBlob": "37c49cd39462083dc92864e110f0b3dc361e965d",
+      "lfsSha256": "bb2628efa99ae02819b04ff7509ef43ddb3213a9fb0916e4e88b8d1a7c3a1810",
+      "localSha256": "bb2628efa99ae02819b04ff7509ef43ddb3213a9fb0916e4e88b8d1a7c3a1810",
+      "verified": true
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 191542,
+      "gitBlob": "494c917d5e064333d16c144ae0bf22ffee9519c7",
+      "lfsSha256": null,
+      "localSha256": "4fd646e8a1fd6694cb9c876c914a516ef8dd84b4f84db2605be1a7388885ae91",
+      "verified": true
+    },
+    {
+      "file": "voices/baotrang/meta.json",
+      "bytes": 305,
+      "gitBlob": "78829c9538bf608f409131e28a6cb08ea9c797e1",
+      "lfsSha256": null,
+      "localSha256": "eb2f68dde7d10da196b23adf0e276f77f9b4304e07e6517fc42b7a52104133f1",
+      "verified": true
+    },
+    {
+      "file": "voices/baotrang/preview.wav",
+      "bytes": 437804,
+      "gitBlob": "3ef339de4f2ecf75393ff036836cc2461071f79b",
+      "lfsSha256": "cfe47bfeabb0177c9f346bae41a42c655ee4531184938d536317470be6ab5cfd",
+      "localSha256": "cfe47bfeabb0177c9f346bae41a42c655ee4531184938d536317470be6ab5cfd",
+      "verified": true
+    },
+    {
+      "file": "voices/baotrang/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "e790922e5e209addb9df81157b083c75ae2632eb",
+      "lfsSha256": "abbc5807cc4767e7c62cc59f7b7cd04b4b7e0dba176086447a0c114578cf695a",
+      "localSha256": "abbc5807cc4767e7c62cc59f7b7cd04b4b7e0dba176086447a0c114578cf695a",
+      "verified": true
+    },
+    {
+      "file": "voices/giahuy/meta.json",
+      "bytes": 284,
+      "gitBlob": "7e13fe2b5e5bf82c526a92d1d6a57a3b59d42b38",
+      "lfsSha256": null,
+      "localSha256": "6cea4affa14ab3bcf1ceb6be3a5dab21271463db447f5486b8c5a94ec3e8714c",
+      "verified": true
+    },
+    {
+      "file": "voices/giahuy/preview.wav",
+      "bytes": 629804,
+      "gitBlob": "22cc7e64e6def1a6e18bd76dbc6612a4fe34bb70",
+      "lfsSha256": "16feeedc4bc930bbe5aad4e657d1df78e60abc11fcac179a42f75c0d268b25d1",
+      "localSha256": "16feeedc4bc930bbe5aad4e657d1df78e60abc11fcac179a42f75c0d268b25d1",
+      "verified": true
+    },
+    {
+      "file": "voices/giahuy/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "6aaf9e172d0d144cfb43fdad864a6b54a3de073d",
+      "lfsSha256": "3979a8369000eaaee1130801c1cacdadddc12e8d9a4a604be7430c4bcc6df32e",
+      "localSha256": "3979a8369000eaaee1130801c1cacdadddc12e8d9a4a604be7430c4bcc6df32e",
+      "verified": true
+    },
+    {
+      "file": "voices/hamy/meta.json",
+      "bytes": 270,
+      "gitBlob": "4d33c16442dbd0a7229783a380d2746f5f1a1dda",
+      "lfsSha256": null,
+      "localSha256": "9b29222f8a8c4b73a6738fae2b62f322be3085f63888409fab93d3b6b1459b5d",
+      "verified": true
+    },
+    {
+      "file": "voices/hamy/preview.wav",
+      "bytes": 460844,
+      "gitBlob": "19b01aca7ba8846f5a8b9fd70517ad6b1d164cda",
+      "lfsSha256": "4bc33835023d7786bc75cb6c5c2681b1aec1ca3fb01300044b30d2161b29a171",
+      "localSha256": "4bc33835023d7786bc75cb6c5c2681b1aec1ca3fb01300044b30d2161b29a171",
+      "verified": true
+    },
+    {
+      "file": "voices/hamy/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "2bcacd7f01af75f77b91d73b087b4b1afcc10af9",
+      "lfsSha256": "a864c127386f74976154c840875f6ad615d74c377768bc6edcb75e3278f228b7",
+      "localSha256": "a864c127386f74976154c840875f6ad615d74c377768bc6edcb75e3278f228b7",
+      "verified": true
+    },
+    {
+      "file": "voices/huuduc/meta.json",
+      "bytes": 301,
+      "gitBlob": "15651a9fe847ef330661eaeb38352062c5c0edb9",
+      "lfsSha256": null,
+      "localSha256": "84869f386fe884418da285a22b95d6a79da5037d029425e44f81f5e9ce54ee19",
+      "verified": true
+    },
+    {
+      "file": "voices/huuduc/preview.wav",
+      "bytes": 491564,
+      "gitBlob": "c7c3443205885290fa46680441ed060e7877a472",
+      "lfsSha256": "8241e4cefd7bc526e101f0d0db7a793b9e2159ffae9f2f2e3c1cc94edebec184",
+      "localSha256": "8241e4cefd7bc526e101f0d0db7a793b9e2159ffae9f2f2e3c1cc94edebec184",
+      "verified": true
+    },
+    {
+      "file": "voices/huuduc/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "5e52ca3f9c95586617ccb3f3e7f685b11d9df42f",
+      "lfsSha256": "d7a6370180263093eb9dd009661ba24b5309f0ba94ec18d8ff2323c80616a7eb",
+      "localSha256": "d7a6370180263093eb9dd009661ba24b5309f0ba94ec18d8ff2323c80616a7eb",
+      "verified": true
+    },
+    {
+      "file": "voices/index.json",
+      "bytes": 3348,
+      "gitBlob": "0e8990db8fc5287bb24ad5e9f0e2afb4563d6565",
+      "lfsSha256": null,
+      "localSha256": "13637f10cb361ee90d67ef0932126e8bf835b4b1ee6e038b9a769d62284456db",
+      "verified": true
+    },
+    {
+      "file": "voices/kimoanh/meta.json",
+      "bytes": 303,
+      "gitBlob": "0d9c2511a0a2f9dcb436ecf8ed8104c4691466d9",
+      "lfsSha256": null,
+      "localSha256": "84f61033f18ca44dabdf6733c6e963678673b627eb9b3499ad91ea835d4f9e96",
+      "verified": true
+    },
+    {
+      "file": "voices/kimoanh/preview.wav",
+      "bytes": 721964,
+      "gitBlob": "b509bd9d0fcff9a8d8e0dac5ad35cbf890dbf3eb",
+      "lfsSha256": "235bbe6aac7abbac191b2302ff52e51422076bf8117cd4142de1da7fe837a806",
+      "localSha256": "235bbe6aac7abbac191b2302ff52e51422076bf8117cd4142de1da7fe837a806",
+      "verified": true
+    },
+    {
+      "file": "voices/kimoanh/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "ff68e6610741d5821b74e94f84d735e379a9f230",
+      "lfsSha256": "0aee413f25eae30123f930bd525d31a3b5a20c0803b4899305c2ff4a69466946",
+      "localSha256": "0aee413f25eae30123f930bd525d31a3b5a20c0803b4899305c2ff4a69466946",
+      "verified": true
+    },
+    {
+      "file": "voices/maichi/meta.json",
+      "bytes": 260,
+      "gitBlob": "c101424d06b08297e193ac910eeabc94029a8bb3",
+      "lfsSha256": null,
+      "localSha256": "39cb20636913f2ad28294a4d2aaeb7fa811c0412a29713b8c0fec37bd2ae165c",
+      "verified": true
+    },
+    {
+      "file": "voices/maichi/preview.wav",
+      "bytes": 646210,
+      "gitBlob": "bd8696dc691f6cb27bbb3bd884eb0e48d078171f",
+      "lfsSha256": "978a62c9d93cd2a955005c5c9ffac6f3b8a37cc60fb85656e950c119d97c1dff",
+      "localSha256": "978a62c9d93cd2a955005c5c9ffac6f3b8a37cc60fb85656e950c119d97c1dff",
+      "verified": true
+    },
+    {
+      "file": "voices/maichi/voice.npz",
+      "bytes": 31222,
+      "gitBlob": "f32eae600933c3be6d864cdf331142cf2c263fe8",
+      "lfsSha256": "d49e0a406d3a005e95f0a19476426973946c4a97e0087eefd638de222913ae3c",
+      "localSha256": "d49e0a406d3a005e95f0a19476426973946c4a97e0087eefd638de222913ae3c",
+      "verified": true
+    },
+    {
+      "file": "voices/quangminh/meta.json",
+      "bytes": 282,
+      "gitBlob": "8c814d9899ecf193f5e526a2bb3cb248db56df55",
+      "lfsSha256": null,
+      "localSha256": "eeb63a9835974d1122f9b6fb94bd5a8bfb3bcf7d718cf13ad75e5bc618a5d17f",
+      "verified": true
+    },
+    {
+      "file": "voices/quangminh/preview.wav",
+      "bytes": 391724,
+      "gitBlob": "0b367353ba142d83827a4e7a1a8646a70a3ba148",
+      "lfsSha256": "0257b6868a5ee37b2ef0f54d35d06c9d193c0358b2e66edc2ea7e1248608cb39",
+      "localSha256": "0257b6868a5ee37b2ef0f54d35d06c9d193c0358b2e66edc2ea7e1248608cb39",
+      "verified": true
+    },
+    {
+      "file": "voices/quangminh/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "a83551ee6e35afb514fa46d5f63fe0ef88feb4a2",
+      "lfsSha256": "4d2acb18f831ade23ed2d02e7b749fa745c95e9ee305795c5ddeb75f93d35fdb",
+      "localSha256": "4d2acb18f831ade23ed2d02e7b749fa745c95e9ee305795c5ddeb75f93d35fdb",
+      "verified": true
+    },
+    {
+      "file": "voices/tiendat/meta.json",
+      "bytes": 303,
+      "gitBlob": "cd0699b5ab6886dab436e0b13d097f2a2e92a092",
+      "lfsSha256": null,
+      "localSha256": "a62d71ef35fc9e6b01bae0ba3fdfbfeee660bb1052a52077dcbb09db7f2d0f21",
+      "verified": true
+    },
+    {
+      "file": "voices/tiendat/preview.wav",
+      "bytes": 483884,
+      "gitBlob": "707edb56f059217b9099e304589659ea74c16794",
+      "lfsSha256": "833a33be52c083c56a11783e67d8cd953b794b8a4334e15e1c14bf11adaf966c",
+      "localSha256": "833a33be52c083c56a11783e67d8cd953b794b8a4334e15e1c14bf11adaf966c",
+      "verified": true
+    },
+    {
+      "file": "voices/tiendat/voice.npz",
+      "bytes": 31262,
+      "gitBlob": "8da8caee88938fa3b7a618f8f2694981c7a33e71",
+      "lfsSha256": "a076fe7b938ad057652ffc4614678395edad90ab5cdc74546f3977636de15d0a",
+      "localSha256": "a076fe7b938ad057652ffc4614678395edad90ab5cdc74546f3977636de15d0a",
+      "verified": true
+    }
+  ],
+  "downloaded": true,
+  "snapshot": "/Users/nhat.hm/Work/5-chua-online/tiktok-live-temple-rpc-main/data/model-cache/hub/models--zeroweight-ai--ZeroTTS/snapshots/18d6681518a4becaed3c125ceb3c7db59905fe86",
+  "verifiedFiles": 38
+}

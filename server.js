@@ -3,6 +3,7 @@ const http = require('http');
 const path = require('path');
 const fs = require('fs');
 const { ZeroTTSManager } = require('./lib/tts-manager');
+const { eventTier } = require('./public/js/ritual-queue');
 const { createSecurity, validViewerKey, safeAvatar, resolveTikTokUsername, validateParams, isPlainObject } = require('./lib/security');
 const { WebSocketServer } = require('ws');
 const { TikTokLiveConnection, WebcastEvent, ControlEvent } = require('tiktok-live-connector');
@@ -1075,11 +1076,14 @@ function sendNotification(method, params) {
 }
 
 function broadcastNotification(method, params) {
-  if (method === 'temple.event' && params.event?.ttsText && state.settings.ttsEnabled) {
-    // Generate once on the server. OBS receives a WAV URL, never an admin credential.
-    const event = { ...params.event };
-    void zeroTts.synthesize(event.ttsText, event.ttsVoice).then(result => {
-      sendNotification(method, { event: { ...event, ttsUrl: result.ok ? result.url : null }, state: getPublicState() });
+  if (method === 'temple.event' && params.event) {
+    const event = { ...params.event, priorityTier: eventTier(params.event) };
+    const pending = Boolean(event.ttsText && state.settings.ttsEnabled && zeroTts.ready);
+    // Visuals never wait for synthesis. Audio is attached to the same event ID later.
+    sendNotification(method, { ...params, event: { ...event, ttsPending: pending, ttsUrl: null } });
+    if (pending) void zeroTts.synthesize(event.ttsText, event.ttsVoice, event.priorityTier).then(result => {
+      sendNotification('tts.ready', { eventId: event.id, url: result.ok ? result.url : null,
+        error: result.ok ? null : result.error });
     });
     return;
   }
