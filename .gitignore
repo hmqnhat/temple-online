@@ -1,0 +1,9 @@
+node_modules/
+.venv/
+data/
+dist/
+embedded-assets.js
+.DS_Store
+*.log
+*.m4a
+public/assets/bg_chant.m4a
