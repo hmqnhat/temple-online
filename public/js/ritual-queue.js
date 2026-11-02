@@ -41,10 +41,10 @@
   // Only one foreground ritual/speech at a time. A higher tier interrupts it;
   // interrupted gifts resume from the start, interrupted community events retire.
   class RitualScheduler {
-    constructor({ onStart, onStop, onAudio, onDrop = () => {}, now = Date.now,
+    constructor({ onStart, onStop, onAudio, onSettled, onDrop = () => {}, now = Date.now,
       setTimer = (fn, ms) => setTimeout(fn, ms), clearTimer = id => clearTimeout(id),
       holdMs = 8000, maxHoldMs = 45000 } = {}) {
-      Object.assign(this, { onStart, onStop, onAudio, onDrop, now, setTimer, clearTimer, holdMs, maxHoldMs });
+      Object.assign(this, { onStart, onStop, onAudio, onSettled, onDrop, now, setTimer, clearTimer, holdMs, maxHoldMs });
       this.queue = new LaneQueue({ community: 10, lotus: 20, lamp: 20, fruit: 20, dragon: 20 });
       this.items = new Map();
       this.active = null;
@@ -80,7 +80,7 @@
       if (!item) return; // Late audio for dropped/expired/interrupted comments stays silent.
       item.pending = false;
       item.url = typeof url === 'string' && /^\/tts-cache\/[a-z0-9_-]+\.wav$/.test(url) ? url : null;
-      if (this.active?.item === item) { this.playAudio(); this.schedule(); }
+      if (this.active?.item === item) { this.onSettled?.(item.event, item.url); this.playAudio(); this.schedule(); }
     }
     pump() {
       if (this.active) return;
@@ -88,7 +88,7 @@
       const item = this.queue.shift();
       if (!item) return;
       this.active = { item, startedAt: this.now(), audioStarted: false, speaking: false, timer: null };
-      this.onStart?.(item.event);
+      this.onStart?.(item.event, { audioPending: item.pending });
       this.playAudio();
       this.schedule();
     }

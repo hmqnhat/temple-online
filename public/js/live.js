@@ -459,7 +459,7 @@
       case 'grandCeremony':
         return `🪷 <strong>${escapeHtml(ev.user)}</strong> dâng <em>${escapeHtml(ev.giftName)}</em> (+${ev.merit} CĐ)`;
       case 'drawFortune':
-        return `🎋 <strong>${escapeHtml(ev.user)}</strong> gieo được Quẻ số ${ev.fortune?.number} (${ev.fortune?.rank})`;
+        return `🎋 <strong>${escapeHtml(ev.user)}</strong> gieo được Quẻ số ${ev.fortune?.number} (${ev.fortune?.vietnamese?.rank || ''})`;
       default:
         return `✨ <strong>${escapeHtml(ev.user || 'Thí chủ')}</strong> tương tác`;
     }
@@ -485,7 +485,10 @@
   }
 
   const ritualScheduler = new window.TempleQueues.RitualScheduler({
+    maxHoldMs: 90000, // long fortune verses are synthesized in several chunks
     onStart: triggerRitualVisuals,
+    // The fortune card waits for the voice so the picture never runs ahead of the sound.
+    onSettled: ev => { if (ev.type === 'drawFortune') revealFortune(ev); },
     onStop: stopRitualVisuals,
     onAudio: (ev, url, done) => {
       audio.enqueueTts(ev.ttsText, { voice: ev.ttsVoice || 'maichi', url, onEnd: done });
@@ -496,7 +499,7 @@
   });
   window.addEventListener('pagehide', () => ritualScheduler.stop());
 
-  function triggerRitualVisuals(ev) {
+  function triggerRitualVisuals(ev, { audioPending = false } = {}) {
     if (!ev) return;
 
     switch (ev.type) {
@@ -560,10 +563,8 @@
           `Thí chủ ${ev.user} đang thành tâm xin quẻ...`,
           false
         );
-        // Show the result even when speech is disabled, full or still synthesizing.
-        showFortuneModal(ev.user, ev.fortune);
-        updateCentralWorshipper(ev.user, ev.avatar,
-          `🎋 Quẻ số ${ev.fortune?.number} (${ev.fortune?.rank})`, ev.fortune?.meaning || '', true);
+        // Reveal immediately only when no voice is coming; otherwise onSettled reveals it with the audio.
+        if (!audioPending) revealFortune(ev);
         break;
       }
     }
@@ -586,14 +587,21 @@
     }, 10600);
   }
 
+  function revealFortune(ev) {
+    showFortuneModal(ev.user, ev.fortune);
+    updateCentralWorshipper(ev.user, ev.avatar,
+      `🎋 Quẻ số ${ev.fortune?.number} (${ev.fortune?.vietnamese?.rank || ''})`, ev.fortune?.vietnamese?.title || '', true);
+  }
+
   function showFortuneModal(user, fortune) {
     if (!fortune) return;
     const modal = document.getElementById('fortuneModal');
-    document.getElementById('fortuneRankBadge').textContent = fortune.rank.toUpperCase();
-    document.getElementById('fortuneTitle').textContent = `Quẻ Số ${fortune.number} — ${fortune.title}`;
+    const vi = fortune.vietnamese || {};
+    document.getElementById('fortuneRankBadge').textContent = `QUẺ ${(vi.rank || '').toUpperCase()}`;
+    document.getElementById('fortuneTitle').textContent = `Quẻ Số ${fortune.number} — ${vi.title || ''} (${fortune.original?.title || ''})`;
     document.getElementById('fortuneDevotee').textContent = `Thí chủ cầu quẻ: ${user}`;
-    document.getElementById('fortunePoem').textContent = fortune.poem;
-    document.getElementById('fortuneMeaning').textContent = `Lời bàn: ${fortune.meaning}`;
+    document.getElementById('fortunePoem').textContent = vi.poemTranslation || '';
+    document.getElementById('fortuneMeaning').textContent = `Lời giải: ${vi.summary || ''}`;
 
     modal.classList.add('visible');
     clearTimeout(fortuneTimer);

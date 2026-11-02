@@ -137,3 +137,27 @@ test('startup failure, pipe errors and oversized output stop the worker', async 
     assert.equal(manager.ready, false);
   }
 });
+
+test('full scalar input including astral text is sent intact; invalid length is explicit', async () => {
+  const { manager, writes, reply } = fixture();
+  const text = 'Nguyễn Thanh Tâm ' + '🌸'.repeat(250) + ' Cầu chúc bình an.';
+  const job = manager.synthesize(text);
+  assert.equal(writes[0].text, text);
+  reply({ type: 'result', id: writes[0].id, ok: true, url: '/tts-cache/full.wav', durationMs: 1000,
+    normalizedText: 'Nguyễn Thanh Tâm. Cầu chúc bình an.', chunkCount: 2, normalizationVersion: 'v6-paragraph-pauses-1' });
+  const result = await job; assert.equal(result.status, 'ready'); assert.equal(result.chunkCount, 2);
+  assert.equal((await manager.synthesize('🌸'.repeat(321))).status, 'failed'); manager.stop();
+});
+
+test('late or duplicate logical result cannot finish the next speech; invalid duration fails', async () => {
+  const { manager, writes, reply } = fixture();
+  const first = manager.synthesize('Câu đầu'); const second = manager.synthesize('Câu cuối');
+  const id = writes[0].id;
+  reply({ type: 'result', id, ok: false, error: 'chunk_failed' });
+  assert.equal((await first).status, 'failed');
+  reply({ type: 'result', id, ok: true, url: '/tts-cache/stale.wav' });
+  assert.equal(manager.active.id, writes[1].id);
+  reply({ type: 'result', id: writes[1].id, ok: true, url: '/tts-cache/long.wav', durationMs: 60001 });
+  const result = await second; assert.equal(result.status, 'failed'); assert.equal(result.url, null);
+  manager.stop();
+});

@@ -1,0 +1,1708 @@
+{
+    "collectionId": "ctc-guanyin-100",
+    "scope": "Chỉ dịch phần 解曰 (lời giải ngắn truyền thống) và phiên âm tên tích. Bài thơ bốn câu giữ nguyên Hán văn, chưa dịch.",
+    "language": "vi",
+    "status": "reviewed_with_traditional_poetry",
+    "records": [
+        {
+            "number": 1,
+            "storyTitleVi": "Chung Ly thành đạo",
+            "poemHanViet": [
+                "Thiên khai địa tịch tác lương duyên",
+                "Nhật cát thời lương vạn vật toàn",
+                "Nhược đắc thử xăm phi tiểu khả",
+                "Nhân hành trung chính Đế vương tuyên"
+            ],
+            "poemVi": [
+                "Đất mở trời khai kết mối duyên,",
+                "Ngày lành giờ tốt vạn sự tuyền.",
+                "Người xin đắc đặng quẻ xâm ấy,",
+                "Trung chính lòng ngay bậc Đế tuyên."
+            ],
+            "glossVi": "Nhanh mà chẳng vội, gặp thời đúng lúc; Quán Âm giáng bút, báo người tỏ tường."
+        },
+        {
+            "number": 2,
+            "storyTitleVi": "Tô Tần bất đệ",
+            "poemHanViet": [
+                "Kình ngư vị biến thủ giang hồ",
+                "Bất khả thăng đằng cánh vọng cao",
+                "Dị nhật tranh vinh thân biến hóa",
+                "Hứa quân nhất dược khiêu Long Môn"
+            ],
+            "poemVi": [
+                "Cá kình chưa biến ở giang hồ,",
+                "Chớ vội bay cao tính chuyện to.",
+                "Ngày khác thân mình nên biến hóa,",
+                "Long Môn nhảy vọt thỏa cơ đồ."
+            ],
+            "glossVi": "Nhẫn được cứ nhẫn, nhịn được cứ nhịn; hãy đợi thời tới, công danh vẫn còn."
+        },
+        {
+            "number": 3,
+            "storyTitleVi": "Đổng Vĩnh mại thân",
+            "poemHanViet": [
+                "Lâm phong mạo vũ khứ hoàn quy",
+                "Chính thị kỳ thân tự yến nhi",
+                "Hàm đắc nê lai dục tác lũy",
+                "Đáo đầu lũy hoại phục hoàn nê"
+            ],
+            "poemVi": [
+                "Dãi gió dầm mưa đi lại về,",
+                "Thân như chim én buổi sơn khê.",
+                "Ngậm bùn kết tổ mong yên chỗ,",
+                "Tổ lở công tiêu đất trả về."
+            ],
+            "glossVi": "Trăm phương tính kế, sớm tối chẳng ngơi; ai hay việc ấy, rốt cuộc nhọc lòng."
+        },
+        {
+            "number": 4,
+            "storyTitleVi": "Ngọc Liên hội Thập Bằng",
+            "poemHanViet": [
+                "Thiên niên cổ kính phục trùng viên",
+                "Nữ tái cầu phu nam tái hôn",
+                "Tự thử môn đình trùng cải hoán",
+                "Cánh thiêm phúc lộc tại nhi tôn"
+            ],
+            "poemVi": [
+                "Gương xưa ngàn tuổi lại lành nguyên,",
+                "Gái kiếm chồng thêm, trai nối duyên.",
+                "Từ đấy cửa nhà thay đổi mới,",
+                "Cháu con thêm hưởng phúc lộc truyền."
+            ],
+            "glossVi": "Đãi cát thấy vàng, cưỡi rồng đạp hổ; tuy có nhọc lòng, trong có ích lợi."
+        },
+        {
+            "number": 5,
+            "storyTitleVi": "Lưu Thần ngộ tiên",
+            "poemHanViet": [
+                "Nhất chùy tạc địa yếu cầu tuyền",
+                "Nỗ lực cầu chi đắc tối nan",
+                "Vô ý nga nhiên ngộ tri kỷ",
+                "Tương phùng huề thủ thướng thanh thiên"
+            ],
+            "poemVi": [
+                "Một mũi khoan sâu kiếm mạch nguồn,",
+                "Ra công gắng sức nhọc nhằn luôn.",
+                "Tình cờ bỗng gặp người tri kỷ,",
+                "Dắt tay cùng bước tận trời khuôn."
+            ],
+            "glossVi": "Mong cầu tâm sự, hướng Tây khá tìm; chi bằng chớ động, tại chỗ mưu thành."
+        },
+        {
+            "number": 6,
+            "storyTitleVi": "Nhân Quý ngộ chủ",
+            "poemHanViet": [
+                "Đầu thân nham hạ tự ư thố",
+                "Tu thị hoàn tha đại trượng phu",
+                "Thập đắc doanh mưu thùy khả đắc",
+                "Thông hành thiên địa thử nhân vô"
+            ],
+            "poemVi": [
+                "Dưới núi liều thân cứu cọp nguy,",
+                "Trượng phu chí lớn sánh ai bì.",
+                "Mưu toan vận hội ai người đặng,",
+                "Khắp cõi đất trời mấy kẻ thi."
+            ],
+            "glossVi": "Ăn dùng chẳng dư, thân thanh nào nghèo; đợi thời lợi lộc, quyền sánh người đời."
+        },
+        {
+            "number": 7,
+            "storyTitleVi": "Tô Nương tẩu nạn",
+            "poemHanViet": [
+                "Bôn ba trở cách trùng trùng hiểm",
+                "Đái thủy tha nê khứ độ sơn",
+                "Cánh vọng tha hương cầu dụng sự",
+                "Thiên hương vạn lý vị hồi hoàn"
+            ],
+            "poemVi": [
+                "Bôn ba cách trở hiểm muôn trùng,",
+                "Lội nước băng bùn vượt núi chung.",
+                "Lại ngóng quê người mưu tính việc,",
+                "Muôn ngàn dặm thẳm chửa về cùng."
+            ],
+            "glossVi": "Lui thân thì được, tiến bước thật nan; chỉ nên giữ cũ, chớ vọng trèo cao."
+        },
+        {
+            "number": 8,
+            "storyTitleVi": "Diêu Năng ngộ tiên",
+            "poemHanViet": [
+                "Mậu lâm tùng bách chính hưng vượng",
+                "Vũ tuyết phong sương tổng mạc tồi",
+                "Dị nhật hốt nhiên thành đại dụng",
+                "Công danh thành tựu đống lương tài"
+            ],
+            "poemVi": [
+                "Rừng sâu tùng bách đương xanh tươi,",
+                "Mưa tuyết phong sương chẳng dập vùi.",
+                "Ngày khác bỗng nhiên thành đại dụng,",
+                "Công danh rường cột giúp cho đời."
+            ],
+            "glossVi": "Đường đi hanh thông, trọn đời có công; ruộng tằm tươi tốt, gia đạo hưng long."
+        },
+        {
+            "number": 9,
+            "storyTitleVi": "Khổng Minh điểm tướng",
+            "poemHanViet": [
+                "Phiền quân vật tác tư tâm sự",
+                "Thử ý thiên nghi thuyết hướng công",
+                "Nhất phiến băng tâm quang giảo khiết",
+                "Uyển như hạo nguyệt chính đương không"
+            ],
+            "poemVi": [
+                "Khuyên người chớ tính chuyện riêng tây,",
+                "Cứ lấy lòng công tỏ giãi bày.",
+                "Một tấm lòng băng trong sáng suốt,",
+                "Khác nào trăng sáng giữa tầng mây."
+            ],
+            "glossVi": "Trong lòng chính trực, lý thuận pháp khoan; Thánh không lời riêng, rốt cuộc rõ ràng."
+        },
+        {
+            "number": 10,
+            "storyTitleVi": "Bàng Quyên quan trận",
+            "poemHanViet": [
+                "Thạch tàng vô giá bảo hòa trân",
+                "Chỉ quản tha hương ngoại xứ tầm",
+                "Uyển như trì đăng cánh mịch hỏa",
+                "Bất như thu thập uổng lao tâm"
+            ],
+            "poemVi": [
+                "Trong đá ngọc ngà báu thiếu chi,",
+                "Lại đi tìm kiếm xứ xa gì.",
+                "Khác nào cầm đuốc đi tìm lửa,",
+                "Chi bằng thu vén đỡ sầu bi."
+            ],
+            "glossVi": "Nhân duyên gặp gỡ, việc gì chẳng thành; lòng đừng oán tiếc, trước mắt là chân."
+        },
+        {
+            "number": 11,
+            "storyTitleVi": "Thư tiến Khương Duy",
+            "poemHanViet": [
+                "Dục cầu thắng sự hỷ phi thường",
+                "Tranh nại thân nhân nhật tạm mang",
+                "Đáo đầu tất cánh thành lộc tiễn",
+                "Quý nhân chỉ dẫn quý nhân hương"
+            ],
+            "poemVi": [
+                "Muốn cầu việc tốt mừng khôn xiết,",
+                "Chỉ hiềm hôn sự hãy còn vương.",
+                "Rốt cuộc tên thần săn được hươu,",
+                "Quý nhân chỉ lối đến quê hương."
+            ],
+            "glossVi": "Có ý đổi thay, rốt cuộc an nhiên; nếu hỏi mưu sự, hãy gần quý nhân."
+        },
+        {
+            "number": 12,
+            "storyTitleVi": "Vũ Cát ngộ sư",
+            "poemHanViet": [
+                "Bĩ khứ thái lai chỉ xích gian",
+                "Tiệm giáo quân tử xuất ư sơn",
+                "Nhược phùng Hổ Thố giai âm tín",
+                "Lập chí mang trung sự tức nhàn"
+            ],
+            "poemVi": [
+                "Bĩ qua thái tới gang tấc thôi,",
+                "Quân tử rời non bước ra đời.",
+                "Dần Mão gặp năm tin tốt đến,",
+                "Vững lòng bận rộn hóa nhàn ngơi."
+            ],
+            "glossVi": "Đổi gai lấy tơ, tạm vướng đôi chân; muốn thấy tỏ rõ, trong họa được phúc."
+        },
+        {
+            "number": 13,
+            "storyTitleVi": "La Thông bái sư",
+            "poemHanViet": [
+                "Tự tiểu sinh tại phú quý gia",
+                "Nhãn tiền vạn vật tổng xa hoa",
+                "Mông quân tứ tử kim ngư đại",
+                "Tứ hải thanh danh định khả khoa"
+            ],
+            "poemVi": [
+                "Từ nhỏ sinh ra cửa phú gia,",
+                "Trước mắt muôn vật thảy xa hoa.",
+                "Ơn vua ban thưởng đai vàng tía,",
+                "Bốn biển lừng danh rạng nước nhà."
+            ],
+            "glossVi": "Tù nhân gặp xá, bệnh gặp thầy hay; Long Môn vượt khỏi, danh rạng kinh thành."
+        },
+        {
+            "number": 14,
+            "storyTitleVi": "Tử Nha khí quan",
+            "poemHanViet": [
+                "Uyển như tiên hạc xuất phàn lồng",
+                "Thoát xuất phàn lồng lộ lộ thông",
+                "Nam bắc đông tây vô chướng ngại",
+                "Nhiệm quân trực thướng cửu tiêu trung"
+            ],
+            "poemVi": [
+                "Khác nào hạc nội thoát khỏi lồng,",
+                "Thoát khỏi lồng ra bước bước thông.",
+                "Nam bắc đông tây không chướng ngại,",
+                "Mặc người bay thẳng chín tầng không."
+            ],
+            "glossVi": "Tùy ý chẳng lo, đường sá hanh thông; theo lòng tự tại, tiêu dao thong dong."
+        },
+        {
+            "number": 15,
+            "storyTitleVi": "Tô Tần bất đệ",
+            "poemHanViet": [
+                "Hành nhân nhất khẩu khí nan thôn",
+                "Khước hữu tai sự vật cận tiền",
+                "Điểu bị phần sào vô sở túc",
+                "Khả tầm thâm xứ ổn an thân"
+            ],
+            "poemVi": [
+                "Người đi một nỗi giận khó nuốt,",
+                "Trước mắt tai ương chớ bước càn.",
+                "Chim cháy mất tổ không nơi đậu,",
+                "Hãy tìm chỗ khuất giữ thân an."
+            ],
+            "glossVi": "Người mang oan ức, bao giờ giãi bày; lời hay chẳng tín, giữ cũ đợi thời."
+        },
+        {
+            "number": 16,
+            "storyTitleVi": "Diệp Mộng Hùng triều đế",
+            "poemHanViet": [
+                "Sầu mi tư lự tạm thời khai",
+                "Khải xuất vân tiêu hỷ tự lai",
+                "Uyển như phẫn thổ trung tàng ngọc",
+                "Lương công nhất cử xuất trần ai"
+            ],
+            "poemVi": [
+                "Mày chau lo lắng tạm giãn ra,",
+                "Mây mù vén mở chuyện vui hòa.",
+                "Khác nào trong đất chôn ngọc quý,",
+                "Thợ khéo nâng lên sạch bụi nhòa."
+            ],
+            "glossVi": "Được chỗ không mất, thiệt trước lợi sau; tiểu nhân gặp dữ, quân tử thuận lành."
+        },
+        {
+            "number": 17,
+            "storyTitleVi": "Tào Tháo thoại mai chỉ khát",
+            "poemHanViet": [
+                "Mạc thính nhàn ngôn thuyết thị phi",
+                "Thần hôn chỉ hảo niệm A Di",
+                "Nhược tương vọng ngữ vi chân thật",
+                "Họa bính như hà chỉ đắc cơ"
+            ],
+            "poemVi": [
+                "Đừng nghe lời nhảm nói thị phi,",
+                "Sớm tối chuyên lòng niệm A Di.",
+                "Nếu đem lời dối cho là thật,",
+                "Bánh vẽ làm sao đỡ đói suy."
+            ],
+            "glossVi": "Trong lòng bất định, uổng đọc kinh văn; ví như bánh vẽ, nuốt cũng khó trôi."
+        },
+        {
+            "number": 18,
+            "storyTitleVi": "Tào Quốc Cữu vi tiên",
+            "poemHanViet": [
+                "Kim ô tây trụy thố đông thăng",
+                "Nhật dạ tuần hoàn cổ chí kim",
+                "Tăng đạo đắc tri vô bất lợi",
+                "Sĩ nông công thương các tùng tâm"
+            ],
+            "poemVi": [
+                "Trời lặn phương tây, trăng mọc đông,",
+                "Ngày đêm xoay chuyển suốt muôn vòng.",
+                "Tăng Đạo hiểu thông đều đắc lợi,",
+                "Sĩ nông công thương thảy vừa lòng."
+            ],
+            "glossVi": "Trong lòng vô sự, việc làm có công; như tên lên nỏ, một phát trúng hồng."
+        },
+        {
+            "number": 19,
+            "storyTitleVi": "Tử Nghi phong vương",
+            "poemHanViet": [
+                "Cấp thủy than đầu phóng thuyền quy",
+                "Phong ba tác lãng dục hà vi",
+                "Nhược yếu an nhiên cầu ổn tĩnh",
+                "Đẳng đãi lãng tĩnh quá thử nguy"
+            ],
+            "poemVi": [
+                "Đầu ghềnh nước xiết thả thuyền về,",
+                "Sóng gió ba đào tính sao xuê.",
+                "Nếu muốn bình yên cầu vững chãi,",
+                "Đợi khi sóng lặng vượt cơn mê."
+            ],
+            "glossVi": "Nước xiết lên thuyền, hiểm trở đợi thời; nếu hỏi mưu tính, thời đến sẽ làm."
+        },
+        {
+            "number": 20,
+            "storyTitleVi": "Khương Thái Công ngộ Văn Vương",
+            "poemHanViet": [
+                "Đương xuân cửu vũ hỷ sơ tình",
+                "Ngọc thố kim ô tiệm tiệm minh",
+                "Cựu sự dĩ thành tân sự toại",
+                "Khán khán nhất khiêu quá Long Môn"
+            ],
+            "poemVi": [
+                "Mưa xuân dầm dề mừng tạnh ráo,",
+                "Mặt nguyệt vầng dương tỏ rạng ngời.",
+                "Việc cũ đã xong, việc mới toại,",
+                "Long Môn nhảy vọt thỏa lòng người."
+            ],
+            "glossVi": "Thần Phật hộ trì, có tai không nguy; thỏa chí bình sinh, rốt cuộc vinh quy."
+        },
+        {
+            "number": 21,
+            "storyTitleVi": "Lý Đán long phụng phối hợp",
+            "poemHanViet": [
+                "Âm dương đạo hợp tổng do thiên",
+                "Nữ giá nam hôn khởi ngẫu nhiên",
+                "Đãn kiến long xà tương hội hợp",
+                "Hùng bi nhập mộng hỷ đoàn viên"
+            ],
+            "poemVi": [
+                "Âm dương hòa hợp vốn do trời,",
+                "Gái gả trai cưới há ngẫu thời.",
+                "Rồng rắn gặp nhau cùng hội ngộ,",
+                "Chiêm bao gấu báo喜 đoàn viên."
+            ],
+            "glossVi": "Mưu vọng theo lòng, hôn nhân sinh trai; tiền tài tăng tiến, lợi cả ruộng tằm."
+        },
+        {
+            "number": 22,
+            "storyTitleVi": "Lục Lang phùng cứu",
+            "poemHanViet": [
+                "Hạn thời điền lý giai khô cảo",
+                "Tạ thiên cam vũ lạc lâm lâm",
+                "Hoa quả thảo mộc giai nhuận trạch",
+                "Thủy tri nhất vũ trị thiên kim"
+            ],
+            "poemVi": [
+                "Gặp cơn nắng hạn ruộng khô khan,",
+                "Ơn trời mưa ngọt xuống ngập tràn.",
+                "Hoa quả cỏ cây đều tươi tốt,",
+                "Mới hay một trận đáng ngàn vàng."
+            ],
+            "glossVi": "Ruộng tằm chín rộ, vận mệnh dần來; bệnh gặp thầy giỏi, người đi sắp về."
+        },
+        {
+            "number": 23,
+            "storyTitleVi": "Hoài Đức chiêu thân",
+            "poemHanViet": [
+                "Dục phan tiên quế nhập Thiềm Cung",
+                "Khởi lự thiên môn bất nhiệm quân",
+                "Hốt ngộ nhất triêu âm tín hảo",
+                "Cao nhân tự tống lĩnh đầu vân"
+            ],
+            "poemVi": [
+                "Muốn vịn cành quế bước cung trăng,",
+                "Lo chi cửa trời chẳng mở giăng.",
+                "Chợt gặp một mai tin tốt đến,",
+                "Người cao tiễn bước cưỡi mây bằng."
+            ],
+            "glossVi": "Buôn bán đắc lợi, đi ở không nguy; bệnh an kiện thuận, mặc sức thi hành."
+        },
+        {
+            "number": 24,
+            "storyTitleVi": "Ân Giao ngộ sư",
+            "poemHanViet": [
+                "Bất thành lý luận bất thành gia",
+                "Thủy tính si nhân tự lạc hoa",
+                "Nhược vấn quân ân tu đắc lực",
+                "Đáo đầu phương kiến sự như ma"
+            ],
+            "poemVi": [
+                "Chẳng nên lý lẽ chẳng nên nhà,",
+                "Người si bụng dạ tựa hoa sa.",
+                "Nếu hỏi ơn trên cần gắng sức,",
+                "Đến đầu mới thấy rối như ma."
+            ],
+            "glossVi": "Thị phi chớ nói, phải thật kỹ càng; tâm ngay lý thẳng, mới khỏi tai nguy."
+        },
+        {
+            "number": 25,
+            "storyTitleVi": "Diêu Năng thụ chức",
+            "poemHanViet": [
+                "Quá liễu ưu nguy sự kỷ trùng",
+                "Tùng kim tái lập vĩnh vô không",
+                "Khoan tâm tự hữu khoan tâm kế",
+                "Đắc ngộ cao nhân lập đại công"
+            ],
+            "poemVi": [
+                "Trải qua lo lắng biết bao trùng,",
+                "Từ nay gây dựng chẳng luống công.",
+                "Rộng lòng ắt có mưu kế tốt,",
+                "Gặp bậc cao nhân lập đại công."
+            ],
+            "glossVi": "Kiện tụng thắng lý, bệnh tật an lành; đi lại mưu cầu, giếng cổ gặp mạch."
+        },
+        {
+            "number": 26,
+            "storyTitleVi": "Chung Quỳ đắc đạo",
+            "poemHanViet": [
+                "Thượng hạ truyền lai sự chuyển hư",
+                "Thiên biên tiếp đắc nhất phong thư",
+                "Thư trung hứa ngã công danh toại",
+                "Trực đáo chung thời diệc thị hư"
+            ],
+            "poemVi": [
+                "Trên dưới truyền tai chuyện hóa hư,",
+                "Chân trời nhận được một phong thư.",
+                "Trong thư hứa hẹn công danh toại,",
+                "Đến lúc sau cùng cũng vẫn hư."
+            ],
+            "glossVi": "Trước mắt lòng phiền, cầu nhàn chẳng nhàn; ước mong công danh, giữ cũ thân an."
+        },
+        {
+            "number": 27,
+            "storyTitleVi": "Lưu Cơ gián chủ",
+            "poemHanViet": [
+                "Nhất mưu nhất dụng nhất phiên tư",
+                "Lự hậu tư tiền bất cảm vi",
+                "Thời đáo quý nhân tương trợ lực",
+                "Như sơn tường lập khả an cư"
+            ],
+            "poemVi": [
+                "Một mưu một việc một phen suy,",
+                "Lo trước tính sau chẳng dám làm.",
+                "Thời đến quý nhân ra sức giúp,",
+                "Vững như vách núi ở an kham."
+            ],
+            "glossVi": "Đổi cũ thành mới, hoa lạnh gặp xuân; trước kia trắc trở, nay được xứng lòng."
+        },
+        {
+            "number": 28,
+            "storyTitleVi": "Bao Công tầm Lý hậu",
+            "poemHanViet": [
+                "Đông biên nguyệt thướng chính thuyền quyên",
+                "Khoảnh khắc vân già diệc ám tồn",
+                "Hoặc hữu viên thời hoàn hữu khuyết",
+                "Cánh ngôn phi giả diệc nhàn ngôn"
+            ],
+            "poemVi": [
+                "Phương đông trăng mọc đẹp thuyền quyên,",
+                "Chốc lát mây che tối một miền.",
+                "Có lúc tròn đầy rồi lại khuyết,",
+                "Lời ra tiếng vào chuyện hão huyền."
+            ],
+            "glossVi": "Mây nổi che trăng, chớ cần nghi hoặc; đợi lúc mây tan, ắt thấy trăng sáng."
+        },
+        {
+            "number": 29,
+            "storyTitleVi": "Triệu Tử Long cứu A Đẩu",
+            "poemHanViet": [
+                "Bảo kiếm xuất hạp diệu quang minh",
+                "Tại hạp toàn nhiên bất nhiễm trần",
+                "Kim đắc quý nhân huề xuất hiện",
+                "Hữu uy hữu thế chúng nhân khâm"
+            ],
+            "poemVi": [
+                "Gươm báu rời bao rạng ánh hồng,",
+                "Trong bao chẳng chút bụi trần phong.",
+                "Nay nhờ quý khách mang ra giúp,",
+                "Có uy có thế vạn người trông."
+            ],
+            "glossVi": "Kiếm báu rời vỏ, sáng rực muôn dặm; quý nhân chỉ lối, thảy đều hoan hỷ."
+        },
+        {
+            "number": 30,
+            "storyTitleVi": "Kỳ bàn đại hội",
+            "poemHanViet": [
+                "Khuyến quân thiết mạc hướng tha cầu",
+                "Tự hạc phi lai ám tiễn đầu",
+                "Nhược khứ thái tân xà tại thảo",
+                "Khủng tao độc khẩu dã ưu sầu"
+            ],
+            "poemVi": [
+                "Khuyên người chớ hướng kẻ khác cầu,",
+                "Hạc bay tên bắn biết về đâu.",
+                "Đi đốn củi rừng rắn trong cỏ,",
+                "Sợ bị nọc độc chuốc ưu sầu."
+            ],
+            "glossVi": "Ngậm miệng khép môi, việc người chớ quản; nếu có thẹn lòng, rốt cuộc hại thân."
+        },
+        {
+            "number": 31,
+            "storyTitleVi": "Phật Ấn hội Đông Pha",
+            "poemHanViet": [
+                "Thanh nhàn vô ưu tĩnh xứ tọa",
+                "Bão hậu khiết trà thời tọa ngọa",
+                "Phóng hạ thân tâm bất dụng mang",
+                "Tất định bất chiêu oan dữ họa"
+            ],
+            "poemVi": [
+                "Thanh nhàn không lo ngồi chốn tĩnh,",
+                "Ăn no uống trà nằm thảnh thơi.",
+                "Buông xả thân tâm cần chi vội,",
+                "Ắt chẳng chiêu vời họa với tai."
+            ],
+            "glossVi": "Giữ cũ an nhiên, khấn hỏi thần tiên; cứ đợi thời đến, việc ắt tự thành."
+        },
+        {
+            "number": 32,
+            "storyTitleVi": "Lưu Bị cầu hiền",
+            "poemHanViet": [
+                "Tiền trình diểu diểu định vô nghi",
+                "Thạch trung tàng ngọc hữu thùy tri",
+                "Nhất triêu lương tượng phân minh phẫu",
+                "Thủy giác an nhiên bích ngọc kỳ"
+            ],
+            "poemVi": [
+                "Tiền trình xa thẳm chớ hồ nghi,",
+                "Đá ngậm ngọc lành mấy kẻ tri.",
+                "Một sớm thợ tài đem mổ xẻ,",
+                "Mới hay ngọc bích đẹp lạ kỳ."
+            ],
+            "glossVi": "Báu ở trong đá, người lạ ít hay; đợi khi rõ rệt, mặc sức thi hành."
+        },
+        {
+            "number": 33,
+            "storyTitleVi": "Giảo Kim sính Nhân Quý",
+            "poemHanViet": [
+                "Nội tàng vô giá bảo hòa trân",
+                "Đắc ngọc hà tu ngoại giới tầm",
+                "Bất như đẳng đãi cao nhân thức",
+                "Khoan tâm do thả cánh khoan tâm"
+            ],
+            "poemVi": [
+                "Trong nhà sẵn có ngọc châu trân,",
+                "Tìm kiếm bên ngoài luống nhọc thân.",
+                "Chi bằng chờ đợi cao nhân biết,",
+                "An lòng thư thái đợi thời gần."
+            ],
+            "glossVi": "Trong sẵn vàng ngọc, chẳng cần tìm ngoài; gặp quý nhân chỉ, chớ nhọc lòng lo."
+        },
+        {
+            "number": 34,
+            "storyTitleVi": "Đào Viên kết nghĩa",
+            "poemHanViet": [
+                "Hành tàng xuất nhập lễ nghĩa cung",
+                "Ngôn tất trung lương tín tất thông",
+                "Tâm sự liễu nhiên câu tĩnh triệt",
+                "Quang minh hồng nhật chính đương trung"
+            ],
+            "poemVi": [
+                "Ra vào cư xử lễ nghĩa cung,",
+                "Lời nói trung lương giữ tín cùng.",
+                "Tâm sự rõ ràng trong suốt cả,",
+                "Mặt trời sáng rực giữa tầng không."
+            ],
+            "glossVi": "Trong lòng vô sự, nước thu trong vắt; chẳng cần nghi hoặc, việc tự nhiên thành."
+        },
+        {
+            "number": 35,
+            "storyTitleVi": "Đường Tăng thủ kinh",
+            "poemHanViet": [
+                "Y quan trùng chỉnh cựu gia phong",
+                "Đạo thị vô cùng khước hữu công",
+                "Tảo khước đương đồ kinh cức thích",
+                "Tam nhân nhược nghị sự hòa đồng"
+            ],
+            "poemVi": [
+                "Áo mũ chỉnh tề nếp gia phong,",
+                "Đạo cả vô cùng ắt có công.",
+                "Quét sạch chông gai ngang trước mặt,",
+                "Ba người bàn bạc ý tâm đồng."
+            ],
+            "glossVi": "Chẳng cần lo nghĩ, tự có hẹn lành; nếu hỏi tiền trình, đường trước hanh thông."
+        },
+        {
+            "number": 36,
+            "storyTitleVi": "Tương Tử ngộ Tân",
+            "poemHanViet": [
+                "Nhãn tiền bệnh tụng bất tu ưu",
+                "Thật địa tư tài tẫn khả cầu",
+                "Kháp tự viên hầu kim tỏa thoát",
+                "Tự quy sơn động khứ lai du"
+            ],
+            "poemVi": [
+                "Trước mắt bệnh kiện chẳng cần lo,",
+                "Đất tốt tiền tài mặc sức đo.",
+                "Khác nào vượn khỉ nay mở khóa,",
+                "Về lại hang non thỏa tự do."
+            ],
+            "glossVi": "Trút bỏ xong việc, hãy cứ an lòng; đợi khi thời tới, đường chính dễ tìm."
+        },
+        {
+            "number": 37,
+            "storyTitleVi": "Lý Tĩnh quy sơn",
+            "poemHanViet": [
+                "Dục đãi thân an vận thái thời",
+                "Phong trung đăng chúc bất tương nghi",
+                "Bất như thu thập thâm đường tọa",
+                "Thứ miễn quang dao tĩnh xứ kỳ"
+            ],
+            "poemVi": [
+                "Muốn đợi thân an vận thái hòa,",
+                "Đèn trước gió lùa chẳng hợp ta.",
+                "Chi bằng thu vén ngồi nhà tĩnh,",
+                "Khỏi sợ lung lay bóng ác tà."
+            ],
+            "glossVi": "Chốn tĩnh an thân, đợi mệnh giữ thời; động chuốc họa hại, giữ cũ chẳng nghi."
+        },
+        {
+            "number": 38,
+            "storyTitleVi": "Hà Văn Tú ngộ nạn",
+            "poemHanViet": [
+                "Nguyệt chiếu thiên thư tĩnh xứ kỳ",
+                "Hốt tao vân vụ hựu hôn mê",
+                "Khoan tâm kỳ đãi vân hà tán",
+                "Thử thời canh cải hảo thi vi"
+            ],
+            "poemVi": [
+                "Trăng soi sách trời buổi tĩnh yên,",
+                "Bỗng gặp mây mù tối một miền.",
+                "An lòng chờ đợi mây tan hết,",
+                "Bấy giờ đổi mới việc làm nên."
+            ],
+            "glossVi": "Gia đạo lo hung, người nhà gặp nạn; cầu phúc bảo toàn, vẫn e hao tài."
+        },
+        {
+            "number": 39,
+            "storyTitleVi": "Khương Nữ tầm phu",
+            "poemHanViet": [
+                "Thiên biên tiêu tức thật nan tư",
+                "Thiết mạc đa tâm vọng cưỡng cầu",
+                "Nhược bả thạch đầu ma tác kính",
+                "Tằng tri uổng phí kỷ công phu"
+            ],
+            "poemVi": [
+                "Tin tức phương trời thật khó suy,",
+                "Chớ nên nhiều chuyện cưỡng cầu chi.",
+                "Nếu đem đá tảng mài làm kiếng,",
+                "Hãy biết công lao uổng phí đi."
+            ],
+            "glossVi": "Trăm phương dùng kế, uổng phí công phu; chi bằng giữ cũ, chuốc nhọc làm gì."
+        },
+        {
+            "number": 40,
+            "storyTitleVi": "Võ Tắc Thiên đăng vị",
+            "poemHanViet": [
+                "Hồng luân tây trụy thố đông thăng",
+                "Âm trưởng dương tiêu bách sự hanh",
+                "Nhược thị nữ nhân nghi vọng dụng",
+                "Tăng thiêm tài lộc phúc kỳ tâm"
+            ],
+            "poemVi": [
+                "Mặt trời lặn tây, trăng mọc đông,",
+                "Âm thịnh dương suy vạn sự thông.",
+                "Nếu là phận gái cầu mưu việc,",
+                "Thêm nhiều tài lộc phúc ngập lòng."
+            ],
+            "glossVi": "Âm lợi nữ nhân, chẳng hợp nam giới; nếu có mưu cầu, trước hung sau cát."
+        },
+        {
+            "number": 41,
+            "storyTitleVi": "Đổng Trác thu Lã Bố",
+            "poemHanViet": [
+                "Vô hạn hảo ngôn quân ký thủ",
+                "Khước vi nhận tặc tương tác tử",
+                "Mạc tham nhãn hạ hữu ta điềm",
+                "Cánh lự tha niên vạn dạng khổ"
+            ],
+            "poemVi": [
+                "Biết bao lời tốt người ghi nhớ,",
+                "Lại nhận giặc cướp làm con thơ.",
+                "Chớ tham trước mắt đôi chút ngọt,",
+                "Phải lo năm khác đắng cay chờ."
+            ],
+            "glossVi": "Chỉ một nước này, quân tử chớ sai; ghi nhớ trong dạ, chẳng sinh u buồn."
+        },
+        {
+            "number": 42,
+            "storyTitleVi": "Mục Liên kiến mẫu",
+            "poemHanViet": [
+                "Quân hoàng Thánh hậu tổng vi ân",
+                "Phục đãi kỳ nhương vô tổn tăng",
+                "Nhất thiết hữu tình giai thụ dụng",
+                "Nhân gian thiên thượng đắc kỳ hanh"
+            ],
+            "poemVi": [
+                "Vua chúa Thánh thần thảy ban ơn,",
+                "Cầu nguyện phúc lành chẳng thiệt hơn.",
+                "Hết thảy hữu tình đều thọ hưởng,",
+                "Trần gian thiên thượng thảy vuông tròn."
+            ],
+            "glossVi": "Ơn trời giáng xuống, trước sau chớ quên; sớm hôm lễ niệm, nên thắp hương lành."
+        },
+        {
+            "number": 43,
+            "storyTitleVi": "Hành Giả đắc đạo",
+            "poemHanViet": [
+                "Thiên địa biến thông vạn vật toàn",
+                "Tự vinh tự dưỡng tự an nhiên",
+                "Sâm la vạn tượng giai tinh thái",
+                "Sự sự như tâm tạ Thánh hiền"
+            ],
+            "poemVi": [
+                "Trời đất hanh thông vạn vật toàn,",
+                "Tự sinh tự dưỡng tự bình an.",
+                "Muôn hình vạn trạng đều tươi sáng,",
+                "Mọi việc như lòng tạ Thánh ban."
+            ],
+            "glossVi": "Trời sinh vạn vật, mưu vọng đều thông; phúc đức giúp sức, điềm lành trùng trùng."
+        },
+        {
+            "number": 44,
+            "storyTitleVi": "Khương Duy Đặng Ngải đấu trận",
+            "poemHanViet": [
+                "Kỳ phùng địch thủ trước tương nghi",
+                "Hắc bạch bàn trung vị quyết thời",
+                "Giai nhân nhất trước tri thắng bại",
+                "Tu giáo tự hữu hảo suy nghi"
+            ],
+            "poemVi": [
+                "Cờ gặp kỳ phùng nước phải cân,",
+                "Trắng đen trên cuộc chửa xoay vần.",
+                "Đều do một nước phân thắng bại,",
+                "Khéo léo suy lường ắt định phân."
+            ],
+            "glossVi": "Mong cầu việc lòng, ví như cờ vây; rốt cuộc thắng bại, nên khéo dụng tâm."
+        },
+        {
+            "number": 45,
+            "storyTitleVi": "Nhân Tông ngộ tiên",
+            "poemHanViet": [
+                "Ôn nhu tự cổ thắng cương cường",
+                "Tích thiện chi môn đại cát xương",
+                "Nhược thị hữu nhân chiêm thử quái",
+                "Uyển như chính khát ngộ quỳnh tương"
+            ],
+            "poemVi": [
+                "Mềm mỏng xưa nay thắng cứng cỏi,",
+                "Cửa nhà tích thiện ắt vinh xương.",
+                "Nếu ai cầu đặng quẻ xâm ấy,",
+                "Khác nào đang khát gặp quỳnh tương."
+            ],
+            "glossVi": "Trời đất cảm ứng, linh nghiệm phi thường; Phật Thần hộ佑, được rồi chớ quên."
+        },
+        {
+            "number": 46,
+            "storyTitleVi": "Vị Thủy điếu ngư",
+            "poemHanViet": [
+                "Khuyến quân nại thủ cựu sinh nhai",
+                "Bả định tâm trường vật khởi đãi",
+                "Trực đãi hữu nhân khinh trước lực",
+                "Khô chi lão thụ tái sinh hoa"
+            ],
+            "poemVi": [
+                "Khuyên người nhẫn nại giữ nghề xưa,",
+                "Giữ vững lòng ngay chớ lọc lừa.",
+                "Đợi có quý nhân ra sức giúp,",
+                "Cây già nhánh cỗi lại đơm hoa."
+            ],
+            "glossVi": "Tĩnh tâm giữ cũ, việc tự thành công; động thì nhiều vạ, tĩnh thì không tai."
+        },
+        {
+            "number": 47,
+            "storyTitleVi": "Lương Hạo đăng khoa",
+            "poemHanViet": [
+                "Cẩm thượng thiêm hoa sắc dũ tươi",
+                "Vận lai lộc mã hỷ song toàn",
+                "Thời nhân mạc hận công danh vãn",
+                "Nhất cử đăng khoa tứ hải truyền"
+            ],
+            "poemVi": [
+                "Trên gấm thêu hoa sắc lại tươi,",
+                "Vận may lộc mã vẹn đôi mươi.",
+                "Người đời chớ trách công danh muộn,",
+                "Một bước đăng khoa rạng bốn trời."
+            ],
+            "glossVi": "Đổi cũ sang mới, trọn hiếu song thân; thỏa chí bình sinh, thảy đều do mệnh."
+        },
+        {
+            "number": 48,
+            "storyTitleVi": "Hàn Tín quải soái",
+            "poemHanViet": [
+                "Côn điểu thu lai hóa tác Bằng",
+                "Hảo du khoái lạc hỷ phi đằng",
+                "Cao tường vạn lý vân tiêu khứ",
+                "Dư ngoại chư cầm tổng bất năng"
+            ],
+            "poemVi": [
+                "Chim Côn thu đến hóa chim Bằng,",
+                "Thỏa chí tung bay vượt chín tầng.",
+                "Muôn dặm trời mây cao vút cánh,",
+                "Muôn loài chim nhỏ sánh sao chăng."
+            ],
+            "glossVi": "Côn hóa thành Bằng, muôn chim chẳng sánh; bẻ cành quế thơm, phúc lộc tự tăng."
+        },
+        {
+            "number": 49,
+            "storyTitleVi": "Vương Tường cầu lý",
+            "poemHanViet": [
+                "Thiên hàn địa đống thủy thành băng",
+                "Hà tu tham cầu thủ công danh",
+                "Chỉ hảo thủ kỷ tĩnh xứ tọa",
+                "Đãi thời hưng biến tự nhiên minh"
+            ],
+            "poemVi": [
+                "Trời hàn đất lạnh nước đóng băng,",
+                "Tham cầu danh lợi nhọc nhằn chăng.",
+                "Chi bằng giữ phận ngồi nơi tĩnh,",
+                "Đợi thời chuyển vận ắt sáng trưng."
+            ],
+            "glossVi": "Nước kết thành băng, băng tan thành nước; nếu hỏi mưu cầu, rốt cuộc như thế."
+        },
+        {
+            "number": 50,
+            "storyTitleVi": "Đào Chu quy Ngũ Hồ",
+            "poemHanViet": [
+                "Ngũ hồ tứ hải nhiệm quân hành",
+                "Cao quải phàm bồng tự tại xanh",
+                "Nhược đắc thuận phong tùy tức chí",
+                "Mãn thuyền bảo bối hỷ tầng tầng"
+            ],
+            "poemVi": [
+                "Bốn biển năm hồ mặc sức đi,",
+                "Buồm cao căng gió ngại ngần chi.",
+                "Nếu gặp gió xuôi thuyền lướt tới,",
+                "Đầy khoang châu báu喜 tràn trề."
+            ],
+            "glossVi": "Tự tại thong dong, chẳng cần gắng sức; tài lộc trùng trùng, việc gì cũng đẹp."
+        },
+        {
+            "number": 51,
+            "storyTitleVi": "Khổng Minh nhập Xuyên",
+            "poemHanViet": [
+                "Hạ nhật viêm thiên nhật tối trường",
+                "Nhân nhân sầu nhiệt muộn phi thường",
+                "Thiên địa dã giải tri nhân ý",
+                "Huân phong phất phất tự nhiên lương"
+            ],
+            "poemVi": [
+                "Ngày hè nắng lửa buổi dài ghê,",
+                "Ai nấy sầu煩 bức bối mê.",
+                "Trời đất cũng hay chiều ý khách,",
+                "Gió nam phe phẩy mát tư bề."
+            ],
+            "glossVi": "Tiến lui chớ nghi, tự có hẹn lành; mưu tính chi dùng, chớ nên làm bừa."
+        },
+        {
+            "number": 52,
+            "storyTitleVi": "Thái Bạch túy lao minh nguyệt",
+            "poemHanViet": [
+                "Thủy trung tróc nguyệt phí công phu",
+                "Phí tận công phu khước hựu vô",
+                "Mạc thuyết nhàn ngôn tịnh loạn ngữ",
+                "Uổng lao tâm lực dã nan đồ"
+            ],
+            "poemVi": [
+                "Đáy nước mò trăng luống nhọc công,",
+                "Tốn bao công sức hóa tay không.",
+                "Đừng nghe lời nhảm cùng lời loạn,",
+                "Uổng phí tâm cơ khó toại lòng."
+            ],
+            "glossVi": "Lời nói khó lường, tốn sức nhọc lòng; trong nhà lo phiền, đợi gặp quý nhân."
+        },
+        {
+            "number": 53,
+            "storyTitleVi": "Lưu Bị chiêu thân",
+            "poemHanViet": [
+                "Thất ý phiên thành đắc ý thời",
+                "Long ngâm hổ khiếu lưỡng tương nghi",
+                "Thanh thiên tự hữu thông tiêu lộ",
+                "Hứa ngã công danh tái hữu kỳ"
+            ],
+            "poemVi": [
+                "Thất ý xoay thành đắc ý ngay,",
+                "Rồng ngâm hổ thét hợp duyên may.",
+                "Trời xanh sẵn lối lên mây thẳm,",
+                "Hứa hẹn công danh có một ngày."
+            ],
+            "glossVi": "Bảo đi thì đi, bảo dừng thì dừng; tự có hanh thông, rốt cuộc ắt lợi."
+        },
+        {
+            "number": 54,
+            "storyTitleVi": "Mã Siêu truy Tào",
+            "poemHanViet": [
+                "Mộng trung đắc bảo tỉnh lai vô",
+                "Tự vị Nam Sơn chỉ thị sừ",
+                "Nhược vấn hôn nhân tịnh vấn bệnh",
+                "Biệt tầm điều lộ vị tương phù"
+            ],
+            "poemVi": [
+                "Trong mộng được vàng tỉnh lại không,",
+                "Non Nam cày cuốc tưởng nên công.",
+                "Nếu hỏi hôn nhân cùng hỏi bệnh,",
+                "Tìm phương hướng khác mới yên lòng."
+            ],
+            "glossVi": "Vật ở trong nước, hình bóng dài ngắn; đều do phận định, chẳng cần bàn tính."
+        },
+        {
+            "number": 55,
+            "storyTitleVi": "Chu Vũ Vương đăng vị",
+            "poemHanViet": [
+                "Phụ hiền truyền tử tử truyền tôn",
+                "Y thực phong long chỉ kháo thiên",
+                "Đường thượng xuân huyên nhân khoái lạc",
+                "Cơ sôn khát ẩm khốn thời miên"
+            ],
+            "poemVi": [
+                "Cha hiền truyền con, con truyền cháu,",
+                "Áo cơm no đủ cậy ơn trên.",
+                "Nhà cao cha mẹ đều vui vẻ,",
+                "Đói ăn khát uống mệt nằm yên."
+            ],
+            "glossVi": "Nối trúc dẫn suối, lưu truyền chẳng dứt; quân tử mưu vọng, thảy đều hoan hỷ."
+        },
+        {
+            "number": 56,
+            "storyTitleVi": "Lộc Sơn mưu phản",
+            "poemHanViet": [
+                "Than tiểu thạch khê lưu thủy hưởng",
+                "Phong thanh minh nguyệt quý nhân mang",
+                "Lộ tu tá vấn hà phương khứ",
+                "Quản thủ lâm trung hoa thảo hương"
+            ],
+            "poemVi": [
+                "Ghềnh nhỏ khe sâu nước chảy vang,",
+                "Gió trong trăng sáng quý nhân màng.",
+                "Đường đi nên hỏi về đâu tá,",
+                "Rừng thẳm cỏ hoa ngát dặm ngàn."
+            ],
+            "glossVi": "Mưu tính làm việc, nhọc lòng tốn sức; giữ cũ đợi thời, vạn sự đại cát."
+        },
+        {
+            "number": 57,
+            "storyTitleVi": "Đổng Trọng tầm thân",
+            "poemHanViet": [
+                "Thuyết thị thuyết phi phong quá nhĩ",
+                "Hảo y hảo lộc tự nhiên phong",
+                "Quân mạc ký thủ đương niên sự",
+                "Nhữ ý hoàn như ngã ý đồng"
+            ],
+            "poemVi": [
+                "Lời phải lời chăng gió thoảng tai,",
+                "Áo cơm phúc lộc tự nhiên dồi.",
+                "Chớ nên nhớ mãi chuyện năm cũ,",
+                "Ý ngươi ý ta vốn hợp đôi."
+            ],
+            "glossVi": "Việc làm mưu vọng, đều đại hoan hỷ; theo công dụng sức, như con gặp mẹ."
+        },
+        {
+            "number": 58,
+            "storyTitleVi": "Văn Vương vấn bốc",
+            "poemHanViet": [
+                "Trực ngôn thuyết thoại quân tu ký",
+                "Mạc tại tha hương cầu biệt nghệ",
+                "Thiết tu thủ kỷ cựu sinh nhai",
+                "Trừ thị kỳ dư đô bất lợi"
+            ],
+            "poemVi": [
+                "Lời ngay nói thẳng người nên nhớ,",
+                "Đừng tới quê người kiếm nghề xa.",
+                "Hãy giữ cho bền nghề nghiệp cũ,",
+                "Ngoài ra việc khác chẳng lợi mà."
+            ],
+            "glossVi": "Ở được cứ ở, giữ được cứ giữ; chớ làm việc khác, chỉ nên giữ cũ."
+        },
+        {
+            "number": 59,
+            "storyTitleVi": "Trương Lương ẩn sơn",
+            "poemHanViet": [
+                "Trực thướng trùng lâu khứ tàng thân",
+                "Tứ vi kinh cức nhiễu vi lâm",
+                "Thiên cao quân mệnh trường hòa đoản",
+                "Đắc nhất phiên thành thất nhị nhân"
+            ],
+            "poemVi": [
+                "Bước thẳng lầu cao để ẩn mình,",
+                "Bốn bề gai góc mọc vây quanh.",
+                "Trời cao mệnh định dài hay ngắn,",
+                "Được một phen thành mất hai anh."
+            ],
+            "glossVi": "Như người say rượu, chỉ nên giữ cũ; cứ đợi thời đến, không tai không lỗi."
+        },
+        {
+            "number": 60,
+            "storyTitleVi": "Xích Bích ao binh",
+            "poemHanViet": [
+                "Bão tân cứu hỏa hỏa giai nhiên",
+                "Thiêu biến tam thiên diệc phục nhiên",
+                "Nhược vấn vinh hoa tịnh xuất nhập",
+                "Bất như thu thập uổng lao tâm"
+            ],
+            "poemVi": [
+                "Ôm củi chữa lửa lửa càng hăng,",
+                "Cháy khắp ba ngàn cũng thế chăng.",
+                "Nếu hỏi vinh hoa cùng đi đứng,",
+                "Chi bằng thu vén đỡ nhọc nhằn."
+            ],
+            "glossVi": "Dẫu có ngàn kế, chẳng bằng đừng động; một mai vướng phải, rước họa vào thân."
+        },
+        {
+            "number": 61,
+            "storyTitleVi": "Tô Tiểu Muội nan phu",
+            "poemHanViet": [
+                "Nhật thướng ngâm thi nguyệt hạ ca",
+                "Phùng trường tác hí tiếu ha ha",
+                "Tương phùng hội ngộ nan tàng tị",
+                "Hát thái tề xướng liên lý la"
+            ],
+            "poemVi": [
+                "Dưới nắng ngâm thơ, dưới nguyệt ca,",
+                "Gặp nơi vui thú tiếng cười hòa.",
+                "Tương phùng hội ngộ khôn bề tránh,",
+                "Vỗ tay cùng hát khúc hoan ca."
+            ],
+            "glossVi": "Giai nhân trong nhà, ngâm hát thơ ca; một tấm lòng vui, mệnh định họa phúc."
+        },
+        {
+            "number": 62,
+            "storyTitleVi": "Đường Tăng đắc đạo",
+            "poemHanViet": [
+                "Thần hôn toàn lại Phật phù trì",
+                "Tu thị phùng nguy khước bất nguy",
+                "Nhược đắc quý nhân tương dẫn xứ",
+                "Na thời tài bạch diệc tương tùy"
+            ],
+            "poemVi": [
+                "Sớm tối nhờ ơn Phật độ trì,",
+                "Cho dù gặp hiểm chẳng lâm nguy.",
+                "Nếu nhờ quý khách đưa đường lối,",
+                "Khi ấy tiền tài cũng bước theo."
+            ],
+            "glossVi": "Bình yên vững chãi, bốn phương danh rạng; đổi cũ theo mới, cũng chẳng hung nguy."
+        },
+        {
+            "number": 63,
+            "storyTitleVi": "Nữ Oa thị luyện thạch",
+            "poemHanViet": [
+                "Tích nhật hành thuyền thất liễu châm",
+                "Kim triêu y cựu hải trung tầm",
+                "Nhược nhiên tầm đắc nguyên châm tại",
+                "Dã phí công phu dã phí tâm"
+            ],
+            "poemVi": [
+                "Ngày trước đi thuyền rớt mũi kim,",
+                "Hôm nay đáy biển lại mò tìm.",
+                "Ví dù tìm đặng cây kim cũ,",
+                "Cũng tốn công phu, cũng nhọc tim."
+            ],
+            "glossVi": "Phúc là nền lộc, lộc là giống phúc; lời nói phân minh, hết sức giữ gìn."
+        },
+        {
+            "number": 64,
+            "storyTitleVi": "Mã tiền phúc thủy",
+            "poemHanViet": [
+                "Du ngư khước tại bích ba trì",
+                "Chạm tao la võng tứ biên vi",
+                "Tư lự vô kế phiên thân xuất",
+                "Sự đáo đầu lai nhạ thị phi"
+            ],
+            "poemVi": [
+                "Cá lội tung tăng giữa bích trì,",
+                "Chẳng may mắc lưới bốn bề vây.",
+                "Lo toan chẳng kế xoay mình thoát,",
+                "Việc đến đầu rồi chuốc thị phi."
+            ],
+            "glossVi": "Dưới nhà an thân, họa từ trời giáng; sớm biết phòng trước, khỏi mắc tai ương."
+        },
+        {
+            "number": 65,
+            "storyTitleVi": "Tôn Tẫn khốn Bàng Quyên",
+            "poemHanViet": [
+                "Nhãn tiền hoan hỷ vị vi hoan",
+                "Diệc bất nguy thời diệc bất an",
+                "Cát nhục thành sang vi thậm sự",
+                "Bất như thủ cựu đãi thời quang"
+            ],
+            "poemVi": [
+                "Trước mắt vui vầy chửa thật vui,",
+                "Chẳng nguy nhưng cũng chẳng an rồi.",
+                "Xẻo thịt làm nhọt vì chi thế,",
+                "Chi bằng giữ cũ đợi thời thôi."
+            ],
+            "glossVi": "Biết dừng thì dừng, biết rộng tự khoan; cắt thịt của mình, đau đớn như nhau."
+        },
+        {
+            "number": 66,
+            "storyTitleVi": "Bá Vương bị khốn",
+            "poemHanViet": [
+                "Lộ hiểm mã luy nhân hành cấp",
+                "Thất quần quân tốt khốn tương đương",
+                "Than cao phong lãng thuyền trạo phá",
+                "Nhật mộ hoa tàn thiên giáng sương"
+            ],
+            "poemVi": [
+                "Đường hiểm ngựa gầy khách vội đi,",
+                "Quân binh lạc lõng khốn cùng kỳ.",
+                "Ghềnh cao sóng dữ thuyền tan mái,",
+                "Trời tối hoa tàn sương lạnh ghì."
+            ],
+            "glossVi": "Giữ cũ giữ cũ, yên tĩnh không lỗi; chẳng cần mưu cầu, tự tại thong dong."
+        },
+        {
+            "number": 67,
+            "storyTitleVi": "Kim Tinh thí Đậu Nhi",
+            "poemHanViet": [
+                "Nhất điều kim tuyến xưng quân tâm",
+                "Vô giảm vô tăng vô trọng khinh",
+                "Vi nhân bình sinh tâm chính trực",
+                "Văn chương toàn cụ nghệ quang minh"
+            ],
+            "poemVi": [
+                "Một sợi dây vàng cân tấm lòng,",
+                "Không thêm không bớt chẳng lệch đong.",
+                "Làm người trọn kiếp lòng ngay thẳng,",
+                "Văn chương tài nghệ rạng non sông."
+            ],
+            "glossVi": "Lòng bình ngay thẳng, rốt cuộc thanh bình; chỉ y bổn phận, thiên hạ thái bình."
+        },
+        {
+            "number": 68,
+            "storyTitleVi": "Quách Phần Dương chúc thọ",
+            "poemHanViet": [
+                "Môn đình cát khánh hỷ phi thường",
+                "Tích thiện chi môn đại cát xương",
+                "Hôn nhân điền tằm chư sự toại",
+                "Bệnh phùng diệu dược tức an khang"
+            ],
+            "poemVi": [
+                "Cửa nhà hỷ khánh chuyện vui mừng,",
+                "Nhà sẵn làm lành ắt thịnh hưng.",
+                "Hôn nhân ruộng tằm muôn việc toại,",
+                "Bệnh gặp thuốc thần khỏe mạnhưng."
+            ],
+            "glossVi": "Xuân sâu nắng ấm, trăm hoa tự nở; việc chớ chần chừ, thuận người hiển đạt."
+        },
+        {
+            "number": 69,
+            "storyTitleVi": "Mai khai nhị độ",
+            "poemHanViet": [
+                "Đông lai lĩnh thượng nhất chi mai",
+                "Diệp lạc chi khô tổng bất tồi",
+                "Đãn đắc dương xuân tiêu tức chí",
+                "Y nhiên hoàn ngã tác hoa khôi"
+            ],
+            "poemVi": [
+                "Đông về trên núi một cành mai,",
+                "Lá rụng cành khô chẳng phai tài.",
+                "Chỉ đợi tin xuân vừa báo tới,",
+                "Ngôi đầu hoa quý trả về ai."
+            ],
+            "glossVi": "Một tên bắn không, tưởng không chẳng không; đợi lúc xuân về, rực rỡ bên trong."
+        },
+        {
+            "number": 70,
+            "storyTitleVi": "Lý Mật phản Đường",
+            "poemHanViet": [
+                "Triêu triêu kháp tự thái hoa phong",
+                "Phi xuất tây nam hựu tẩu đông",
+                "Xuân tận hoa tàn vô mịch xứ",
+                "Thử tâm bất biến cựu hành tung"
+            ],
+            "poemVi": [
+                "Sớm sớm khác nào ong hút hoa,",
+                "Bay về tây nam lại đông qua.",
+                "Xuân tàn hoa rụng tìm đâu thấy,",
+                "Lòng này vẫn giữ nếp đường xa."
+            ],
+            "glossVi": "Suốt buổi sắc xuân, mưa lâu chẳng tạnh; mưu cầu hành động, chẳng bằng yên tĩnh."
+        },
+        {
+            "number": 71,
+            "storyTitleVi": "Văn Quân phỏng Tương Như",
+            "poemHanViet": [
+                "Thùy tri thương long thướng cửu cù",
+                "Nữ tử đương niên giá nhị phu",
+                "Tự thị nhất cung giá lưỡng tiễn",
+                "Thiết khủng long mã thướng an cư"
+            ],
+            "poemVi": [
+                "Ai hay rồng biếc vượt đường mây,",
+                "Phận gái năm xưa hai lượt chồng.",
+                "Vốn bởi một cung gài hai tiễn,",
+                "Chỉ e ngựa rồng khó an thân."
+            ],
+            "glossVi": "Chẳng khỏi trùng điệp, việc do thiên mệnh; buông mở đúng lúc, hết sức giữ mình."
+        },
+        {
+            "number": 72,
+            "storyTitleVi": "Vương Mãng cầu hiền",
+            "poemHanViet": [
+                "Dưỡng phong tu dụng cầu tha mật",
+                "Chỉ phạ tao xúc vĩ thượng châm",
+                "Tuy thị nhãn tiền hữu dị lộ",
+                "Ám lý thâm như kinh cức lâm"
+            ],
+            "poemVi": [
+                "Nuôi ong vốn để lấy mật tươi,",
+                "Chỉ sợ đuôi ong đốt trúng người.",
+                "Trước mắt tuy rằng có lối khác,",
+                "Trong ngầm gai góc mọc trùng khơi."
+            ],
+            "glossVi": "Việc phải kỹ lưỡng, chẳng nên cưỡng cầu; gom ong lấy mật, xét kỹ nguồn cơn."
+        },
+        {
+            "number": 73,
+            "storyTitleVi": "Trần Kiều binh biến",
+            "poemHanViet": [
+                "Xuân lai lôi chấn bách trùng minh",
+                "Phiên thân nhất chuyển ly nê trung",
+                "Thủy tri xuất nhập hoàn lai vãng",
+                "Nhất triêu biến hóa tiện thành long"
+            ],
+            "poemVi": [
+                "Xuân về sấm dậy bách trùng kêu,",
+                "Mình xoay một bước thoát bùn lầy.",
+                "Mới biết ra vào qua lại mãi,",
+                "Một sớm hóa rồng vượt tầng mây."
+            ],
+            "glossVi": "Sấm nổ chuyển thời, đi ở vẹn đôi; một sớm biến hóa, thẳng tới cửa trời."
+        },
+        {
+            "number": 74,
+            "storyTitleVi": "Tần bại cầm tam soái",
+            "poemHanViet": [
+                "Tự hộc phi lai tự nhập lồng",
+                "Dục đắc phiên thân khước bất thông",
+                "Nam bắc đông tây đô nan xuất",
+                "Thử quái thành khủng hận vô cùng"
+            ],
+            "poemVi": [
+                "Như chim thiên nga tự chui lồng,",
+                "Muốn xoay mình thoát lại chẳng thông.",
+                "Nam bắc đông tây đều khó vượt,",
+                "Quẻ này e nỗi hận vô cùng."
+            ],
+            "glossVi": "Tiến thân chẳng được, lùi bước cũng nan; cúi đầu đi thẳng, mọi sự ở trong."
+        },
+        {
+            "number": 75,
+            "storyTitleVi": "Ngũ Viên dạ xuất Chiêu Quan",
+            "poemHanViet": [
+                "Kháp như bão hổ quá cao sơn",
+                "Chiến chiến兢兢 đảm toái hàn",
+                "Bất giác hốt nhiên thành hảo sự",
+                "Thiết tu bảo thủ nhất thân an"
+            ],
+            "poemVi": [
+                "Khác nào ôm cọp vượt non cao,",
+                "Run rẩy kinh hoàng mật muốn xao.",
+                "Chẳng biết bỗng nhiên thành việc tốt,",
+                "Hãy nên giữ vững tấm thân nào."
+            ],
+            "glossVi": "Nguy hiểm trùng trùng, tiền trình có trở; nếu hỏi mưu cầu, rốt cuộc vất vả."
+        },
+        {
+            "number": 76,
+            "storyTitleVi": "Hồng Vũ khán ngưu",
+            "poemHanViet": [
+                "Ngư long hỗn tạp ý tương đồng",
+                "Nại thủ thâm đàm đãi vận thông",
+                "Bất giác nhất triêu đầu tủng xuất",
+                "Vũ Môn nhất khiêu quá Long Cung"
+            ],
+            "poemVi": [
+                "Cá rồng lẫn lộn ý cùng nhau,",
+                "Nhẫn nại chờ thời dưới vực sâu.",
+                "Bỗng chốc một mai vươn trán dậy,",
+                "Vũ Môn nhảy vọt đến Long Lầu."
+            ],
+            "glossVi": "Tuy có nền tảng, cũng phải đợi thời; mưu tính từ gốc, chớ nên làm càn."
+        },
+        {
+            "number": 77,
+            "storyTitleVi": "Phủng bích quy Triệu",
+            "poemHanViet": [
+                "Mộng trung thuyết đắc thị đa tài",
+                "Thanh danh vân ngoại tổng hư lai",
+                "Thủy viễn sơn dao nan tín thật",
+                "Quý nhân chỉ điểm tiếu nhan khai"
+            ],
+            "poemVi": [
+                "Trong mơ nói chuyện được nhiều tiền,",
+                "Danh tiếng ngoài mây vốn hão huyền.",
+                "Nước thẳm non xa khôn tin chắc,",
+                "Quý nhân chỉ điểm nở nụ duyên."
+            ],
+            "glossVi": "Như mộng nói mộng, danh tiếng chớ trông; chỉ đợi thời tốt, quý nhân chỉ đường."
+        },
+        {
+            "number": 78,
+            "storyTitleVi": "Lâm Đồng cứu giá",
+            "poemHanViet": [
+                "Lãnh thủy vị thiêu bách phất thang",
+                "Bất hàn bất nhiệt hữu ôn lương",
+                "Yếu hành thiên hạ vô tha sự",
+                "Vị hữu thân trung bách nghệ cường"
+            ],
+            "poemVi": [
+                "Nước lạnh chưa đun chẳng thể sôi,",
+                "Không hàn không nhiệt ấm vừa thôi.",
+                "Muốn đi thiên hạ không chi ngại,",
+                "Nhờ sẵn trong thân trăm nghệ tài."
+            ],
+            "glossVi": "Tù nhân gặp xá, bệnh gặp thầy hay; cầu tài mưu vọng, quý nhân chỉ đường."
+        },
+        {
+            "number": 79,
+            "storyTitleVi": "Ám phù đảo đồng kỳ",
+            "poemHanViet": [
+                "Hư không kết nguyện bảo bình an",
+                "Bảo đắc thân an nguyện bất hoàn",
+                "Mạc vong Thần Thánh nghi hoàn liễu",
+                "Khởi tri Thần ngữ mạc khinh mạn"
+            ],
+            "poemVi": [
+                "Giữa trời khấn nguyện giữ bình an,",
+                "Thân đặng an rồi lễ chẳng hoàn.",
+                "Chớ quên ơn Thánh mau đền trả,",
+                "Lời Thần nghiêm dạy chớ khinh khi."
+            ],
+            "glossVi": "Người ôm ngã kiến, lòng chớ vội vàng; Quán Âm chỉ dạy, tuyệt đối chớ khinh."
+        },
+        {
+            "number": 80,
+            "storyTitleVi": "Trí Viễn đầu quân",
+            "poemHanViet": [
+                "Trực thướng tiên nham yếu học tiên",
+                "Khởi tri nhất đán Đế vương tuyên",
+                "Thanh thiên nhật nguyệt thường minh chiếu",
+                "Tâm chính thanh danh tứ hải truyền"
+            ],
+            "poemVi": [
+                "Lên thẳng non tiên quyết học tiên,",
+                "Ai ngờ một sớm Đế vương tuyên.",
+                "Trời xanh nhật nguyệt hằng soi sáng,",
+                "Lòng ngay danh tiếng khắp bốn miền."
+            ],
+            "glossVi": "Có đầu có cuối, chớ hướng đông tây; việc ở trong lòng, quý nhân trùng trùng."
+        },
+        {
+            "number": 81,
+            "storyTitleVi": "Phong tống Đằng Vương Các",
+            "poemHanViet": [
+                "Ngô đồng diệp lạc thu tương mộ",
+                "Hành khách quy trình khứ tự phi",
+                "Tạ đắc thiên công cao trước lực",
+                "Thuận phong thuyền tải bảo trân quy"
+            ],
+            "poemVi": [
+                "Ngô đồng lá rụng tiết thu tàn,",
+                "Khách bước đường về tựa cánh nhạn.",
+                "Tạ ơn trời đất ra tay giúp,",
+                "Thuyền xuôi gió thuận chở kho vàng."
+            ],
+            "glossVi": "Việc lòng đã quyết, trời ắt chiều theo; mưu tính công việc, mặc sức thi hành."
+        },
+        {
+            "number": 82,
+            "storyTitleVi": "Hỏa thiêu Hồ Lô Cốc",
+            "poemHanViet": [
+                "Viêm viêm liệt hỏa diễm liên thiên",
+                "Diễm lý hoàn sinh nhất đóa liên",
+                "Đáo đầu đắc thành chung bất hại",
+                "Y nhiên sinh diệp trưởng căn chi"
+            ],
+            "poemVi": [
+                "Rực rực lửa hồng cháy ngút mây,",
+                "Trong lò lửa đỏ nở sen đầy.",
+                "Đến cùng thành tựu không hư hại,",
+                "Vẫn trổ cành xanh bám rễ dày."
+            ],
+            "glossVi": "Tuy gặp hiểm nguy, chẳng hại đến thân; mưu tính công việc, đều gặp quý nhân."
+        },
+        {
+            "number": 83,
+            "storyTitleVi": "Lý Uyên đăng vị",
+            "poemHanViet": [
+                "Thí nhược sơ tam tứ ngũ khuyết",
+                "Bán vô bán hữu vị viên toàn",
+                "Đẳng đãi thập ngũ lương tiêu dạ",
+                "Đáo xứ quang minh đáo xứ viên"
+            ],
+            "poemVi": [
+                "Ví như mồng ba bốn năm khuyết,",
+                "Nửa không nửa có chửa tròn đầy.",
+                "Đợi đến đêm rằm trăng sáng tỏ,",
+                "Khắp chốn quang minh khắp chốn vầy."
+            ],
+            "glossVi": "Giữ cũ đợi thời, như trăng mới nhô; đợi lúc trăng tròn, không gì chẳng tốt."
+        },
+        {
+            "number": 84,
+            "storyTitleVi": "Trang Tử thí thê",
+            "poemHanViet": [
+                "Nhân danh táng đức như hà sự",
+                "Thiết khủng cát trung biến hóa hung",
+                "Tửu túy bất tri hà xứ khứ",
+                "Thanh tùng ảnh lý mộng mông lung"
+            ],
+            "poemVi": [
+                "Vì danh mất đức chuyện làm sao,",
+                "Chỉ sợ trong lành hóa dữ vào.",
+                "Rượu say chẳng biết đi đâu tá,",
+                "Dưới bóng tùng xanh giấc mộng chao."
+            ],
+            "glossVi": "Cá lạnh lìa nước, đẹp mà chưa trọn; nếu hỏi mưu cầu, chi bằng đừng khởi."
+        },
+        {
+            "number": 85,
+            "storyTitleVi": "Hàn Văn Công ngộ tuyết",
+            "poemHanViet": [
+                "Vân khai vụ tráo sơn tiền lộ",
+                "Vạn vật viên trung nguyệt tái viên",
+                "Nhược đắc thi thư trầm mộng tỉnh",
+                "Quý nhân chỉ dẫn bộ Thiên Thai"
+            ],
+            "poemVi": [
+                "Mây tan sương phủ lối non tiền,",
+                "Vạn vật tròn đầy nguyệt lại viên.",
+                "Nếu đọc thi thư bừng tỉnh mộng,",
+                "Quý nhân chỉ lối bước đài tiên."
+            ],
+            "glossVi": "Bền bỉ mưu cầu, xuân tàn lại nở; muốn cầu danh lợi, muộn gặp hoạnh tài."
+        },
+        {
+            "number": 86,
+            "storyTitleVi": "Thương Lộ trúng tam nguyên",
+            "poemHanViet": [
+                "Xuân lai hoa phát ánh dương đài",
+                "Vạn lý xa lai tiến bảo tài",
+                "Nhược đắc Vũ Môn tam cấp lãng",
+                "Kháp như bình địa nhất thanh lôi"
+            ],
+            "poemVi": [
+                "Xuân về hoa nở rạng lâu đài,",
+                "Muôn dặm xe về chở báu tài.",
+                "Vũ Môn nếu vượt ba tầng sóng,",
+                "Đất bằng một tiếng sấm nổ vang."
+            ],
+            "glossVi": "Chầu vua nhận chức, như nghèo được báu; mưu vọng theo lòng, đệ nhất trong quẻ."
+        },
+        {
+            "number": 87,
+            "storyTitleVi": "Giảo Kim thám địa huyệt",
+            "poemHanViet": [
+                "Nhân hành bán lĩnh nhật hàm sơn",
+                "Tuấn lĩnh nhai nham vị khả an",
+                "Ngưỡng vọng thượng thiên vi hộ hựu",
+                "Thử thân do tại thái hư gian"
+            ],
+            "poemVi": [
+                "Người đi lưng núi bóng chiều tà,",
+                "Vách dựng cheo leo khó bước qua.",
+                "Ngửa trông trời thẳm thương che chở,",
+                "Thân này còn giữa cõi bao la."
+            ],
+            "glossVi": "Đục đá thấy ngọc, đãi cát thấy vàng; cần phải ra sức, chỉ là nhọc lòng."
+        },
+        {
+            "number": 88,
+            "storyTitleVi": "Bàng Hồng úy Bao Công",
+            "poemHanViet": [
+                "Mộc vi nhất hổ tại đương môn",
+                "Tu thị hữu uy bất hại nhân",
+                "Phân minh thuyết thị vô phương sự",
+                "Ưu não trì nghi khủng cụ tâm"
+            ],
+            "poemVi": [
+                "Gỗ tạc hình hổ đặt trước nhà,",
+                "Tuy có oai phong chẳng hại ta.",
+                "Rõ ràng nói thẳng không chi ngại,",
+                "Lo buồn nghi sợ tự tâm ra."
+            ],
+            "glossVi": "Tuyết rơi đầu lò, như gió thoảng tai; nên lo tích phúc, trước hung sau cát."
+        },
+        {
+            "number": 89,
+            "storyTitleVi": "Đại khán quỳnh hoa",
+            "poemHanViet": [
+                "Xuất nhập doanh mưu đại cát xương",
+                "Tự ngọc vô hà thạch lý tàng",
+                "Nhược đắc quý nhân lai chỉ dẫn",
+                "Tư thời đắc bảo hỷ phong quang"
+            ],
+            "poemVi": [
+                "Ra vào mưu tính đại cát xương,",
+                "Như ngọc không tì ẩn đá thường.",
+                "Nếu gặp quý nhân来 chỉ điểm,",
+                "Được báu phen này rạng bốn phương."
+            ],
+            "glossVi": "Như đá giấu ngọc, quý nhân chỉ bảo; được báu xứng lòng, vui vẻ đắc ý."
+        },
+        {
+            "number": 90,
+            "storyTitleVi": "Vi Bội ngộ tiên",
+            "poemHanViet": [
+                "Hốt nhiên nhất tín hướng thiên phi",
+                "Thái Sơn bảo bối mãn thuyền quy",
+                "Nhược vấn lộ đồ thành hảo sự",
+                "Tiền đầu nhẫn hữu quý nhân thôi"
+            ],
+            "poemVi": [
+                "Bỗng nhiên tin tốt vút tầng mây,",
+                "Châu báu Thái Sơn chở ngập đầy.",
+                "Nếu hỏi đường đi thành việc tốt,",
+                "Phía trước quý nhân giúp sức ngay."
+            ],
+            "glossVi": "Nếu hỏi công danh, trước có quý nhân; lại thêm hỷ khí, tài lộc dồi dào."
+        },
+        {
+            "number": 91,
+            "storyTitleVi": "Tam Anh chiến Lã Bố",
+            "poemHanViet": [
+                "Hảo triển sầu mi xuất chúng lai",
+                "Tiền đồ cải biến hỷ đa tài",
+                "Nhất điều đại lộ như thiên khoát",
+                "Phàm hữu thi tài tẫn sướng hoài"
+            ],
+            "poemVi": [
+                "Hãy giãn mày chau bước ra đời,",
+                "Tiền đồ đổi mới lộc thêm tươi.",
+                "Một con đường lớn thênh thang mở,",
+                "Đem của giúp người thỏa dạ vui."
+            ],
+            "glossVi": "Một con đường lớn, có thể tiến lên; việc ở trong lòng, cứ việc thẳng tiến."
+        },
+        {
+            "number": 92,
+            "storyTitleVi": "Thái Khanh báo ân",
+            "poemHanViet": [
+                "Tự ấu vi thương nhiệm thiết mưu",
+                "Tài lộc doanh phong bất dụng cầu",
+                "Nhược thị tiến thân mưu vọng sự",
+                "Tú tài xuất khứ Trạng nguyên hồi"
+            ],
+            "poemVi": [
+                "Từ nhỏ buôn bán mặc mưu toan,",
+                "Tài lộc dồi dào chẳng phải van.",
+                "Nếu muốn tiến thân cầu sự nghiệp,",
+                "Tú tài đi thi đỗ Trạng nguyên."
+            ],
+            "glossVi": "Từ nhỏ đến lớn, không ngăn không trở; chủ ý mưu tính, công danh vẫn còn."
+        },
+        {
+            "number": 93,
+            "storyTitleVi": "Cao Quân Bảo chiêu thân",
+            "poemHanViet": [
+                "Loan phụng tường mao vũ lâm ly",
+                "Đương thời khước bị tước nhi khi",
+                "Chung giáo nhất nhật vân khai đạt",
+                "Y cựu hoàn quân chỉnh vũ y"
+            ],
+            "poemVi": [
+                "Loan phượng mưa dầm ướt cánh tiên,",
+                "Sa cơ chim sẻ dám khinh khiền.",
+                "Đến ngày mây tạnh trời quang đãng,",
+                "Áo vũ chỉnh tề trả vẹn nguyên."
+            ],
+            "glossVi": "Tiểu nhân đương thịnh, quân tử chớ làm; chỉ nên giữ phận, đợi thời thi hành."
+        },
+        {
+            "number": 94,
+            "storyTitleVi": "Bá Nha phỏng hữu",
+            "poemHanViet": [
+                "Quân tử mạc thính tiểu nhân vi",
+                "Sự nhược sai trì nhạ thị phi",
+                "Cầm minh tu dụng tri âm thính",
+                "Thủ thường an tĩnh đắc y hy"
+            ],
+            "poemVi": [
+                "Quân tử đừng nghe kẻ tiểu nhân,",
+                "Việc mà sai sẩy chuốc phong trần.",
+                "Đàn ngân phải có tri âm thưởng,",
+                "Giữ phận yên lành phúc tự phân."
+            ],
+            "glossVi": "Tri âm mới nhận, việc nhàn chớ quản; đợi gặp quý nhân, thảy đều hoan hỷ."
+        },
+        {
+            "number": 95,
+            "storyTitleVi": "Tào Phi xưng đế",
+            "poemHanViet": [
+                "Chí khí công nghiệp tại triêu triêu",
+                "Kim tương tửu sắc bất thắng nhiêu",
+                "Nhược kiến kim kê báo quân ngữ",
+                "Tiền tài phúc lộc dữ quân chiêu"
+            ],
+            "poemVi": [
+                "Chí khí công danh buổi sớm chiều,",
+                "Nay vương tửu sắc biết bao nhiêu.",
+                "Nếu nghe gà gáy vang lời báo,",
+                "Tài lộc vinh hoa vẫy gọi đều."
+            ],
+            "glossVi": "Chí khí chuyên cần, giữ mình chớ trễ; gà vàng báo tin, thảy đều hoan hỷ."
+        },
+        {
+            "number": 96,
+            "storyTitleVi": "Đậu Yên Sơn tích thiện",
+            "poemHanViet": [
+                "Nguy nguy bảo tháp bất tầm thường",
+                "Bát diện linh lung tẫn phóng quang",
+                "Khuyến quân lập chí cần đính lễ",
+                "Tác thiện thương thiên giáng phúc tường"
+            ],
+            "poemVi": [
+                "Tháp báu nguy nga chẳng tầm thường,",
+                "Tám bề lóng lánh tỏa hào quang.",
+                "Khuyên người lập chí siêng chiêm bái,",
+                "Làm thiện trời cao giáng phúc tường."
+            ],
+            "glossVi": "Phúc phần sâu dày, mọi người đều thấy; chẳng cần vội vã, phúc đức hiện tiền."
+        },
+        {
+            "number": 97,
+            "storyTitleVi": "Lục xuất Kỳ Sơn",
+            "poemHanViet": [
+                "Đương phong điểm chúc không sơ ảnh",
+                "Hoảng hốt phô thành dương lý hoa",
+                "Lũy bị nhi đồng lai thu thập",
+                "Chẩm tri chỉ thị tự phù trà"
+            ],
+            "poemVi": [
+                "Trước gió thắp đèn bóng lung lay,",
+                "Mập mờ tưởng hoa mận hoa dương.",
+                "Trẻ thơ mấy bận đem thu vén,",
+                "Đâu biết bè trôi giữa dặm trường."
+            ],
+            "glossVi": "Phú quý tại trời, nghèo khó do mệnh; chẳng cần mưu cầu, thảy đều tiền định."
+        },
+        {
+            "number": 98,
+            "storyTitleVi": "Cát Bình ngộ nạn",
+            "poemHanViet": [
+                "Xuất nhập cầu mưu sự nghi trì",
+                "Chỉ khủng nhàn sầu nhạ thị phi",
+                "Như điểu phi nhập la võng lý",
+                "Tương phùng năng hữu kỷ đa thời"
+            ],
+            "poemVi": [
+                "Ra vào mưu việc hãy khoan thai,",
+                "Chỉ sợ buồn vơ chuốc vạ ngoài.",
+                "Khác nào chim bay vào trong lưới,",
+                "Gặp gỡ còn được mấy canh dài."
+            ],
+            "glossVi": "Giữ cũ tùy thời, đợi quý nhân tới; nếu hỏi các việc, chủ sự ắt chầy."
+        },
+        {
+            "number": 99,
+            "storyTitleVi": "Đào Tam Xuân quải soái",
+            "poemHanViet": [
+                "Lặc mã trì tiên trực quá lai",
+                "Bán hữu ưu nguy bán hữu tai",
+                "Kháp tự tao hỏa phần thiêu ốc",
+                "Thiên giáng thời vũ đãng thành hôi"
+            ],
+            "poemVi": [
+                "Ghìm cương vung roi phóng thẳng qua,",
+                "Nửa phần nguy hiểm nửa phần tai.",
+                "Khác nào nhà cháy đang bùng lửa,",
+                "Trời đổ mưa rào hóa tro phai."
+            ],
+            "glossVi": "Trọn đời nhọc sức, chớ quản thị phi; gông cùm đến thân, oán hận tự chuốc."
+        },
+        {
+            "number": 100,
+            "storyTitleVi": "Tam giáo đàm đạo",
+            "poemHanViet": [
+                "Phật Thần linh biến dữ quân tri",
+                "Si nhân thuyết sự chuyển hôn mê",
+                "Lão nhân cầu đắc linh xăm khứ",
+                "Bất như thủ cựu đãi thời lai"
+            ],
+            "poemVi": [
+                "Phật Thần linh ứng báo người hay,",
+                "Kẻ si bàn việc rối thêm dày.",
+                "Người già cầu đặng quẻ xâm ấy,",
+                "Chi bằng giữ cũ đợi thời may."
+            ],
+            "glossVi": "Linh xăm viên mãn, báo hết người hay; y cũ chớ động, đợi đến thời may."
+        }
+    ]
+}

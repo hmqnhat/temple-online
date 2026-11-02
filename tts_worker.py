@@ -3,19 +3,22 @@
 Persistent ZeroTTS Worker Daemon (voice='maichi' default).
 - Strict Vietnamese-only text sanitizer: strips all Cuneiform (𒐫), Zalgo, emojis, and foreign scripts
   before passing to ZeroTTS so the model never chokes or glitches.
-- Single-pass continuous synthesis + soft peak normalization (<= 0.90) + cosine fade-in/out.
+- Full bounded input, sequential chunks, one concatenated WAV with explicit overflow failures.
+- Soft peak normalization (<= 0.90) + cosine fade-in/out.
 - Low CPU configuration: intra_op_num_threads=3 + OMP_WAIT_POLICY=PASSIVE (0% CPU when idle).
 """
 import hashlib
 import json
 import os
 import re
+import resource
 import sys
 import time
 import traceback
+import wave
 import unicodedata
 from pathlib import Path
-from lib.tts_cache import prune_cache, MAX_AUDIO_BYTES
+from lib.tts_cache import prune_cache, MAX_AUDIO_BYTES, pin_file
 
 os.environ.setdefault("OMP_NUM_THREADS", "3")
 os.environ.setdefault("OMP_WAIT_POLICY", "PASSIVE")
@@ -30,6 +33,13 @@ from zerotts.chunking import normalize_punctuation
 CACHE_DIR = Path(os.environ.get("APP_DATA_DIR", Path(__file__).resolve().parent / "data")) / "tts-cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
+NORMALIZATION_VERSION = "v6-paragraph-pauses-1"
+CHUNK_PAUSE_SEC = 0.12
+PARAGRAPH_PAUSE_SEC = 0.7
+MAX_NORMALIZED = 1280
+MAX_CHUNKS = 8
+MAX_CHUNK = 160
+
 MODEL_ID = "zeroweight-ai/ZeroTTS"
 MODEL_REVISION = "18d6681518a4becaed3c125ceb3c7db59905fe86"
 
@@ -38,7 +48,7 @@ VIETNAMESE_ALLOWED_RE = re.compile(
     r"[^0-9a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ\s.,!?]"
 )
 BRACKET_EMOTE_RE = re.compile(r"\[[^\]]{1,24}\]")
-REPEATED_CHARS_RE = re.compile(r"(.)\1{2,}", re.IGNORECASE)
+REPEATED_CHARS_RE = re.compile(r"([^0-9\s])\1{2,}", re.IGNORECASE)
 MULTI_PUNCT_RE = re.compile(r"([.,!?])\1+")
 MULTI_SPACE_RE = re.compile(r"\s+")
 
@@ -48,7 +58,7 @@ def emit(payload: dict) -> None:
     sys.stdout.flush()
 
 
-def clean_and_normalize_text(raw_text: str) -> str:
+def _clean_paragraph(raw_text: str) -> str:
     if not raw_text:
         return ""
     # 1. Chuẩn hóa NFKC (biến chữ kiểu toán học 𝒯𝒽𝒾ê𝓃 𝒯â𝓂 -> Thiên Tâm) rồi NFC
@@ -67,17 +77,69 @@ def clean_and_normalize_text(raw_text: str) -> str:
     if len(letters) < 2:
         return ""
 
-    # Giới hạn độ dài an toàn cho 1 câu đọc TTS (tối đa 160 ký tự)
-    if len(text) > 160:
-        text = text[:160].rsplit(" ", 1)[0]
-
     normalized = normalize_vi_text(text)
     normalized = normalize_punctuation(normalized).strip()
     normalized = VIETNAMESE_ALLOWED_RE.sub(" ", normalized)
     normalized = MULTI_SPACE_RE.sub(" ", normalized).strip()
     if normalized and normalized[-1] not in ".!?":
         normalized += "."
+    if len(normalized) > MAX_NORMALIZED:
+        raise ValueError("normalized_text_too_long")
     return normalized
+
+
+def clean_and_normalize_text(raw_text: str) -> str:
+    """A newline in the input is a deliberate pause (e.g. fortune title -> verse)."""
+    paragraphs = [_clean_paragraph(p) for p in str(raw_text or "").split("\n")]
+    normalized = "\n".join(p for p in paragraphs if p)
+    if len(normalized) > MAX_NORMALIZED:
+        raise ValueError("normalized_text_too_long")
+    return normalized
+
+
+def chunk_plan(normalized):
+    """[(chunk, pause_before_sec)]: 0.12s between chunks, 0.7s across a paragraph break."""
+    plan = []
+    for index, paragraph in enumerate(normalized.split("\n")):
+        for position, chunk in enumerate(_chunk_paragraph(paragraph)):
+            plan.append((chunk, 0.0 if not plan else (PARAGRAPH_PAUSE_SEC if position == 0 else CHUNK_PAUSE_SEC)))
+    if len(plan) > MAX_CHUNKS:
+        raise ValueError("normalized_text_too_long")
+    return plan
+
+
+def chunk_text(normalized):
+    return [chunk for chunk, _ in chunk_plan(normalized)]
+
+
+def _chunk_paragraph(normalized):
+    """Preserve the complete normalized sequence; split at sentences then words."""
+    chunks = []
+    remaining = normalized.strip()
+    while remaining:
+        if len(remaining) <= MAX_CHUNK:
+            chunks.append(remaining)
+            break
+        window = remaining[:MAX_CHUNK + 1]
+        boundaries = [m.end() for m in re.finditer(r"[.!?,]\s", window)]
+        cut = boundaries[-1] if boundaries else window.rfind(" ")
+        if cut <= 0:
+            raise ValueError("unbreakable_word")
+        chunks.append(remaining[:cut].strip())
+        remaining = remaining[cut:].strip()
+    return chunks
+
+
+def cache_key(voice, normalized):
+    return hashlib.sha256(f"{NORMALIZATION_VERSION}::{MODEL_REVISION}::{voice}::{normalized}".encode("utf-8")).hexdigest()[:32]
+
+
+def audio_duration(path):
+    with wave.open(str(path), "rb") as audio:
+        duration = audio.getnframes() / audio.getframerate()
+        if not 0 < duration <= 60:
+            raise ValueError("audio_duration_limit")
+        return duration
 
 
 def polish_waveform(wav: np.ndarray, sample_rate: int) -> np.ndarray:
@@ -159,33 +221,50 @@ def main() -> None:
                 emit({"type": "result", "id": req_id, "ok": False, "error": "Filtered empty/spam text"})
                 continue
 
-            cache_key = hashlib.sha256(f"v4::{MODEL_REVISION}::{voice}::{norm_text}".encode("utf-8")).hexdigest()[:32]
-            out_name = f"{voice}_{cache_key}.wav"
+            plan = chunk_plan(norm_text)
+            chunks = [chunk for chunk, _ in plan]
+            key = cache_key(voice, norm_text)
+            out_name = f"{voice}_{key}.wav"
             out_path = CACHE_DIR / out_name
+            metadata = {"normalizedText": norm_text, "chunkCount": len(chunks),
+                        "normalizationVersion": NORMALIZATION_VERSION, "status": "ready", "errorCode": None,
+                        "chunks": chunks}
+            if out_path.is_file() and not out_path.is_symlink() and 200 < out_path.stat().st_size <= MAX_AUDIO_BYTES:
+                try:
+                    duration = audio_duration(out_path)
+                except (ValueError, wave.Error, EOFError):
+                    out_path.unlink(missing_ok=True)
+                else:
+                    pin_file(out_path)
+                    emit({"type": "result", "id": req_id, "ok": True, "cached": True,
+                          "voice": voice, "file": out_name, "url": f"/tts-cache/{out_name}",
+                          "synthSec": 0.0, "durationSec": duration, "durationMs": round(duration * 1000), **metadata})
+                    continue
 
-            if out_path.is_file() and out_path.stat().st_size > 200:
-                emit({
-                    "type": "result",
-                    "id": req_id,
-                    "ok": True,
-                    "cached": True,
-                    "voice": voice,
-                    "file": out_name,
-                    "url": f"/tts-cache/{out_name}",
-                    "synthSec": 0.0,
-                })
-                continue
-
-            t_synth = time.time()
-            raw_wav = tts.synthesize(norm_text, voice=voice, eoa_extra_frames=2)
-            if raw_wav is None or raw_wav.size == 0:
-                emit({"type": "result", "id": req_id, "ok": False, "error": "No audio generated"})
-                continue
-
-            clean_audio = polish_waveform(raw_wav, int(tts.sample_rate))
-            if clean_audio.shape[-1] / float(tts.sample_rate) > 60:
-                raise ValueError("Generated audio exceeds 60 seconds")
-            partial_path = CACHE_DIR / f"{voice}_{cache_key}.part.wav"
+            t_synth = time.monotonic()
+            parts = []
+            frames = 0
+            rate = int(tts.sample_rate)
+            # Silence between chunks counts toward the complete-file 60s limit.
+            for chunk, pause_sec in plan:
+                if time.monotonic() - t_synth >= 180:
+                    raise ValueError("synthesis_timeout")
+                raw_wav = tts.synthesize(chunk, voice=voice, eoa_extra_frames=2)
+                if time.monotonic() - t_synth >= 180:
+                    raise ValueError("synthesis_timeout")
+                if raw_wav is None or not np.asarray(raw_wav).size or not np.isfinite(raw_wav).all():
+                    raise ValueError("chunk_audio_invalid")
+                part = polish_waveform(raw_wav, rate).reshape(-1)
+                if parts:
+                    pause = np.zeros(round(rate * pause_sec), dtype=np.float32)
+                    parts.append(pause)
+                    frames += pause.size
+                parts.append(part)
+                frames += part.size
+                if frames / rate > 60:
+                    raise ValueError("audio_duration_limit")
+            clean_audio = np.concatenate(parts).reshape(1, -1)
+            partial_path = CACHE_DIR / f"{voice}_{key}.part.wav"
             try:
                 tts.save_audio(clean_audio, str(partial_path))
                 size = partial_path.stat().st_size
@@ -193,9 +272,10 @@ def main() -> None:
                     raise ValueError("Generated audio exceeds cache file limit")
                 prune_cache(CACHE_DIR, reserve_bytes=size)
                 partial_path.replace(out_path)
+                pin_file(out_path)
             finally:
                 partial_path.unlink(missing_ok=True)
-            synth_sec = round(time.time() - t_synth, 2)
+            synth_sec = round(time.monotonic() - t_synth, 2)
             duration_sec = round(clean_audio.shape[-1] / float(tts.sample_rate), 2)
 
             emit({
@@ -208,13 +288,18 @@ def main() -> None:
                 "url": f"/tts-cache/{out_name}",
                 "synthSec": synth_sec,
                 "durationSec": duration_sec,
+                "durationMs": round(clean_audio.shape[-1] / float(tts.sample_rate) * 1000),
+                "peakRssKiB": round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / (1024 if sys.platform == "darwin" else 1)),
+                **metadata,
             })
         except Exception as exc:
             emit({
                 "type": "result",
                 "id": req_id,
                 "ok": False,
-                "error": str(exc),
+                "error": str(exc), "errorCode": str(exc), "status": "failed",
+                "url": None, "durationMs": None, "normalizedText": "", "chunkCount": 0,
+                "normalizationVersion": NORMALIZATION_VERSION,
             })
 
 

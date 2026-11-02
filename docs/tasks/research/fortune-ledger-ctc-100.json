@@ -1,0 +1,1031 @@
+{
+ "generatedBy": "scripts/import-fortunes.py + manual Vietnamese layer",
+ "accessedAt": "2026-11-02",
+ "collectionId": "ctc-guanyin-100",
+ "edition": "CTC Guanyin published reference edition",
+ "publisher": "華人廟宇委員會 (Chinese Temples Committee, Hong Kong)",
+ "recordCount": 100,
+ "rankCounts": {
+  "upper": 34,
+  "middle": 46,
+  "lower": 20
+ },
+ "files": {
+  "source.json": "89f14b73d600b9bf2a9aadf8bb149fe1ca968821774231af83842f7182e596c8",
+  "vi.json": "e9cfd252dcfb7327085b8fa8d5a371cac722003585ea4177c8b8e8cd4aedca7e"
+ },
+ "reuse": "Redistribution permission NOT confirmed; user accepted storing original poem + short traditional gloss with source and caveat (02/11/2026). Modern commentary not copied.",
+ "translation": {
+  "status": "reviewed_with_traditional_poetry",
+  "reviewedBy": "Người dùng (review trực tiếp file vi.json, 02/11/2026)",
+  "fields": [
+   "storyTitleVi",
+   "poemHanViet",
+   "poemVi",
+   "glossVi"
+  ],
+  "note": "poemVi và poemHanViet do người dùng cung cấp/duyệt; runtime đọc TTS bằng poemVi, hiển thị poemVi cùng nguyên văn Hán. glossVi chỉ nằm trong dữ liệu sự kiện."
+ },
+ "records": [
+  {
+   "number": 1,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "鍾離成道",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Chung Ly thành đạo",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 2,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "蘇秦不第",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tô Tần bất đệ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 3,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "董永賣身",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đổng Vĩnh mại thân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 4,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "玉蓮會十朋",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Ngọc Liên hội Thập Bằng",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 5,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "劉晨遇仙",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lưu Thần ngộ tiên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 6,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "仁貴遇主",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Nhân Quý ngộ chủ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 7,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "蘇娘走難",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tô Nương tẩu nạn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 8,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "姚能遇仙",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Diêu Năng ngộ tiên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 9,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "孔明點將",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Khổng Minh điểm tướng",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 10,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "龐涓觀陣",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Bàng Quyên quan trận",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 11,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "書薦姜維",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Thư tiến Khương Duy",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 12,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "武吉遇師",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Vũ Cát ngộ sư",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 13,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "羅通拜師",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "La Thông bái sư",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 14,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "子牙棄官",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tử Nha khí quan",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 15,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "蘇秦不第",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tô Tần bất đệ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 16,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "葉夢熊朝帝",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Diệp Mộng Hùng triều đế",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 17,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "曹操話梅止渴",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tào Tháo thoại mai chỉ khát",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 18,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "曹國舅為仙",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tào Quốc Cữu vi tiên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 19,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "子儀封王",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tử Nghi phong vương",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 20,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "姜太公遇文王",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Khương Thái Công ngộ Văn Vương",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 21,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "李旦龍鳳配合",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lý Đán long phụng phối hợp",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 22,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "六郎逢救",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lục Lang phùng cứu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 23,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "懷德招親",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hoài Đức chiêu thân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 24,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "殷郊遇師",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Ân Giao ngộ sư",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 25,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "姚能受職",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Diêu Năng thụ chức",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 26,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "鍾馗得道",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Chung Quỳ đắc đạo",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 27,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "劉基諫主",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lưu Cơ gián chủ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 28,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "包公尋李后",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Bao Công tầm Lý hậu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 29,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "趙子龍救阿斗",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第二十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Triệu Tử Long cứu A Đẩu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 30,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "棋盤大會",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Kỳ bàn đại hội",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 31,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "佛印會東坡",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Phật Ấn hội Đông Pha",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 32,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "劉備求賢",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lưu Bị cầu hiền",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 33,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "咬金聘仁貴",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Giảo Kim sính Nhân Quý",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 34,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "桃園結義",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đào Viên kết nghĩa",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 35,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "唐僧取經",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đường Tăng thủ kinh",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 36,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "湘子遇賓",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tương Tử ngộ Tân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 37,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "李靖歸山",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lý Tĩnh quy sơn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 38,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "何文秀遇難",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hà Văn Tú ngộ nạn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 39,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "姜女尋夫",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第三十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Khương Nữ tầm phu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 40,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "武則天登位",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Võ Tắc Thiên đăng vị",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 41,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "董卓收呂布",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đổng Trác thu Lã Bố",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 42,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "目蓮見母",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Mục Liên kiến mẫu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 43,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "行者得道",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hành Giả đắc đạo",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 44,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "姜維鄧艾鬥陣",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Khương Duy Đặng Ngải đấu trận",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 45,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "仁宗遇仙",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Nhân Tông ngộ tiên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 46,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "渭水釣魚",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Vị Thủy điếu ngư",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 47,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "梁灝登科",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lương Hạo đăng khoa",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 48,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "韓信掛帥",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hàn Tín quải soái",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 49,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "王祥求鯉",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第四十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Vương Tường cầu lý",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 50,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "陶朱歸五湖",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đào Chu quy Ngũ Hồ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 51,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "孔明入川",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Khổng Minh nhập Xuyên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 52,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "太白醉撈明月",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Thái Bạch túy lao minh nguyệt",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 53,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "劉備招親",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lưu Bị chiêu thân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 54,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "馬超追曹",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Mã Siêu truy Tào",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 55,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "周武王登位",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Chu Vũ Vương đăng vị",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 56,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "祿山謀反",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lộc Sơn mưu phản",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 57,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "董仲尋親",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đổng Trọng tầm thân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 58,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "文王問卜",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Văn Vương vấn bốc",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 59,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "張良隱山",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第五十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Trương Lương ẩn sơn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 60,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "赤壁鏖兵",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Xích Bích ao binh",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 61,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "蘇小妹難夫",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tô Tiểu Muội nan phu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 62,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "唐僧得道",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đường Tăng đắc đạo",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 63,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "女媧氏煉石",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Nữ Oa thị luyện thạch",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 64,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "馬前覆水",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Mã tiền phúc thủy",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 65,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "孫臏困龐涓",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tôn Tẫn khốn Bàng Quyên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 66,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "霸王被困",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Bá Vương bị khốn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 67,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "金星試竇兒",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Kim Tinh thí Đậu Nhi",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 68,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "郭汾陽祝壽",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Quách Phần Dương chúc thọ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 69,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "梅開二度",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第六十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Mai khai nhị độ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 70,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "李密反唐",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lý Mật phản Đường",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 71,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "文君訪相如",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Văn Quân phỏng Tương Như",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 72,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "王莽求賢",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Vương Mãng cầu hiền",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 73,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "陳橋兵變",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Trần Kiều binh biến",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 74,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "秦敗擒三帥",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tần bại cầm tam soái",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 75,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "伍員夜出昭關",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Ngũ Viên dạ xuất Chiêu Quan",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 76,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "洪武看牛",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hồng Vũ khán ngưu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 77,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "捧璧歸趙",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Phủng bích quy Triệu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 78,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "臨潼救駕",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lâm Đồng cứu giá",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 79,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "暗扶倒銅旗",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第七十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Ám phù đảo đồng kỳ",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 80,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "智遠投軍",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Trí Viễn đầu quân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 81,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "風送滕王閣",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Phong tống Đằng Vương Các",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 82,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "火燒葫蘆谷",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hỏa thiêu Hồ Lô Cốc",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 83,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "李淵登位",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lý Uyên đăng vị",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 84,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "莊子試妻",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Trang Tử thí thê",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 85,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "韓文公遇雪",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Hàn Văn Công ngộ tuyết",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 86,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "商輅中三元",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Thương Lộ trúng tam nguyên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 87,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "咬金探地穴",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Giảo Kim thám địa huyệt",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 88,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "龐洪畏包公",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Bàng Hồng úy Bao Công",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 89,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "大看瓊花",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第八十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đại khán quỳnh hoa",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 90,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "葦佩遇仙",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Vi Bội ngộ tiên",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 91,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "三英戰呂布",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十一籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tam Anh chiến Lã Bố",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 92,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "蔡卿報恩",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十二籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Thái Khanh báo ân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 93,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "高君保招親",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十三籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Cao Quân Bảo chiêu thân",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 94,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "伯牙訪友",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十四籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Bá Nha phỏng hữu",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 95,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "曹丕稱帝",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十五籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tào Phi xưng đế",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 96,
+   "rankOriginal": "上籤",
+   "rank": "upper",
+   "storyTitleOriginal": "竇燕山積善",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十六籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đậu Yên Sơn tích thiện",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 97,
+   "rankOriginal": "中籤",
+   "rank": "middle",
+   "storyTitleOriginal": "六出祁山",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十七籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Lục xuất Kỳ Sơn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 98,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "吉平遇難",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十八籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Cát Bình ngộ nạn",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 99,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "陶三春掛帥",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第九十九籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Đào Tam Xuân quải soái",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  },
+  {
+   "number": 100,
+   "rankOriginal": "下籤",
+   "rank": "lower",
+   "storyTitleOriginal": "三教談道",
+   "sourceUrl": "https://www.ctc.org.hk/chim/觀音籤-第一百籤/",
+   "verification": "captured_from_publisher_page",
+   "storyTitleVi": "Tam giáo đàm đạo",
+   "glossViStatus": "reviewed_with_traditional_poetry"
+  }
+ ]
+}
