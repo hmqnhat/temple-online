@@ -41,10 +41,10 @@
   // Only one foreground ritual/speech at a time. A higher tier interrupts it;
   // interrupted gifts resume from the start, interrupted community events retire.
   class RitualScheduler {
-    constructor({ onStart, onStop, onAudio, onSettled, onDrop = () => {}, now = Date.now,
+    constructor({ onStart, onStop, onAudio, onDrop = () => {}, now = Date.now,
       setTimer = (fn, ms) => setTimeout(fn, ms), clearTimer = id => clearTimeout(id),
-      holdMs = 8000, maxHoldMs = 45000 } = {}) {
-      Object.assign(this, { onStart, onStop, onAudio, onSettled, onDrop, now, setTimer, clearTimer, holdMs, maxHoldMs });
+      holdMs = 8000, maxHoldMs = 45000, startWaitMs = 0 } = {}) {
+      Object.assign(this, { onStart, onStop, onAudio, onDrop, now, setTimer, clearTimer, holdMs, maxHoldMs, startWaitMs });
       this.queue = new LaneQueue({ community: 10, lotus: 20, lamp: 20, fruit: 20, dragon: 20 });
       this.items = new Map();
       this.active = null;
@@ -80,17 +80,26 @@
       if (!item) return; // Late audio for dropped/expired/interrupted comments stays silent.
       item.pending = false;
       item.url = typeof url === 'string' && /^\/tts-cache\/[a-z0-9_-]+\.wav$/.test(url) ? url : null;
-      if (this.active?.item === item) { this.onSettled?.(item.event, item.url); this.playAudio(); this.schedule(); }
+      if (this.active?.item === item) { this.begin(); this.playAudio(); this.schedule(); }
     }
     pump() {
       if (this.active) return;
       this.prune();
       const item = this.queue.shift();
       if (!item) return;
-      this.active = { item, startedAt: this.now(), audioStarted: false, speaking: false, timer: null };
-      this.onStart?.(item.event, { audioPending: item.pending });
+      const active = this.active = { item, startedAt: this.now(), started: false, audioStarted: false, speaking: false, timer: null, waitTimer: null };
+      // Visuals wait for the voice (bounded by startWaitMs) so the picture never runs ahead of the sound.
+      if (item.pending && this.startWaitMs > 0) {
+        active.waitTimer = this.setTimer(() => { if (this.active === active) this.begin(); }, this.startWaitMs);
+      } else this.begin();
       this.playAudio();
       this.schedule();
+    }
+    begin() {
+      const active = this.active;
+      if (!active || active.started) return;
+      active.started = true; active.startedAt = this.now(); this.clearTimer(active.waitTimer);
+      this.onStart?.(active.item.event);
     }
     playAudio() {
       const active = this.active;
@@ -114,7 +123,7 @@
     stopActive() {
       if (!this.active) return;
       const active = this.active; this.active = null;
-      this.clearTimer(active.timer); this.onStop?.(active.item.event);
+      this.clearTimer(active.timer); this.clearTimer(active.waitTimer); this.onStop?.(active.item.event);
     }
     stop() { this.stopActive(); this.queue.remove(() => true); this.items.clear(); }
   }

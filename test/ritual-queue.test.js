@@ -100,3 +100,29 @@ test('interrupting a full gift tier preserves its active donor at the front of t
   assert.equal(f.scheduler.active.item.event.id, 'first-small');
   f.scheduler.stop();
 });
+
+test('with startWaitMs, visuals wait for the voice, start when audio settles, and never wait past the bound', () => {
+  const f = fixture({ startWaitMs: 20000 });
+  f.scheduler.enqueue({ ...gift('g1', 20), ttsPending: true });
+  assert.deepEqual(f.starts, [], 'no visuals while synthesis is pending');
+  f.advance(9000);
+  f.scheduler.audioReady({ eventId: 'g1', url: '/tts-cache/maichi_a.wav' });
+  assert.deepEqual(f.starts, ['g1']);
+  assert.equal(f.speech.length, 1, 'voice starts together with visuals');
+
+  const failed = fixture({ startWaitMs: 20000 });
+  failed.scheduler.enqueue({ ...gift('g2', 20), ttsPending: true });
+  failed.scheduler.audioReady({ eventId: 'g2', url: null });
+  assert.deepEqual(failed.starts, ['g2'], 'failed synthesis still shows the ritual');
+  failed.advance(7000);
+  assert.deepEqual(failed.stops, [], 'hold time counts from when visuals started');
+
+  const slow = fixture({ startWaitMs: 20000 });
+  slow.scheduler.enqueue({ ...gift('g3', 20), ttsPending: true });
+  slow.advance(19999); assert.deepEqual(slow.starts, []);
+  slow.advance(2); assert.deepEqual(slow.starts, ['g3']);
+
+  const ready = fixture({ startWaitMs: 20000 });
+  ready.scheduler.enqueue({ ...gift('g4', 20), ttsPending: false });
+  assert.deepEqual(ready.starts, ['g4'], 'events without a pending voice start at once');
+});

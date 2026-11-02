@@ -486,9 +486,8 @@
 
   const ritualScheduler = new window.TempleQueues.RitualScheduler({
     maxHoldMs: 90000, // long fortune verses are synthesized in several chunks
+    startWaitMs: 25000, // visuals start with the voice; this bounds the wait if synthesis is slow
     onStart: triggerRitualVisuals,
-    // The fortune card waits for the voice so the picture never runs ahead of the sound.
-    onSettled: ev => { if (ev.type === 'drawFortune') revealFortune(ev); },
     onStop: stopRitualVisuals,
     onAudio: (ev, url, done) => {
       audio.enqueueTts(ev.ttsText, { voice: ev.ttsVoice || 'maichi', url, onEnd: done });
@@ -499,7 +498,7 @@
   });
   window.addEventListener('pagehide', () => ritualScheduler.stop());
 
-  function triggerRitualVisuals(ev, { audioPending = false } = {}) {
+  function triggerRitualVisuals(ev) {
     if (!ev) return;
 
     switch (ev.type) {
@@ -563,8 +562,7 @@
           `Thí chủ ${ev.user} đang thành tâm xin quẻ...`,
           false
         );
-        // Reveal immediately only when no voice is coming; otherwise onSettled reveals it with the audio.
-        if (!audioPending) revealFortune(ev);
+        revealFortune(ev);
         break;
       }
     }
@@ -598,7 +596,7 @@
     const modal = document.getElementById('fortuneModal');
     const vi = fortune.vietnamese || {};
     document.getElementById('fortuneRankBadge').textContent = `QUẺ ${(vi.rank || '').toUpperCase()}`;
-    document.getElementById('fortuneTitle').textContent = `Quẻ Số ${fortune.number} — ${vi.title || ''} (${fortune.original?.title || ''})`;
+    document.getElementById('fortuneTitle').textContent = `Quẻ Số ${fortune.number} — ${vi.title || ''}`;
     document.getElementById('fortuneDevotee').textContent = `Thí chủ cầu quẻ: ${user}`;
     document.getElementById('fortunePoem').textContent = vi.poemTranslation || '';
     document.getElementById('fortuneMeaning').textContent = `Lời giải: ${vi.summary || ''}`;

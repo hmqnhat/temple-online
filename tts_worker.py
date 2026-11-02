@@ -35,7 +35,8 @@ CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 NORMALIZATION_VERSION = "v6-paragraph-pauses-1"
 CHUNK_PAUSE_SEC = 0.12
-PARAGRAPH_PAUSE_SEC = 0.7
+LINE_PAUSE_SEC = 0.2
+PARAGRAPH_PAUSE_SEC = 0.2
 MAX_NORMALIZED = 1280
 MAX_CHUNKS = 8
 MAX_CHUNK = 160
@@ -89,20 +90,35 @@ def _clean_paragraph(raw_text: str) -> str:
 
 
 def clean_and_normalize_text(raw_text: str) -> str:
-    """A newline in the input is a deliberate pause (e.g. fortune title -> verse)."""
-    paragraphs = [_clean_paragraph(p) for p in str(raw_text or "").split("\n")]
-    normalized = "\n".join(p for p in paragraphs if p)
+    """One newline is a short pause, a blank line a long one (e.g. fortune title -> verse)."""
+    pieces = re.split(r"(\n+)", str(raw_text or ""))
+    out, pending = [], ""
+    for i, piece in enumerate(pieces):
+        if i % 2:
+            pending = "\n\n" if len(piece) > 1 else "\n"
+            continue
+        cleaned = _clean_paragraph(piece)
+        if cleaned:
+            out.append((pending if out else "") + cleaned)
+            pending = ""
+    normalized = "".join(out)
     if len(normalized) > MAX_NORMALIZED:
         raise ValueError("normalized_text_too_long")
     return normalized
 
 
 def chunk_plan(normalized):
-    """[(chunk, pause_before_sec)]: 0.12s between chunks, 0.7s across a paragraph break."""
+    """[(chunk, pause_before_sec)]: 0.12s between chunks, 0.3s after a newline, 0.5s after a blank line."""
     plan = []
-    for index, paragraph in enumerate(normalized.split("\n")):
-        for position, chunk in enumerate(_chunk_paragraph(paragraph)):
-            plan.append((chunk, 0.0 if not plan else (PARAGRAPH_PAUSE_SEC if position == 0 else CHUNK_PAUSE_SEC)))
+    pieces = re.split(r"(\n+)", normalized)
+    pause = 0.0
+    for i, piece in enumerate(pieces):
+        if i % 2:
+            pause = PARAGRAPH_PAUSE_SEC if len(piece) > 1 else LINE_PAUSE_SEC
+            continue
+        for position, chunk in enumerate(_chunk_paragraph(piece)):
+            plan.append((chunk, 0.0 if not plan else (pause if position == 0 and pause else CHUNK_PAUSE_SEC)))
+        pause = 0.0
     if len(plan) > MAX_CHUNKS:
         raise ValueError("normalized_text_too_long")
     return plan

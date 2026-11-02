@@ -22,10 +22,11 @@ test('production edition is the complete CTC set with original ranks, sources an
     assert.equal(r.source.accessedAt, '2026-11-02');
     assert.equal(r.vietnamese.poemTranslation.split('\n').length, 4, 'reviewed Vietnamese verse, four lines');
     assert.equal(r.vietnamese.poemHanViet.split('\n').length, 4);
+    assert.ok(!/[\u3400-\u9fff]/.test(JSON.stringify(r.vietnamese)), `Chinese character left in Vietnamese text ${r.number}`);
     assert.equal(r.vietnamese.reviewStatus, 'reviewed_with_traditional_poetry');
     assert.equal(r.vietnamese.reviewLabel, 'Bản dịch thơ đã được duyệt');
     assert.notEqual(r.vietnamese.summary, r.original.gloss);
-    assert.equal(r.ttsSummary, `Quẻ số ${r.number}, ${r.vietnamese.rank === 'Thượng' ? 'quẻ thượng' : r.vietnamese.rank === 'Trung' ? 'quẻ trung' : 'quẻ hạ'}. Tích ${r.vietnamese.title}.\nThơ. ${r.vietnamese.poemTranslation.split('\n').join(' ')}`);
+    assert.equal(r.ttsSummary, `Quẻ số ${r.number}, ${r.vietnamese.rank === 'Thượng' ? 'quẻ thượng' : r.vietnamese.rank === 'Trung' ? 'quẻ trung' : 'quẻ hạ'}.\n${r.vietnamese.title}.\n\n${r.vietnamese.poemTranslation.split('\n').join(' ')}`);
     assert.ok(r.ttsSummary.length <= 210, `tts too long ${r.number}`);
     assert.equal(r.original.rank, raw.records[i].rankOriginal);
   });

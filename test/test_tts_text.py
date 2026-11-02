@@ -41,13 +41,12 @@ class TextTests(unittest.TestCase):
         self.assertEqual(chunks[0], 'Xin chào.')
         self.assertEqual(' '.join(chunks), normalized)
 
-    def test_newline_is_a_longer_pause_between_title_and_verse(self):
-        normalized = worker.clean_and_normalize_text('Quẻ số 1, quẻ thượng. Tích Chung Ly thành đạo.\nThơ. Đất mở trời khai kết mối duyên.')
+    def test_newline_is_short_pause_and_blank_line_is_long_pause(self):
+        normalized = worker.clean_and_normalize_text('Quẻ số 1, quẻ hạ.\nChung Ly thành đạo.\n\nĐất mở trời khai kết mối duyên.')
         plan = worker.chunk_plan(normalized)
-        self.assertEqual(len(plan), 2)
-        self.assertEqual(plan[0][1], 0.0)
-        self.assertEqual(plan[1][1], worker.PARAGRAPH_PAUSE_SEC)
-        self.assertTrue(plan[1][0].startswith('Thơ'))
+        self.assertEqual([c for c, _ in plan], ['Quẻ số một, quẻ hạ.', 'Chung Ly thành đạo.', 'Đất mở trời khai kết mối duyên.'])
+        self.assertEqual([p for _, p in plan], [0.0, worker.LINE_PAUSE_SEC, worker.PARAGRAPH_PAUSE_SEC])
+        self.assertLess(worker.LINE_PAUSE_SEC, worker.PARAGRAPH_PAUSE_SEC)
 
     def run_worker(self, synthesize, text=None, repeats=1):
         text = text or ('Xin cảm ơn Nguyễn Thị Thanh Tâm. ' * 7)
