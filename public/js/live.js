@@ -29,7 +29,23 @@
   const particles = new window.TempleParticleEngine(canvas);
   const audio = new window.TempleAudioEngine();
 
+  // The control tab (no ?obs=1) is a silent preview: every tab receives the same events, so only the
+  // OBS tab makes sound or the voice would play twice. The unlock button turns it on deliberately.
+  const isObsTab = params.get('obs') === '1';
+  audio.silenced = !isObsTab;
+  for (const name of ['playIncenseChime', 'playWoodenFish', 'playTempleBell', 'playFortuneShake', 'startZenAmbience']) {
+    const original = audio[name].bind(audio);
+    audio[name] = (...args) => (audio.silenced ? undefined : original(...args));
+  }
+  const enqueueTts = audio.enqueueTts.bind(audio);
+  audio.enqueueTts = (text, options = {}) => {
+    if (!audio.silenced) return enqueueTts(text, options);
+    options.onStart?.();
+    if (options.onEnd) setTimeout(options.onEnd, 3000); // keep the preview's ritual queue moving without sound
+  };
+
   function unlockAudioOnce() {
+    audio.silenced = false;
     audio.ensureContext();
     const btnUnlock = document.getElementById('btnUnlockAudio');
     if (btnUnlock) {
@@ -38,7 +54,8 @@
       btnUnlock.classList.add('active-toggle');
     }
   }
-  window.addEventListener('pointerdown', unlockAudioOnce, { once: true });
+  if (isObsTab) window.addEventListener('pointerdown', unlockAudioOnce, { once: true });
+  document.getElementById('btnUnlockAudio')?.addEventListener('click', unlockAudioOnce, { once: true });
 
   // 3. Vẽ các nén nhang đang cháy trong Lư Hương Đỉnh Đồng (x=540, y=895)
   const incenseHolder = document.getElementById('incenseSticksHolder');
@@ -404,15 +421,14 @@
       liveText.textContent = `Đang kết nối @${st.tiktok.username}...`;
     } else {
       liveDot.classList.remove('connected');
-      liveText.textContent = st.settings?.autoSim
-        ? 'CHÙA LINH ỨNG • TỰ ĐỘNG GIẢ LẬP ĐÔNG NGƯỜI'
-        : 'CHÙA LINH ỨNG • ĐỨC PHẬT A DI ĐÀ';
+      // Never mention simulation on the stream; the control tab shows it on its own button.
+      liveText.textContent = 'CHÙA LINH ỨNG • ĐỨC PHẬT A DI ĐÀ';
     }
 
     const btnAutoSim = document.getElementById('btnToggleAutoSim');
     if (btnAutoSim && st.settings) {
       btnAutoSim.textContent = st.settings.autoSim
-        ? '🤖 Tự động Giả lập Người Xem: ĐANG BẬT'
+        ? `🤖 Tự động Giả lập Người Xem: ĐANG BẬT (${st.npcCount || 0} NPC)`
         : '🤖 Tự động Giả lập Người Xem: TẮT';
       btnAutoSim.classList.toggle('active-toggle', Boolean(st.settings.autoSim));
     }

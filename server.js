@@ -5,6 +5,9 @@ const fs = require('fs');
 const { ZeroTTSManager } = require('./lib/tts-manager');
 const { eventTier } = require('./public/js/ritual-queue');
 const { loadEdition, FortuneDeck } = require('./lib/fortunes');
+const simPolicy = require('./lib/sim-policy');
+const { NPC_ALL: NPC_POOL, NPC_WISHES, createWishDeck } = require('./lib/sim-npc');
+const npcWishDeck = createWishDeck(NPC_WISHES);
 const { createSecurity, validViewerKey, safeAvatar, resolveTikTokUsername, validateParams, isPlainObject } = require('./lib/security');
 const { WebSocketServer } = require('ws');
 const { TikTokLiveConnection, WebcastEvent, ControlEvent } = require('tiktok-live-connector');
@@ -145,9 +148,35 @@ function saveState() {
   }, 1200);
 }
 
+// Simulated worshippers are ranked like everyone else so the board never contradicts what the
+// audience just saw; they are in memory only and never counted in totals or saved.
+// NPCs never farm: a low hard cap, and once a real viewer has merit they are shown below 60% of the best real score.
+const NPC_MERIT_CAP = 60;
+const NPC_SHARE_OF_TOP_REAL = 0.6;
+const npcStore = new Map();
+let npcOffset = 0, npcSteps = 0;
+
+function npcCrew() {
+  if (!state.settings.autoSim) return [];
+  const size = Math.min(simPolicy.npcTarget(state.tiktok.viewerCount), NPC_POOL.length);
+  return Array.from({ length: size }, (_, i) => NPC_POOL[(npcOffset + i) % NPC_POOL.length]);
+}
+
+function npcEntry({ user, uniqueId }) {
+  let entry = npcStore.get(uniqueId);
+  if (!entry) {
+    entry = { name: user, uniqueId, avatar: '', merit: 5 * Math.floor(1 + Math.random() * 5), incense: 0, gifts: 0, lastWish: '', simulated: true };
+    npcStore.set(uniqueId, entry);
+  }
+  return entry;
+}
+
 function getLeaderboard(limit = 6) {
-  return Object.values(state.devotees)
-    .sort((a, b) => b.merit - a.merit)
+  const real = Object.values(state.devotees);
+  const topReal = real.reduce((max, d) => Math.max(max, d.merit), 0);
+  const ceiling = topReal > 0 ? Math.max(1, Math.floor(topReal * NPC_SHARE_OF_TOP_REAL)) : NPC_MERIT_CAP;
+  return [...real, ...npcCrew().map(npcEntry).map(n => ({ ...n, merit: Math.min(n.merit, ceiling) }))]
+    .sort((a, b) => b.merit - a.merit || Number(Boolean(a.simulated)) - Number(Boolean(b.simulated)))
     .slice(0, limit)
     .map((d, index) => ({
       rank: index + 1,
@@ -223,11 +252,23 @@ try {
 } catch { /* keep the fresh shuffle */ }
 state.settings.autoSim = false;
 
+let simulating = false;
+let lastRealEventAt = 0;
+
 function recordDevotee(user, uniqueId, avatar, meritDelta, incenseDelta = 0, giftDelta = 0, wish = '') {
   const displayName = sanitizeUserName(user || uniqueId);
   const cleanWish = sanitizeWishText(wish);
   const candidate = String(uniqueId || displayName).slice(0, 80);
   const key = validViewerKey(candidate) ? candidate : `viewer:${displayName}`;
+  // Simulated worshippers keep their own in-memory merit; real totals and the saved file never see it.
+  if (simulating) {
+    const npc = npcEntry({ user: displayName, uniqueId: key });
+    // Gains stay modest so a simulated gift cannot launch an NPC past real contributors.
+    npc.merit = Math.min(NPC_MERIT_CAP, npc.merit + Math.min(meritDelta, 10));
+    npc.incense += incenseDelta;
+    if (cleanWish) npc.lastWish = cleanWish;
+    return npc;
+  }
   if (!Object.hasOwn(state.devotees, key)) {
     if (Object.keys(state.devotees).length >= 10000) delete state.devotees[Object.keys(state.devotees)[0]];
     state.devotees[key] = {
@@ -254,6 +295,7 @@ function recordDevotee(user, uniqueId, avatar, meritDelta, incenseDelta = 0, gif
 }
 
 function pushEventLog(evt) {
+  if (!simulating) lastRealEventAt = Date.now();
   const entry = {
     id: `evt_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
     timestamp: new Date().toISOString(),
@@ -278,6 +320,7 @@ function getPublicState() {
     haloIntensity: state.haloIntensity,
     offerings: state.offerings,
     leaderboard: getLeaderboard(24),
+    npcCount: npcCrew().length,
     recentEvents: state.recentEvents.slice(0, 15),
     settings: state.settings,
     tiktok: state.tiktok,
@@ -297,8 +340,8 @@ const Rituals = {
     const wish = sanitizeWishText(params.wish) || 'Thành tâm dâng hương bái Phật, cầu bình an cát tường';
     const merit = count * 5;
 
-    state.totalIncense += count;
-    state.activeIncenseSticks = Math.min(36, state.activeIncenseSticks + count);
+    if (!simulating) state.totalIncense += count;
+    if (!simulating) state.activeIncenseSticks = Math.min(36, state.activeIncenseSticks + count);
     const devotee = recordDevotee(user, uniqueId, avatar, merit, count, 0, wish);
 
     const ttsText = params.readTts === false
@@ -329,7 +372,7 @@ const Rituals = {
     const count = Math.max(1, Math.min(50, Number(params.count) || 1));
     const merit = count;
 
-    state.woodenFishHits += count;
+    if (!simulating) state.woodenFishHits += count;
     const devotee = recordDevotee(user, uniqueId, avatar, merit, 0, 0);
 
     const event = pushEventLog({
@@ -355,7 +398,7 @@ const Rituals = {
     const wish = sanitizeWishText(params.wish) || 'Thỉnh chuông Bát Nhã, phiền não tiêu tan, trí tuệ sáng ngời';
     const merit = count * 10;
 
-    state.bellRings += count;
+    if (!simulating) state.bellRings += count;
     const devotee = recordDevotee(user, uniqueId, avatar, merit, 0, 0, wish);
 
     const ttsText = params.readTts
@@ -386,7 +429,7 @@ const Rituals = {
     const wish = sanitizeWishText(params.wish) || 'Cầu cho quốc thái dân an, gia đình mạnh khỏe hạnh phúc';
     const merit = 10;
 
-    state.lanternCount += 1;
+    if (!simulating) state.lanternCount += 1;
     const devotee = recordDevotee(user, uniqueId, avatar, merit, 1, 0, wish);
 
     const ttsText = params.readTts === false
@@ -428,9 +471,9 @@ const Rituals = {
     const multiplier = coins >= 100 ? 50 : coins >= 10 ? 30 : 20;
     const merit = Math.max(20, coins * multiplier);
 
-    state.offerings[giftType] = (state.offerings[giftType] || 0) + 1;
-    state.totalIncense += 3;
-    state.activeIncenseSticks = Math.min(36, state.activeIncenseSticks + 3);
+    if (!simulating) state.offerings[giftType] = (state.offerings[giftType] || 0) + 1;
+    if (!simulating) state.totalIncense += 3;
+    if (!simulating) state.activeIncenseSticks = Math.min(36, state.activeIncenseSticks + 3);
 
     const wish = params.wish || `Dâng cúng ${giftName} lên Tam Bảo`;
     const devotee = recordDevotee(user, uniqueId, avatar, merit, 3, 1, wish);
@@ -466,7 +509,7 @@ const Rituals = {
     const fortune = fortuneDeck.draw(validViewerKey(uniqueId) ? uniqueId : null);
     const merit = 10;
 
-    state.fortuneCount += 1;
+    if (!simulating) state.fortuneCount += 1;
     const devotee = recordDevotee(user, uniqueId, avatar, merit, 0, 0, `Xin xăm: Quẻ số ${fortune.number} (${fortune.vietnamese.rank})`);
 
     const ttsText = params.readTts === false
@@ -531,6 +574,7 @@ const Rituals = {
     state.activeIncenseSticks = 3;
     state.offerings = { lotus: 1, fruit: 1, lamp: 1, dragon: 0 };
     state.devotees = Object.create(null);
+    npcStore.clear();
     state.recentEvents = [];
     saveState();
     broadcastNotification('temple.state', getPublicState());
@@ -704,8 +748,10 @@ async function connectTikTokLive(usernameOrUrl) {
   tiktokConn.on(WebcastEvent.ROOM_USER, (data) => {
     const viewerCount = Number(data?.total ?? data?.viewerCount ?? 0);
     if (viewerCount > 0) {
+      const crewBefore = state.settings.autoSim ? currentNpcTarget() : 0;
       state.tiktok.viewerCount = viewerCount;
       broadcastNotification('temple.viewerCount', { viewerCount });
+      if (state.settings.autoSim && currentNpcTarget() !== crewBefore) broadcastNotification('temple.state', getPublicState());
     }
   });
 
@@ -820,40 +866,60 @@ async function disconnectTikTokLive() {
 // 6. AUTO-SIMULATION ENGINE (CHẾ ĐỘ TỰ ĐỘNG GIẢ LẬP ĐÔNG NGƯỜI XEM)
 // ============================================================================
 let autoSimTimer = null;
-const SIM_DEVOTEES = [
-  { user: 'Ngọc Anh Nguyễn', uniqueId: 'ngocanh.98', wish: 'Con thành tâm cầu cho bố mẹ luôn mạnh khỏe, bình an' },
-  { user: 'Trần Minh Quân', uniqueId: 'minhquan_bds', wish: 'Cầu tháng mới công việc thuận buồm xuôi gió, tài lộc hanh thông' },
-  { user: 'Diệu Thảo Tâm An', uniqueId: 'tam_an_99', wish: 'Nam Mô A Di Đà Phật, nguyện cầu thế giới hòa bình chúng sinh an lạc' },
-  { user: 'Lê Hoàng Nam', uniqueId: 'hoangnam.dev', wish: 'Cầu thi cử đỗ đạt điểm cao, sự nghiệp rộng mở' },
-  { user: 'Phạm Thanh Hà', uniqueId: 'thanhha.lotus', wish: 'Cầu gia đạo êm ấm, con cái ngoan ngoãn học giỏi' },
-  { user: 'Vũ Đức Thịnh', uniqueId: 'ducthinh88', wish: 'Con xin gieo một quẻ cầu tài lộc đầu năm' }
-];
+function currentNpcTarget() {
+  // Offline (no live connection) viewerCount is 0, which yields the full crew.
+  return simPolicy.npcTarget(state.tiktok.viewerCount);
+}
 
 function runSingleSimulationStep() {
-  const pick = SIM_DEVOTEES[Math.floor(Math.random() * SIM_DEVOTEES.length)];
-  const roll = Math.random();
-  if (roll < 0.30) {
-    Rituals.burnIncense({ user: pick.user, uniqueId: pick.uniqueId, count: 3, wish: pick.wish });
-  } else if (roll < 0.55) {
-    Rituals.sendPrayer({ user: pick.user, uniqueId: pick.uniqueId, wish: pick.wish });
-  } else if (roll < 0.75) {
-    Rituals.drawFortune({ user: pick.user, uniqueId: pick.uniqueId, topic: pick.wish });
-  } else if (roll < 0.90) {
-    Rituals.offerGift({ user: pick.user, uniqueId: pick.uniqueId, giftType: 'lotus', coins: 15, giftName: 'Hoa Sen Vàng Tinh Khiết' });
-  } else {
-    Rituals.ringBell({ user: pick.user, uniqueId: pick.uniqueId, count: 1, wish: pick.wish, readTts: true });
-  }
+  const target = currentNpcTarget();
+  if (simPolicy.shouldSkipStep({ target, lastRealAt: lastRealEventAt, now: Date.now() })) return;
+  // Only NPCs that currently appear on the board act, so every name the audience hears can be found there.
+  const onBoard = getLeaderboard(24).filter(d => d.simulated !== false && npcStore.has(d.uniqueId));
+  if (!onBoard.length) return;
+  const chosen = onBoard[Math.floor(Math.random() * onBoard.length)];
+  const pick = { user: chosen.name, uniqueId: chosen.uniqueId, wish: npcWishDeck.next() };
+  // Turnover: one or two NPCs leave and new ones join. Faster once real viewers are watching,
+  // so they do not hear the same names and wishes again and again.
+  const live = Boolean(state.tiktok.connected);
+  if (++npcSteps % (live ? 3 : 8) === 0) npcOffset = (npcOffset + 1 + Math.floor(Math.random() * 2)) % NPC_POOL.length;
+  // Fake gifts would outrank real viewers in the ritual queue, so they are only simulated offline.
+  const roll = live ? Math.random() * 0.75 : Math.random();
+  simulating = true;
+  try {
+    if (roll < 0.30) {
+      Rituals.burnIncense({ user: pick.user, uniqueId: pick.uniqueId, count: 3, wish: pick.wish });
+    } else if (roll < 0.55) {
+      Rituals.sendPrayer({ user: pick.user, uniqueId: pick.uniqueId, wish: pick.wish });
+    } else if (roll < 0.75) {
+      Rituals.drawFortune({ user: pick.user, uniqueId: pick.uniqueId, topic: pick.wish });
+    } else if (roll < 0.90) {
+      Rituals.offerGift({ user: pick.user, uniqueId: pick.uniqueId, giftType: 'lotus', coins: 15, giftName: 'Hoa Sen Vàng Tinh Khiết' });
+    } else {
+      Rituals.ringBell({ user: pick.user, uniqueId: pick.uniqueId, count: 1, wish: pick.wish, readTts: true });
+    }
+  } finally { simulating = false; }
+}
+
+// Self-rescheduling so the pace follows the current NPC crew size as real viewers come and go.
+function scheduleSimulationStep() {
+  autoSimTimer = setTimeout(() => {
+    autoSimTimer = null;
+    if (!state.settings.autoSim) return;
+    runSingleSimulationStep();
+    scheduleSimulationStep();
+  }, simPolicy.npcIntervalMs(state.settings.autoSimIntervalMs || 9500, currentNpcTarget()));
 }
 
 function configureAutoSim(enabled) {
   state.settings.autoSim = Boolean(enabled);
   if (autoSimTimer) {
-    clearInterval(autoSimTimer);
+    clearTimeout(autoSimTimer);
     autoSimTimer = null;
   }
   if (state.settings.autoSim) {
     runSingleSimulationStep();
-    autoSimTimer = setInterval(runSingleSimulationStep, state.settings.autoSimIntervalMs || 9500);
+    scheduleSimulationStep();
   }
 }
 
@@ -1053,7 +1119,7 @@ function start() {
 
 async function stop() {
   clearInterval(heartbeat);
-  if (autoSimTimer) clearInterval(autoSimTimer);
+  if (autoSimTimer) clearTimeout(autoSimTimer);
   await disconnectTikTokLive();
   zeroTts.stop();
   for (const client of wss.clients) client.terminate();
