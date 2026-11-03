@@ -126,3 +126,20 @@ test('with startWaitMs, visuals wait for the voice, start when audio settles, an
   ready.scheduler.enqueue({ ...gift('g4', 20), ttsPending: false });
   assert.deepEqual(ready.starts, ['g4'], 'events without a pending voice start at once');
 });
+
+test('a higher tier waits for its voice before cutting the current ritual, with a bound', () => {
+  const f = fixture({ startWaitMs: 20000 });
+  f.scheduler.enqueue(gift('low', 1));
+  f.scheduler.enqueue({ ...gift('big', 200), ttsPending: true });
+  assert.deepEqual(f.stops, [], 'current ritual keeps running while the voice is generated');
+  f.advance(5000);
+  f.scheduler.audioReady({ eventId: 'big', url: '/tts-cache/maichi_b.wav' });
+  assert.deepEqual(f.stops, ['low']);
+  assert.deepEqual(f.starts, ['low', 'big']);
+
+  const slow = fixture({ startWaitMs: 20000 });
+  slow.scheduler.enqueue(gift('low', 1));
+  slow.scheduler.enqueue({ ...gift('big', 200), ttsPending: true });
+  slow.advance(20001);
+  assert.deepEqual(slow.stops, ['low'], 'preempts anyway once the wait bound passes');
+});

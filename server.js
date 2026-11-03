@@ -171,6 +171,9 @@ function npcEntry({ user, uniqueId }) {
   return entry;
 }
 
+// 6 VIP cushions + up to 54 seated viewers in the hall.
+const MAX_BOARD = 60;
+
 function getLeaderboard(limit = 6) {
   const real = Object.values(state.devotees);
   const topReal = real.reduce((max, d) => Math.max(max, d.merit), 0);
@@ -319,7 +322,7 @@ function getPublicState() {
     activeIncenseSticks: state.activeIncenseSticks,
     haloIntensity: state.haloIntensity,
     offerings: state.offerings,
-    leaderboard: getLeaderboard(24),
+    leaderboard: getLeaderboard(MAX_BOARD),
     npcCount: npcCrew().length,
     recentEvents: state.recentEvents.slice(0, 15),
     settings: state.settings,
@@ -866,6 +869,7 @@ async function disconnectTikTokLive() {
 // 6. AUTO-SIMULATION ENGINE (CHẾ ĐỘ TỰ ĐỘNG GIẢ LẬP ĐÔNG NGƯỜI XEM)
 // ============================================================================
 let autoSimTimer = null;
+const NPC_PACE = 2.2;
 function currentNpcTarget() {
   // Offline (no live connection) viewerCount is 0, which yields the full crew.
   return simPolicy.npcTarget(state.tiktok.viewerCount);
@@ -875,7 +879,7 @@ function runSingleSimulationStep() {
   const target = currentNpcTarget();
   if (simPolicy.shouldSkipStep({ target, lastRealAt: lastRealEventAt, now: Date.now() })) return;
   // Only NPCs that currently appear on the board act, so every name the audience hears can be found there.
-  const onBoard = getLeaderboard(24).filter(d => d.simulated !== false && npcStore.has(d.uniqueId));
+  const onBoard = getLeaderboard(MAX_BOARD).filter(d => d.simulated !== false && npcStore.has(d.uniqueId));
   if (!onBoard.length) return;
   const chosen = onBoard[Math.floor(Math.random() * onBoard.length)];
   const pick = { user: chosen.name, uniqueId: chosen.uniqueId, wish: npcWishDeck.next() };
@@ -884,16 +888,16 @@ function runSingleSimulationStep() {
   const live = Boolean(state.tiktok.connected);
   if (++npcSteps % (live ? 3 : 8) === 0) npcOffset = (npcOffset + 1 + Math.floor(Math.random() * 2)) % NPC_POOL.length;
   // Fake gifts would outrank real viewers in the ritual queue, so they are only simulated offline.
-  const roll = live ? Math.random() * 0.75 : Math.random();
+  const roll = live ? Math.random() * 0.70 : Math.random();
   simulating = true;
   try {
-    if (roll < 0.30) {
+    if (roll < 0.35) {
       Rituals.burnIncense({ user: pick.user, uniqueId: pick.uniqueId, count: 3, wish: pick.wish });
-    } else if (roll < 0.55) {
+    } else if (roll < 0.65) {
       Rituals.sendPrayer({ user: pick.user, uniqueId: pick.uniqueId, wish: pick.wish });
-    } else if (roll < 0.75) {
+    } else if (roll < 0.70) {
       Rituals.drawFortune({ user: pick.user, uniqueId: pick.uniqueId, topic: pick.wish });
-    } else if (roll < 0.90) {
+    } else if (roll < 0.85) {
       Rituals.offerGift({ user: pick.user, uniqueId: pick.uniqueId, giftType: 'lotus', coins: 15, giftName: 'Hoa Sen Vàng Tinh Khiết' });
     } else {
       Rituals.ringBell({ user: pick.user, uniqueId: pick.uniqueId, count: 1, wish: pick.wish, readTts: true });
@@ -908,7 +912,9 @@ function scheduleSimulationStep() {
     if (!state.settings.autoSim) return;
     runSingleSimulationStep();
     scheduleSimulationStep();
-  }, simPolicy.npcIntervalMs(state.settings.autoSimIntervalMs || 9500, currentNpcTarget()));
+  // NPCs are background colour: roughly half as busy as the raw interval, with jitter so the gaps vary
+  // and the music gets room between rituals.
+  }, Math.round(simPolicy.npcIntervalMs((state.settings.autoSimIntervalMs || 9500) * NPC_PACE, currentNpcTarget()) * (0.75 + Math.random() * 0.5)));
 }
 
 function configureAutoSim(enabled) {

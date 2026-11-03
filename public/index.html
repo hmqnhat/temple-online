@@ -16,9 +16,12 @@
          ==================================================================== -->
     <div class="stage-wrapper" id="stageWrapper">
       <div class="stage-9x16" id="stage9x16">
+        <!-- Canvas 1080x2340 (19.5:9), nền amitabha_stage_2 vẽ sẵn đúng tỉ lệ này. -->
+        <!-- SCENE: toạ độ canvas 1080x2340 -->
+        <div class="scene-layer" id="sceneLayer">
         <!-- 1. HÌNH NỀN CHÁNH ĐIỆN ĐỨC PHẬT A DI ĐÀ 8K SẮC NÉT -->
         <img
-          src="/assets/amitabha_stage.png"
+          src="/assets/amitabha_stage_2.png"
           alt="Đức Phật A Di Đà Chánh Điện"
           class="sanctuary-bg-img"
         />
@@ -44,19 +47,6 @@
 
         <!-- HÀO QUANG ĐÀI SEN TRÊN TAY ĐỨC PHẬT A DI ĐÀ -->
         <div class="lotus-hand-halo" id="lotusHandHalo"></div>
-
-        <!-- 2. THANH TRẠNG THÁI MỎNG TRÊN ĐỈNH (KHÔNG CHE TƯỢNG PHẬT) -->
-        <header class="minimal-top-bar">
-          <div class="live-pill" id="liveStatusPill">
-            <span class="live-dot" id="liveDot"></span>
-            <span id="liveStatusText">CHÙA LINH ỨNG • ĐỨC PHẬT A DI ĐÀ</span>
-          </div>
-          <div class="top-Right-badges">
-            <div class="mini-stat-pill">
-              🔥 <strong id="statIncense">108</strong> hương • ✨ <strong id="statMerit">1,080</strong> CĐ
-            </div>
-          </div>
-        </header>
 
         <!-- 3. CỘT SÁNG TÂM HƯƠNG & LƯ HƯƠNG TRUNG TÂM -->
         <div class="sacred-light-beam" id="sacredLightBeam"></div>
@@ -119,6 +109,22 @@
 
         <!-- 9. LỚP CANVAS HIỆU ỨNG KHÓI HƯƠNG, HOA SEN RƠI & SÓNG ÂM -->
         <canvas id="templeCanvas"></canvas>
+
+        </div><!-- /scene-layer -->
+
+        <!-- CHROME: thông tin nằm trong vùng an toàn, không bị giao diện TikTok che -->
+        <!-- 2. THANH TRẠNG THÁI MỎNG TRÊN ĐỈNH (KHÔNG CHE TƯỢNG PHẬT) -->
+        <header class="minimal-top-bar">
+          <div class="live-pill" id="liveStatusPill">
+            <span class="live-dot" id="liveDot"></span>
+            <span id="liveStatusText">CHÙA LINH ỨNG • ĐỨC PHẬT A DI ĐÀ</span>
+          </div>
+          <div class="top-Right-badges">
+            <div class="mini-stat-pill">
+              🔥 <strong id="statIncense">108</strong> hương • ✨ <strong id="statMerit">1,080</strong> CĐ
+            </div>
+          </div>
+        </header>
 
         <!-- 10. THANH HUD GỌN GÀNG DƯỚI ĐÁY (GIỐNG MẪU THAM CHIẾU) -->
         <div class="stage-disclaimer">Chỉ mang tính giải trí. Không khuyến khích tặng quà hay trông chờ vào nghi lễ tâm linh.</div>

@@ -5,6 +5,9 @@
   --gold-deep: #b87e14;
   --ivory: #fff8eb;
   --muted-gold: #d8be92;
+  /* Canvas 1080x2340 (19.5:9). Giao diện TikTok che phần đầu và phần cuối khung hình. */
+  --canvas-h: 2340px;
+  --hud-bottom: 20px;      /* thanh HUD sát đáy như thiết kế gốc */
 }
 
 * {
@@ -50,7 +53,7 @@ body.obs-mode .quick-dock {
 .stage-wrapper {
   position: relative;
   height: 96vh;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 1080 / 2340;
   border-radius: 22px;
   overflow: hidden;
   border: 2px solid rgba(244, 193, 80, 0.55);
@@ -69,19 +72,28 @@ body.obs-mode .stage-wrapper {
   top: 0;
   left: 0;
   width: 1080px;
-  height: 1920px;
+  height: var(--canvas-h);
   transform-origin: top left;
   overflow: hidden;
   background: #120403;
   contain: strict;
 }
 
+/* Lớp cảnh: toạ độ bên trong chính là toạ độ canvas 1080x2340. */
+.scene-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1080px;
+  height: var(--canvas-h);
+  overflow: visible;
+}
 /* 1. HÌNH NỀN CHÁNH ĐIỆN ĐỨC PHẬT A DI ĐÀ SẮC NÉT TUYỆT ĐỐI */
 .sanctuary-bg-img {
   position: absolute;
   inset: 0;
   width: 1080px;
-  height: 1920px;
+  height: var(--canvas-h);
   object-fit: cover;
   object-position: center top;
   z-index: 1;
@@ -92,7 +104,7 @@ body.obs-mode .stage-wrapper {
 .buddha-halo-system {
   position: absolute;
   left: 540px;
-  top: 260px;
+  top: 335px;
   width: 720px;
   height: 720px;
   transform: translate3d(-50%, -50%, 0);
@@ -193,7 +205,7 @@ body.obs-mode .stage-wrapper {
 .lotus-hand-halo {
   position: absolute;
   left: 540px;
-  top: 502px;
+  top: 621px;
   width: 190px;
   height: 150px;
   transform: translate3d(-50%, -50%, 0);
@@ -287,7 +299,7 @@ body.obs-mode .stage-wrapper {
 .sacred-light-beam {
   position: absolute;
   left: 540px;
-  top: 485px;
+  top: 640px;
   width: 110px;
   height: 435px;
   transform: translate3d(-50%, 0, 0);
@@ -309,7 +321,7 @@ body.obs-mode .stage-wrapper {
 
 .incense-burner-zone {
   position: absolute;
-  top: 790px;
+  top: 891px;
   left: 50%;
   transform: translateX(-50%);
   width: 190px;
@@ -366,15 +378,15 @@ body.obs-mode .stage-wrapper {
   font-weight: 700;
 }
 .bell-hotspot {
-  top: 955px;
+  top: 1050px;
   left: 34px;
 }
 .woodfish-hotspot {
-  top: 955px;
+  top: 1050px;
   right: 34px;
 }
 .fortune-hotspot {
-  top: 895px;
+  top: 985px;
   right: 34px;
 }
 
@@ -391,7 +403,7 @@ body.obs-mode .stage-wrapper {
 .central-worshipper {
   position: absolute;
   left: 540px;
-  top: 970px;
+  top: 1090px;
   transform: translate3d(-50%, 0, 0);
   display: flex;
   flex-direction: column;
@@ -586,7 +598,8 @@ body.obs-mode .stage-wrapper {
 .hall-seat {
   position: absolute;
   display: flex;
-  flex-direction: column;
+  /* thẻ tên nằm phía trên đầu để không bị phật tử hàng trước che */
+  flex-direction: column-reverse;
   align-items: center;
 }
 
@@ -603,7 +616,7 @@ body.obs-mode .stage-wrapper {
   border-radius: 999px;
   background: rgba(12, 4, 3, 0.92);
   border: 1px solid rgba(244, 193, 80, 0.68);
-  margin-top: -12px;
+  margin-bottom: -6px;
   white-space: nowrap;
 }
 
@@ -647,7 +660,7 @@ body.obs-mode .stage-wrapper {
 .carpet-walker {
   position: absolute;
   left: 540px;
-  top: 1665px;
+  top: 2110px;
   will-change: transform, opacity;
   display: flex;
   flex-direction: column;
@@ -670,11 +683,11 @@ body.obs-mode .stage-wrapper {
     opacity: 1;
   }
   92% {
-    transform: translate3d(-50%, calc(-100% - 495px), 0) scale(0.84);
+    transform: translate3d(-50%, calc(-100% - 830px), 0) scale(0.84);
     opacity: 1;
   }
   100% {
-    transform: translate3d(-50%, calc(-100% - 510px), 0) scale(0.82);
+    transform: translate3d(-50%, calc(-100% - 845px), 0) scale(0.82);
     opacity: 0;
   }
 }
@@ -692,7 +705,7 @@ body.obs-mode .stage-wrapper {
 
 .sky-lantern {
   position: absolute;
-  bottom: 360px;
+  bottom: 330px;
   width: 260px;
   padding: 12px 15px;
   border-radius: 16px;
@@ -727,14 +740,14 @@ body.obs-mode .stage-wrapper {
   0% { transform: translate3d(0, 60px, 0) scale(0.85); opacity: 0; }
   12% { transform: translate3d(0, 0px, 0) scale(1); opacity: 1; }
   86% { opacity: 0.95; }
-  100% { transform: translate3d(0, -1180px, 0) scale(0.92); opacity: 0; }
+  100% { transform: translate3d(0, -1500px, 0) scale(0.92); opacity: 0; }
 }
 
 #templeCanvas {
   position: absolute;
   inset: 0;
   width: 1080px;
-  height: 1920px;
+  height: var(--canvas-h);
   pointer-events: none;
   z-index: 15;
 }
@@ -744,7 +757,7 @@ body.obs-mode .stage-wrapper {
    ========================================================================== */
 .bottom-hud-bar {
   position: absolute;
-  bottom: 20px;
+  bottom: var(--hud-bottom);
   left: 24px;
   right: 24px;
   height: 192px;
@@ -980,7 +993,7 @@ body.obs-mode .stage-wrapper {
 
 .grand-ceremony-banner {
   position: absolute;
-  top: 790px;
+  top: 900px;
   left: 50%;
   transform: translate3d(-50%, 0, 0) scale(0.9);
   width: 860px;
@@ -1125,7 +1138,7 @@ body.obs-mode .stage-wrapper {
 .stage-disclaimer {
   position: absolute;
   left: 24px;
-  bottom: 220px;
+  bottom: calc(var(--hud-bottom) + 192px + 10px);
   max-width: 560px;
   z-index: 21;
   font-size: 22px;

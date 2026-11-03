@@ -11,7 +11,7 @@
     document.body.classList.add('obs-mode');
   }
 
-  // 1. Tự động co giãn khung 1080x1920 vừa khít Stage Wrapper (9:16)
+  // 1. Tự động co giãn khung 1080x2340 (19.5:9) vừa khít Stage Wrapper
   const stageWrapper = document.getElementById('stageWrapper');
   const stage9x16 = document.getElementById('stage9x16');
 
@@ -41,7 +41,18 @@
   audio.enqueueTts = (text, options = {}) => {
     if (!audio.silenced) return enqueueTts(text, options);
     options.onStart?.();
-    if (options.onEnd) setTimeout(options.onEnd, 3000); // keep the preview's ritual queue moving without sound
+    if (!options.onEnd) return;
+    // The preview plays nothing, but it must hold each ritual as long as the OBS tab's voice runs,
+    // otherwise it moves on to the next devotee while the OBS tab is still reading.
+    let finished = false;
+    const finish = (ms) => { if (!finished) { finished = true; setTimeout(options.onEnd, ms); } };
+    if (!options.url) return finish(3000);
+    const probe = new Audio();
+    probe.preload = 'metadata';
+    probe.onloadedmetadata = () => finish(Number.isFinite(probe.duration) ? probe.duration * 1000 + 250 : 3000);
+    probe.onerror = () => finish(3000);
+    setTimeout(() => finish(3000), 5000);
+    probe.src = options.url;
   };
 
   function unlockAudioOnce() {
@@ -57,7 +68,7 @@
   if (isObsTab) window.addEventListener('pointerdown', unlockAudioOnce, { once: true });
   document.getElementById('btnUnlockAudio')?.addEventListener('click', unlockAudioOnce, { once: true });
 
-  // 3. Vẽ các nén nhang đang cháy trong Lư Hương Đỉnh Đồng (x=540, y=895)
+  // 3. Vẽ các nén nhang đang cháy trong Lư Hương Đỉnh Đồng (x=540, y=996)
   const incenseHolder = document.getElementById('incenseSticksHolder');
   let renderedStickCount = 0;
 
@@ -89,20 +100,20 @@
 
       const rad = (angleDeg * Math.PI) / 180;
       const tipX = 540 + (leftPx - 65) + Math.sin(rad) * heightPx;
-      const tipY = 895 - Math.cos(rad) * heightPx;
+      const tipY = 996 - Math.cos(rad) * heightPx;
       tips.push({ x: tipX, y: tipY });
     }
     particles.setIncenseTips(tips);
   }
 
-  // 4. Dựng Hàng 6 Đệm Quỳ VIP (Top 6 Thí Chủ trên bục gỗ y=1188)
+  // 4. Dựng Hàng 6 Đệm Quỳ VIP (Top 6 Thí Chủ trên bục gỗ, toạ độ theo amitabha_stage_2)
   const VIP_CUSHION_COORDS = [
-    { x: 140, y: 1188, rank: 1 },
-    { x: 268, y: 1188, rank: 2 },
-    { x: 392, y: 1188, rank: 3 },
-    { x: 688, y: 1188, rank: 4 },
-    { x: 812, y: 1188, rank: 5 },
-    { x: 940, y: 1188, rank: 6 }
+    { x: 152, y: 1252, rank: 1 },
+    { x: 285, y: 1252, rank: 2 },
+    { x: 416, y: 1252, rank: 3 },
+    { x: 659, y: 1252, rank: 4 },
+    { x: 788, y: 1252, rank: 5 },
+    { x: 923, y: 1252, rank: 6 }
   ];
 
   function renderVipCushions(leaderboard = []) {
@@ -124,37 +135,72 @@
     }).join('');
   }
 
-  // 5. Dựng Đạo Tràng 40 Phật Tử Quỳ Lễ Hai Bên Thảm Đỏ (5 Hàng x 4 Cột mỗi bên)
+  // 5. Đạo tràng quỳ hai bên thảm đỏ: lưới có hàng lối, hai bên đối xứng. Ghế nào có người xem (thật hoặc NPC)
+  // mới hiện phật tử; không có ai thì sảnh trống. Mỗi người chọn ghế ngẫu nhiên theo tên nên nhìn lộn xộn.
   const congregationHall = document.getElementById('congregationHall');
   const HALL_SEAT_COORDS = [];
+  const HALL_FIRST_ROW_Y = 1450;
+  const HALL_LAST_ROW_Y = 2050;
+  const HALL_ROWS = 10;
+  const HALL_MIN_X = 40;
+  // Hàng trên ngồi sát nhau, hàng dưới thưa dần. Ghế trong cùng của mỗi hàng bám mép thảm (hàng gần
+  // lấn ra đường đi nhiều hơn), các ghế còn lại dàn ra phía ngoài.
+  const HALL_SPACING_TOP = 54;
+  const HALL_SPACING_BOTTOM = 76;
 
   (function buildHallGrid() {
-    const rows = 5;
-    const colsPerSide = 4;
-    for (let r = 0; r < rows; r++) {
-      const progress = r / (rows - 1); // 0 (xa) -> 1 (gần)
-      const y = Math.round(1290 + progress * 355); // 1290 -> 1645
-      const scale = +(0.76 + progress * 0.28).toFixed(2);
-
-      // Cánh trái thảm đỏ
-      const leftInnerX = Math.round(335 - progress * 48); // mép thảm mở rộng dần
-      const leftOuterX = 48;
-      for (let c = 0; c < colsPerSide; c++) {
-        const t = c / (colsPerSide - 1);
-        const x = Math.round(leftOuterX + t * (leftInnerX - leftOuterX));
+    for (let r = 0; r < HALL_ROWS; r++) {
+      const progress = r / (HALL_ROWS - 1); // 0 (xa) -> 1 (gần)
+      const y = Math.round(HALL_FIRST_ROW_Y + progress * (HALL_LAST_ROW_Y - HALL_FIRST_ROW_Y));
+      const scale = +(0.8 + progress * 0.42).toFixed(2);
+      // Mép trái thảm: x = 387 ở y=1318, mở rộng 0.4px mỗi px đi xuống.
+      const inner = 387 - 0.4 * (y - 1318) + 10 + progress * 170;
+      const target = HALL_SPACING_TOP + progress * (HALL_SPACING_BOTTOM - HALL_SPACING_TOP);
+      // Số ghế vừa đủ để hàng dàn từ mép thảm tới sát mép màn hình; khoảng cách giãn nhẹ cho khít.
+      const cols = Math.max(2, Math.floor((inner - HALL_MIN_X) / target) + 1);
+      const spacing = (inner - HALL_MIN_X) / (cols - 1);
+      for (let c = 0; c < cols; c++) {
+        const x = Math.round(inner - (cols - 1 - c) * spacing);
         HALL_SEAT_COORDS.push({ side: 'L', row: r, col: c, x, y, scale });
-      }
-
-      // Cánh phải thảm đỏ
-      const rightInnerX = Math.round(745 + progress * 48);
-      const rightOuterX = 1032;
-      for (let c = 0; c < colsPerSide; c++) {
-        const t = c / (colsPerSide - 1);
-        const x = Math.round(rightInnerX + t * (rightOuterX - rightInnerX));
-        HALL_SEAT_COORDS.push({ side: 'R', row: r, col: c, x, y, scale });
+        HALL_SEAT_COORDS.push({ side: 'R', row: r, col: c, x: 1080 - x, y, scale });
       }
     }
   })();
+
+  // Người xem chọn ghế ngẫu nhiên và giữ nguyên chỗ trong suốt thời gian có mặt. Các hàng phía trên được
+  // lấp trước: chỉ khi những hàng đó đã khá đầy (HALL_FILL_TARGET) mới có người ngồi rải xuống hàng dưới.
+  const HALL_FILL_TARGET = 0.75;
+  const seatOfViewer = new Map(); // khoá người xem -> chỉ số ghế
+  function seatsInFirstRows(count) {
+    let end = 0;
+    for (let row = 0; row < HALL_ROWS && end < count; row++) {
+      while (end < HALL_SEAT_COORDS.length && HALL_SEAT_COORDS[end].row === row) end++;
+    }
+    return Math.max(end, Math.min(count, HALL_SEAT_COORDS.length));
+  }
+  function assignSeats(viewers) {
+    const wanted = viewers.slice(0, HALL_SEAT_COORDS.length);
+    const keys = new Set(wanted.map(v => v.uniqueId || v.name));
+    for (const key of [...seatOfViewer.keys()]) if (!keys.has(key)) seatOfViewer.delete(key);
+    const taken = new Set(seatOfViewer.values());
+    const limit = seatsInFirstRows(Math.ceil(wanted.length / HALL_FILL_TARGET));
+    const map = new Map();
+    for (const viewer of wanted) {
+      const key = viewer.uniqueId || viewer.name;
+      let idx = seatOfViewer.get(key);
+      if (idx === undefined) {
+        const free = [];
+        for (let i = 0; i < limit; i++) if (!taken.has(i)) free.push(i);
+        if (!free.length) for (let i = limit; i < HALL_SEAT_COORDS.length; i++) if (!taken.has(i)) free.push(i);
+        if (!free.length) continue;
+        idx = free[Math.floor(Math.random() * free.length)];
+        seatOfViewer.set(key, idx);
+        taken.add(idx);
+      }
+      map.set(idx, viewer);
+    }
+    return map;
+  }
 
   let lastRenderedLeaderboardJson = '';
 
@@ -166,19 +212,11 @@
     if (sig === lastRenderedLeaderboardJson && congregationHall.children.length > 0) return;
     lastRenderedLeaderboardJson = sig;
 
-    // Ưu tiên gắn thẻ tên vào các ghế gần thảm đỏ dễ nhìn nhất
-    const labeledSeatIndices = [
-      3, 4, 11, 12, 19, 20, 27, 28, 35, 36, 2, 5, 10, 13, 18, 21, 26, 29
-    ];
-    const seatViewerMap = new Map();
-    hallViewers.forEach((viewer, idx) => {
-      if (idx < labeledSeatIndices.length) {
-        seatViewerMap.set(labeledSeatIndices[idx], viewer);
-      }
-    });
+    const seatViewerMap = assignSeats(hallViewers);
 
     congregationHall.innerHTML = HALL_SEAT_COORDS.map((seat, idx) => {
       const viewer = seatViewerMap.get(idx);
+      if (!viewer) return ''; // ghế trống: không vẽ phật tử
       const badgeHtml = viewer
         ? `
           <div class="seat-badge">
@@ -196,7 +234,9 @@
         <div
           class="hall-seat"
           data-seat-idx="${idx}"
-          style="left: ${seat.x}px; top: ${seat.y}px; z-index: ${20 + seat.row * 2}; transform: translate(-50%, -100%) scale(${seat.scale});"
+          data-x="${seat.x}"
+          data-y="${seat.y}"
+          style="left: ${seat.x}px; top: ${seat.y}px; z-index: ${20 + idx}; transform: translate(-50%, -100%) scale(${seat.scale});"
         >
           <img
             src="/assets/devotee.png"
@@ -226,11 +266,43 @@
     img.src = url;
   });
 
+  function bowSeat(el, delay) {
+    const img = el.querySelector('.devotee-sprite');
+    if (!img) return;
+    setTimeout(() => { img.src = SPRITE_FRAMES.forehead; }, delay);
+    setTimeout(() => { img.src = SPRITE_FRAMES.bowMid; }, delay + 140);
+    setTimeout(() => { img.src = SPRITE_FRAMES.prostrateDeep; }, delay + 300);
+    setTimeout(() => { img.src = SPRITE_FRAMES.bowMid; }, delay + 620);
+    setTimeout(() => { img.src = SPRITE_FRAMES.kneel; }, delay + 780);
+  }
+
+  // Phật tử lạy ngẫu nhiên: khoảng cách giữa các lần theo phân phối mũ (lúc dồn dập, lúc im), thỉnh thoảng
+  // vài người lạy cùng lúc, thỉnh thoảng lệch nhau chút ít. Chỉ là hiệu ứng hình, không cộng công đức hay tiếng.
+  const BOW_MEAN_GAP_MS = 2200;
+  const bowingSeats = new WeakSet();
+  function randomBows() {
+    if (!congregationHall || document.hidden) return;
+    const seats = Array.from(congregationHall.querySelectorAll('.hall-seat')).filter(el => !bowingSeats.has(el));
+    if (!seats.length) return;
+    const together = Math.random() < 0.3 ? 2 + Math.floor(Math.random() * 3) : 1;
+    const sync = Math.random() < 0.5; // nhóm này lạy đúng cùng lúc hay lệch nhau
+    for (let k = 0; k < together && seats.length; k++) {
+      const el = seats.splice(Math.floor(Math.random() * seats.length), 1)[0];
+      bowingSeats.add(el);
+      setTimeout(() => bowingSeats.delete(el), 1200 + 600);
+      bowSeat(el, sync ? 0 : Math.floor(Math.random() * 700));
+    }
+  }
+  (function scheduleRandomBow() {
+    const gap = Math.min(7000, Math.max(350, -Math.log(1 - Math.random()) * BOW_MEAN_GAP_MS));
+    setTimeout(() => { randomBows(); scheduleRandomBow(); }, gap);
+  })();
+
   function pulseHallBowing() {
     if (!congregationHall) return;
     const seats = congregationHall.querySelectorAll('.hall-seat');
     seats.forEach((el, i) => {
-      if (i % 4 !== 0) return;
+      if (i % 2 !== 0) return;
       const img = el.querySelector('.devotee-sprite');
       if (!img) return;
       const delay = (i % 4) * 80;
@@ -355,7 +427,7 @@
       lotusHand.classList.add('flare');
       highlightTimers.push(setTimeout(() => lotusHand.classList.remove('flare'), 3600));
     }
-    particles.spawnBellWave(540, 260, 2);
+    particles.spawnBellWave(540, 335, 2);
 
     // Cập nhật dòng thông báo dưới thanh HUD
     const hudName = document.getElementById('devoteeNameLine');
@@ -520,8 +592,8 @@
     switch (ev.type) {
       case 'burnIncense': {
         audio.playIncenseChime();
-        particles.spawnIncenseBurst(540, 895);
-        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 540, 860, '#ffe082');
+        particles.spawnIncenseBurst(540, 996);
+        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 540, 960, '#ffe082');
         animateWalkerOnCarpet(ev.user, ev.avatar, `🔥 Dâng ${ev.count} nén hương (+${ev.merit} CĐ)`, ev.wish);
         break;
       }
@@ -529,15 +601,15 @@
       case 'strikeWoodenFish': {
         audio.playWoodenFish();
         pulseHallBowing();
-        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 890, 935, '#ffd54f');
+        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 890, 1065, '#ffd54f');
         break;
       }
 
       case 'ringBell': {
         audio.playTempleBell(1.0);
         pulseHallBowing();
-        particles.spawnBellWave(540, 510, 4);
-        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 190, 935, '#fff3b0');
+        particles.spawnBellWave(540, 621, 4);
+        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 190, 1065, '#fff3b0');
         updateCentralWorshipper(ev.user, ev.avatar, `🔔 Thỉnh Đại Hồng Chung (+${ev.merit} CĐ)`, ev.wish);
         break;
       }
@@ -545,7 +617,7 @@
       case 'sendPrayer': {
         audio.playIncenseChime();
         spawnSkyLantern(ev.user, ev.wish);
-        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 540, 920, '#ffb74d');
+        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 540, 1040, '#ffb74d');
         animateWalkerOnCarpet(ev.user, ev.avatar, `🏮 Cầu phúc (+${ev.merit} CĐ)`, ev.wish);
         break;
       }
@@ -553,8 +625,8 @@
       case 'offerGift': {
         audio.playIncenseChime();
         audio.playTempleBell(0.85);
-        particles.spawnIncenseBurst(540, 895);
-        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 540, 840, '#fff3b0');
+        particles.spawnIncenseBurst(540, 996);
+        particles.spawnFloatingMerit(`+${ev.merit} Công Đức`, 540, 940, '#fff3b0');
         animateWalkerOnCarpet(ev.user, ev.avatar, `🪷 Dâng ${ev.giftName} (+${ev.merit} CĐ)`, ev.wish);
         break;
       }
@@ -618,10 +690,11 @@
     document.getElementById('fortuneMeaning').textContent = `Lời giải: ${vi.summary || ''}`;
 
     modal.classList.add('visible');
+    // The ritual scheduler hides the card (stopRitualVisuals) once the reading ends; this is only a safety net.
     clearTimeout(fortuneTimer);
     fortuneTimer = setTimeout(() => {
       modal.classList.remove('visible');
-    }, 15000);
+    }, 100000);
   }
 
   document.getElementById('fortuneModal')?.addEventListener('click', () => {

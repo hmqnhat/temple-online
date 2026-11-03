@@ -66,14 +66,23 @@
       }
       if (!this.queue.push(item)) { this.onDrop(event, 'full'); return false; }
       this.items.set(event.id, item);
-      if (this.active && TIERS.indexOf(tier) > TIERS.indexOf(this.active.item.tier)) {
-        const previous = this.active.item;
-        this.stopActive();
-        if (previous.tier !== 'community' && !this.queue.push(previous, true)) this.drop(previous, 'full');
-        else if (previous.tier === 'community') this.drop(previous, 'interrupted');
-      }
+      // A higher tier only cuts the current ritual once its own voice is ready (or after startWaitMs),
+      // so the stage is never emptied while the newcomer is still waiting for audio.
+      if (item.pending && this.startWaitMs > 0) {
+        item.preemptTimer = this.setTimer(() => this.preempt(item), this.startWaitMs);
+      } else this.preempt(item);
       this.pump();
       return true;
+    }
+    preempt(item) {
+      this.clearTimer(item.preemptTimer);
+      if (!this.active || this.active.item === item || this.items.get(item.event.id) !== item) return;
+      if (TIERS.indexOf(item.tier) <= TIERS.indexOf(this.active.item.tier)) return;
+      const previous = this.active.item;
+      this.stopActive();
+      if (previous.tier !== 'community' && !this.queue.push(previous, true)) this.drop(previous, 'full');
+      else if (previous.tier === 'community') this.drop(previous, 'interrupted');
+      this.pump();
     }
     audioReady({ eventId, url }) {
       const item = this.items.get(eventId);
@@ -81,6 +90,7 @@
       item.pending = false;
       item.url = typeof url === 'string' && /^\/tts-cache\/[a-z0-9_-]+\.wav$/.test(url) ? url : null;
       if (this.active?.item === item) { this.begin(); this.playAudio(); this.schedule(); }
+      else this.preempt(item);
     }
     pump() {
       if (this.active) return;
