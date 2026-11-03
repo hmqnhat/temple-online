@@ -1120,3 +1120,19 @@ body.obs-mode .stage-wrapper {
   border-left: 3px solid var(--gold-main);
   color: #f3e5cf;
 }
+
+/* Lời nhắc nhỏ góc trái dưới, nằm ngay trên thanh HUD */
+.stage-disclaimer {
+  position: absolute;
+  left: 24px;
+  bottom: 220px;
+  max-width: 560px;
+  z-index: 21;
+  font-size: 22px;
+  line-height: 1.35;
+  color: rgba(255, 244, 220, 0.9);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 10px;
+  pointer-events: none;
+}
